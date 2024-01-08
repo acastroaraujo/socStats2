@@ -1,0 +1,57 @@
+# Preface {.unnumbered}
+
+[Syllabus](https://docs.google.com/document/d/11H5pobsoZYp1beVbCkgh9gIshvPhhjLixDEeDpSCMJY/)
+
+Hi everyone, I will be uploading the homework questions to this website.
+
+Feel free to reach out to me with *any* questions.
+
+## Resources
+
+These are my personal recommendations for resources to start getting interested in statistics. It's somewhat incomplete---e.g., there are no dedicated textbooks to causal inference, which is what we'll cover next semester.
+
+**Class Resources:**
+
+-   [The Effect](https://theeffectbook.net/) by NHK [@huntington-klein2021]
+
+**Recommended (Short):**
+
+-   General [@lundberg2021]
+
+```{=html}
+<!-- -->
+```
+-   Introduction to DAGs [@rohrer2018; @cinelli2022]
+
+    The [Causal Diagrams edX course](https://www.edx.org/learn/data-analysis/harvard-university-causal-diagrams-draw-your-assumptions-before-your-conclusions) by Miguel Hernán is pretty good too.
+
+```{=html}
+<!-- -->
+```
+-   Don't interpret "control" or "adjustment" variables [@keele2020; @westreich2013; @hünermund2023].
+
+**Good books to play around with:**
+
+-   [Causal Inference: The Mixtape](https://mixtape.scunning.com/) [@cunningham2021]
+
+    Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.
+
+-   *Counterfactuals and Causal Inference* [@morgan2014]
+
+    I've been told many times that the first edition is better, so maybe try that one instead.
+
+-   [Regression and Other Stories](https://users.aalto.fi/~ave/ROS.pdf) [@gelman2020]
+
+    Chapters 18-21
+
+-   *Theory & Credibility* [@ashworth2021]
+
+**Advanced Resources:**
+
+-   Mostly Harmless Econometrics [@angrist2009]
+
+-   Causality: Models, Reasoning and Inference [@pearl2009]
+
+-   [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf) [@hernan2023]
+
+    This gets used a lot in epidemiology.

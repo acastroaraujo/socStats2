@@ -1,0 +1,32 @@
+project:
+  type: book
+  output-dir: _site
+
+book:
+  title: "Social Statistics II (Exercises)"
+  author: "andrés castro araújo"
+  date: last-modified
+  navbar:
+    right:
+      - icon: github
+        text: andrés
+        href: https://github.com/acastroaraujo/socStats2
+  chapters:
+    - index.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: american-journal-of-sociology.csl
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    code-fold: show
+    code-tools: true
+    fig-align: "center"
+    
+execute:
+  freeze: auto
+
+editor: visual
+

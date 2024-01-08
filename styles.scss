@@ -1,0 +1,35 @@
+/*-- scss:defaults --*/
+
+// Import the Optima font from a CDN
+@import url('https://www.cssfontstack.com/Optima');
+
+// Define a variable for the Optima font family
+$optima-font: 'Optima', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+$fira-font: 'Fira Code', monospace; 
+
+$font-family-sans-serif: $optima-font;
+$font-family-monospace: $fira-font; 
+$link-color: #4974A5;
+$code-block-bg: #F4F4F4;
+//$body-bg: #FEFDFA;
+$primary: #4974A5;
+//$primary: #368DFC;
+
+// Import the IM Fell DW Pica SC font
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&display=swap');
+// Define a variable for the font family
+$custom-font: 'IM Fell DW Pica SC', serif;
+
+/*-- scss:rules --*/
+
+// h1, h2, h3, h4, h5, h6 {
+//   font-family: $custom-font;
+//   font-weight: 900;
+// }
+
+.allcaps {
+  font-family: $custom-font;
+  font-size: 0.9em;
+}
