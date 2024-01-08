@@ -6,6 +6,7 @@ book:
   title: "Social Statistics II (Exercises)"
   author: "andrés castro araújo"
   date: last-modified
+  search: false
   navbar:
     right:
       - icon: github
