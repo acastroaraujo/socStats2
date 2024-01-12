@@ -10,10 +10,17 @@ book:
   navbar:
     right:
       - icon: github
+        text: steve
+        href: https://github.com/vaiseys/soc-stats-2
+      - icon: github
         text: andrés
         href: https://github.com/acastroaraujo/socStats2
+      
   chapters:
     - index.qmd
+    - part: sec01.qmd
+      chapters: 
+        - week01.qmd
     - references.qmd
 
 bibliography: references.bib

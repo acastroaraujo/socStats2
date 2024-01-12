@@ -16,18 +16,12 @@ These are my personal recommendations for resources to start getting interested 
 
 **Recommended (Short):**
 
--   General [@lundberg2021]
+-   Research questions and estimands [@lundberg2021]
 
-```{=html}
-<!-- -->
-```
 -   Introduction to DAGs [@rohrer2018; @cinelli2022]
 
     The [Causal Diagrams edX course](https://www.edx.org/learn/data-analysis/harvard-university-causal-diagrams-draw-your-assumptions-before-your-conclusions) by Miguel Hernán is pretty good too.
 
-```{=html}
-<!-- -->
-```
 -   Don't interpret "control" or "adjustment" variables [@keele2020; @westreich2013; @hünermund2023].
 
 **Good books to play around with:**

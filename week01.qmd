@@ -1,0 +1,100 @@
+---
+title: "Week 1"
+callout-appearance: simple
+callout-icon: false
+---
+
+## Exercise
+
+::: callout-note
+Start reading [*What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory*](https://journals.sagepub.com/doi/full/10.1177/00031224211004187)*.*
+
+Keep track of at least 5 terms that are new to you or that perhaps you don't fully understand yet (e.g., estimand, DAG, potential outcome).
+
+I will be asking you to build a glossary of terms related to causal inference. I will not grade this yet, but still do your best attempt at defining each of these terms.
+:::
+
+*We will be digesting this article more fully in the coming weeks, so don't worry if you don't understand everything yet.*
+
+## Exercise
+
+```{r}
+#| label: Packages
+#| code-summary: Packages
+#| message: false
+
+library(tidyverse)
+library(gt)
+```
+
+## Exercise
+
+The following data frame contains the potential outcomes for 8 individuals.
+
+```{r}
+d <- data.frame(
+  T = c(0, 0, 1, 0, 0, 1, 1, 1),
+  Y0 = c(5, 8, 5, 12, 4, 8, 4, 9),
+  Y1 = c(5, 10, 3, 13, 2, 9, 1, 13), 
+  id = LETTERS[1:8]
+)
+
+gt(d, rowname_col = "id") # gt is used for fancy printing of tables
+```
+
+The variable `T` depicts whether the someone got the "treatment" or not.
+
+::: callout-note
+-   Create a new variable called `Y` that contains the observed outcomes.
+
+-   What is the Average Treatment Effect (ATE) for this 8 person experiment?
+:::
+
+*Note. I'm only asking for a simple difference in means; this is also sometimes called the "naive estimator" (or "naive comparison"), which works just fine in simple experimental settings.*
+
+## Exercise
+
+::: callout-note
+-   Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random with the constraint that equal numbers get the treatment and the control.
+
+```{=html}
+<!-- -->
+```
+-   Create a new variable called `Y` that contains the observed outcomes.
+
+-   What is the Average Treatment Effect (ATE) for this 8 person experiment?
+
+-   Do this a couple of different times (at least 3) and note the differences.
+:::
+
+::: callout-tip
+Hint: You can re-sample $T$ very easily using the `sample()` function.
+
+For example:
+
+```{r}
+sample(d$T)
+```
+:::
+
+::: callout-note
+How do these estimates compare the to the "real" ATE?
+
+When I say "the real ATE" I basically mean this:
+
+```{r}
+
+```
+:::
+
+## Exercise
+
+::: callout-note
+Obviously, an experiment of 8 people will not give you enough "statistical power."
+
+-   Assuming the ATE is $0.125$, how meany people would you need to enroll in this experiment to have enough statistical power?
+:::
+
+::: callout-tip
+Hint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous.
+:::
