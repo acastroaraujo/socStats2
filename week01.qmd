@@ -42,7 +42,7 @@ d <- data.frame(
 gt(d, rowname_col = "id") # gt is used for fancy printing of tables
 ```
 
-The variable `T` depicts whether the someone got the "treatment" or not.
+The variable `T` depicts whether someone got the "treatment" or not.
 
 ::: callout-note
 -   Create a new variable called `Y` that contains the observed outcomes.
@@ -55,7 +55,7 @@ The variable `T` depicts whether the someone got the "treatment" or not.
 ## Exercise
 
 ::: callout-note
--   Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random with the constraint that equal numbers get the treatment and the control.
+-   Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random so that equal numbers get the treatment and the control.
 
 ```{=html}
 <!-- -->
@@ -64,7 +64,7 @@ The variable `T` depicts whether the someone got the "treatment" or not.
 
 -   What is the Average Treatment Effect (ATE) for this 8 person experiment?
 
--   Do this a couple of different times (at least 3) and note the differences.
+-   Do this a couple of times (at least 3) and note the differences.
 :::
 
 ::: callout-tip
@@ -78,12 +78,12 @@ sample(d$T)
 :::
 
 ::: callout-note
-How do these estimates compare the to the "real" ATE?
+How do these estimates compare to the "real" ATE?
 
 When I say "the real ATE" I basically mean this:
 
 ```{r}
-
+mean(d$Y1 - d$Y0)
 ```
 :::
 
@@ -92,7 +92,7 @@ When I say "the real ATE" I basically mean this:
 ::: callout-note
 Obviously, an experiment of 8 people will not give you enough "statistical power."
 
--   Assuming the ATE is $0.125$, how meany people would you need to enroll in this experiment to have enough statistical power?
+-   Assuming the ATE is $0.125$, how many people would you need to enroll in this experiment to have enough statistical power?
 :::
 
 ::: callout-tip
