@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="andrés castro araújo">
-<meta name="dcterms.date" content="2024-01-13">
+<meta name="dcterms.date" content="2024-01-19">
 
 <title>Social Statistics II (Exercises)</title>
 <style>
@@ -179,6 +179,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -226,7 +232,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2024</p>
+      <p class="date">January 19, 2024</p>
     </div>
   </div>
   
@@ -248,19 +254,20 @@ div.csl-indent {
 <ul>
 <li><a href="https://theeffectbook.net/">The Effect</a> by NHK <span class="citation" data-cites="huntington-klein2021">(<a href="references.html#ref-huntington-klein2021" role="doc-biblioref">Huntington-Klein 2021</a>)</span></li>
 </ul>
-<p><strong>Recommended (Short):</strong></p>
+<p><strong>Short:</strong></p>
 <ul>
 <li><p>Research questions and estimands <span class="citation" data-cites="lundberg2021">(<a href="references.html#ref-lundberg2021" role="doc-biblioref">Lundberg et al. 2021</a>)</span></p></li>
 <li><p>Introduction to DAGs <span class="citation" data-cites="rohrer2018 cinelli2022">(<a href="references.html#ref-rohrer2018" role="doc-biblioref">Rohrer 2018</a>; <a href="references.html#ref-cinelli2022" role="doc-biblioref">Cinelli et al. 2022</a>)</span></p>
 <p>The <a href="https://www.edx.org/learn/data-analysis/harvard-university-causal-diagrams-draw-your-assumptions-before-your-conclusions">Causal Diagrams edX course</a> by Miguel Hernán is pretty good too.</p></li>
 <li><p>Don’t interpret “control” or “adjustment” variables <span class="citation" data-cites="keele2020 westreich2013 hünermund2023">(<a href="references.html#ref-westreich2013" role="doc-biblioref">Westreich and Greenland 2013</a>; <a href="references.html#ref-keele2020" role="doc-biblioref">Keele et al. 2020</a>; <a href="references.html#ref-hünermund2023" role="doc-biblioref">Hünermund and Louw 2023</a>)</span>.</p></li>
+<li><p>The effects of seemingly immutable characteristics <span class="citation" data-cites="sen2016 holland1986">(<a href="references.html#ref-sen2016" role="doc-biblioref">Sen and Wasow 2016</a>; cf. <a href="references.html#ref-holland1986" role="doc-biblioref">Holland 1986</a>)</span>.</p></li>
 </ul>
-<p><strong>Good books to play around with:</strong></p>
+<p><strong>Good to play around with:</strong></p>
 <ul>
-<li><p><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a> <span class="citation" data-cites="cunningham2021">(<a href="references.html#ref-cunningham2021" role="doc-biblioref">Cunningham 2021</a>)</span></p>
-<p>Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.</p></li>
 <li><p><em>Counterfactuals and Causal Inference</em> <span class="citation" data-cites="morgan2014">(<a href="references.html#ref-morgan2014" role="doc-biblioref">Morgan and Winship 2014</a>)</span></p>
 <p>I’ve been told many times that the first edition is better, so maybe try that one instead.</p></li>
+<li><p><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a> <span class="citation" data-cites="cunningham2021">(<a href="references.html#ref-cunningham2021" role="doc-biblioref">Cunningham 2021</a>)</span></p>
+<p>Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.</p></li>
 <li><p><a href="https://users.aalto.fi/~ave/ROS.pdf">Regression and Other Stories</a> <span class="citation" data-cites="gelman2020">(<a href="references.html#ref-gelman2020" role="doc-biblioref">Gelman et al. 2020</a>)</span></p>
 <p>Chapters 18-21</p></li>
 <li><p><em>Theory &amp; Credibility</em> <span class="citation" data-cites="ashworth2021">(<a href="references.html#ref-ashworth2021" role="doc-biblioref">Ashworth et al. 2021</a>)</span></p></li>
@@ -270,7 +277,7 @@ div.csl-indent {
 <li><p>Mostly Harmless Econometrics <span class="citation" data-cites="angrist2009">(<a href="references.html#ref-angrist2009" role="doc-biblioref">Angrist and Pischke 2009</a>)</span></p></li>
 <li><p>Causality: Models, Reasoning and Inference <span class="citation" data-cites="pearl2009">(<a href="references.html#ref-pearl2009" role="doc-biblioref">Pearl 2009</a>)</span></p></li>
 <li><p><a href="https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf">Causal Inference: What If</a> <span class="citation" data-cites="hernan2023">(<a href="references.html#ref-hernan2023" role="doc-biblioref">Hernan and Robins 2023</a>)</span></p>
-<p>This gets used a lot in epidemiology.</p></li>
+<p>This book gets used a lot in epidemiology.</p></li>
 </ul>
 
 
@@ -295,6 +302,9 @@ Gelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. <em>Regression and Other S
 <div id="ref-hernan2023" class="csl-entry" role="listitem">
 Hernan, Miquel A., and James M. Robins. 2023. <em>Causal Inference: What If</em>. CRC Press.
 </div>
+<div id="ref-holland1986" class="csl-entry" role="listitem">
+Holland, Paul W. 1986. <span>“<a href="https://doi.org/10.2307/2289064">Statistics and Causal Inference</a>.”</span> <em>Journal of the American Statistical Association</em> 81(396): 945–60.
+</div>
 <div id="ref-hünermund2023" class="csl-entry" role="listitem">
 Hünermund, Paul, and Beyers Louw. 2023. <span>“<a href="https://doi.org/10.1177/10944281231219274">On the Nuisance of Control Variables in Causal Regression Analysis</a>.”</span> <em>Organizational Research Methods</em> 10944281231219274.
 </div>
@@ -315,6 +325,9 @@ Pearl, Judea. 2009. <em>Causality: Models, Reasoning and Inference</em>. 2nd edi
 </div>
 <div id="ref-rohrer2018" class="csl-entry" role="listitem">
 Rohrer, Julia M. 2018. <span>“Thinking Clearly about Correlations and Causation: Graphical Causal Models for Observational Data.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 1(1): 2742.
+</div>
+<div id="ref-sen2016" class="csl-entry" role="listitem">
+Sen, Maya, and Omar Wasow. 2016. <span>“<a href="https://doi.org/10.1146/annurev-polisci-032015-010015">Race as a Bundle of Sticks: Designs That Estimate Effects of Seemingly Immutable Characteristics</a>.”</span> <em>Annual Review of Political Science</em> 19(1): 499–522.
 </div>
 <div id="ref-westreich2013" class="csl-entry" role="listitem">
 Westreich, Daniel, and Sander Greenland. 2013. <span>“<a href="https://doi.org/10.1093/aje/kws412">The Table&nbsp;2 Fallacy: Presenting and Interpreting Confounder and Modifier Coefficients</a>.”</span> <em>American Journal of Epidemiology</em> 177(4): 292–98.
@@ -633,7 +646,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">The Effect</span><span class="co">](https://theeffectbook.net/)</span> by NHK <span class="co">[</span><span class="ot">@huntington-klein2021</span><span class="co">]</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Recommended (Short):**</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>**Short:**</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Research questions and estimands <span class="co">[</span><span class="ot">@lundberg2021</span><span class="co">]</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
@@ -643,31 +656,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Don't interpret "control" or "adjustment" variables <span class="co">[</span><span class="ot">@keele2020; @westreich2013; @hünermund2023</span><span class="co">]</span>.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Good books to play around with:**</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The effects of seemingly immutable characteristics <span class="co">[</span><span class="ot">@sen2016; cf. @holland1986</span><span class="co">]</span>.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Causal Inference: The Mixtape</span><span class="co">](https://mixtape.scunning.com/)</span> <span class="co">[</span><span class="ot">@cunningham2021</span><span class="co">]</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**Good to play around with:**</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Counterfactuals and Causal Inference* <span class="co">[</span><span class="ot">@morgan2014</span><span class="co">]</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Counterfactuals and Causal Inference* <span class="co">[</span><span class="ot">@morgan2014</span><span class="co">]</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    I've been told many times that the first edition is better, so maybe try that one instead.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    I've been told many times that the first edition is better, so maybe try that one instead.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Causal Inference: The Mixtape</span><span class="co">](https://mixtape.scunning.com/)</span> <span class="co">[</span><span class="ot">@cunningham2021</span><span class="co">]</span></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Regression and Other Stories</span><span class="co">](https://users.aalto.fi/~ave/ROS.pdf)</span> <span class="co">[</span><span class="ot">@gelman2020</span><span class="co">]</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    Chapters 18-21</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Regression and Other Stories</span><span class="co">](https://users.aalto.fi/~ave/ROS.pdf)</span> <span class="co">[</span><span class="ot">@gelman2020</span><span class="co">]</span></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Theory &amp; Credibility* <span class="co">[</span><span class="ot">@ashworth2021</span><span class="co">]</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    Chapters 18-21</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>**Advanced Resources:**</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Theory &amp; Credibility* <span class="co">[</span><span class="ot">@ashworth2021</span><span class="co">]</span></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mostly Harmless Econometrics <span class="co">[</span><span class="ot">@angrist2009</span><span class="co">]</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>**Advanced Resources:**</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Causality: Models, Reasoning and Inference <span class="co">[</span><span class="ot">@pearl2009</span><span class="co">]</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Mostly Harmless Econometrics <span class="co">[</span><span class="ot">@angrist2009</span><span class="co">]</span></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Causal Inference: What If</span><span class="co">](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf)</span> <span class="co">[</span><span class="ot">@hernan2023</span><span class="co">]</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Causality: Models, Reasoning and Inference <span class="co">[</span><span class="ot">@pearl2009</span><span class="co">]</span></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    This gets used a lot in epidemiology.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Causal Inference: What If</span><span class="co">](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf)</span> <span class="co">[</span><span class="ot">@hernan2023</span><span class="co">]</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    This book gets used a lot in epidemiology.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
