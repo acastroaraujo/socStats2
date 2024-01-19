@@ -1,0 +1,62 @@
+---
+title: "Week 2"
+callout-appearance: simple
+callout-icon: false
+---
+
+Dear all,
+
+Covid forbids me from getting creative with homework this week.
+
+Instead, I will borrow some [problems](https://github.com/NickCH-K/TheEffectAssignments) from NHK ([chapter 5](https://theeffectbook.net/ch-Identification.html)).
+
+## Exercise
+
+::: callout-note
+Which of the following is the best definition of the term *identified* as in "this variation has identified the effect we're interested in"?
+
+a.  We've generated the data by conducting a controlled experiment in which treatment is randomly assigned.
+b.  In the data generating process, the only reason why we see variation in the outcome variable is because of the treatment variable.
+c.  The relationship we are looking at in the data actually tests a hypothesis.
+d.  In the variation we use, there's no reason we'd see any relationship at all except for the effect we're interested in.
+:::
+
+## Exercise
+
+::: callout-note
+You read about a new study with the headline "eating caviar linked to longer lifespan." The study's research question is "does eating caviar make you live longer?" In the study's data, they find that people who eat caviar have, on average, longer lifespans than people who don't.
+
+a.  What are some alternate explanations for this relationship?
+b.  What sort of variation would identify the answer to the research question?
+c.  Give one suggestion for how the study authors might isolate variation that would identify the answer to the research question
+:::
+
+## Exercise
+
+::: callout-note
+For each of the following news headlines, assume that the underlying data actually only shows a correlation between the two variables mentioned. Give an alternate explanation for the correlation other than the causal relationship implied by the headline.
+
+a.  "As stock market drops, presidential approval ratings decline."
+
+b.  "Dates are announced for the downtown summer concert series, driving up sales at downtown restaurants."
+
+c.  "Unsanitary? Hospital visits linked to 20% increased risk of disease."
+
+d.  "Dress for success! Every CEO follows this office-wear rule."
+:::
+
+## Exercise
+
+::: callout-note
+Why is a variable that causes both the "treatment" and "outcome" variables especially concerning for identification? You may want to use the phrase "alternate explanation" in your answer.
+:::
+
+## Exercise
+
+::: callout-note
+Shoe company Crikey claims that people who wear their fancy and expensive professional running-shoe Cool Mistrunner brand run 4 to 5% faster than if they wore an average shoe.
+
+a.  In a few sentences, describe the data-generating process (you will probably leave some things out, that's okay).
+b.  What are possible alternative explanations for this claim, aside from the shoe making the person run faster?
+c.  In running their study, the researchers accounted for some alternative explanations, including: gender, enthusiasm for running, and whether runners have participated in marathons and/or half marathons. Think of an alternative explanation not on this list. What is the implication of not accounting for this alternative explanation?
+:::

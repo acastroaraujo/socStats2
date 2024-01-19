@@ -56,14 +56,8 @@ The variable `T` depicts whether someone got the "treatment" or not.
 
 ::: callout-note
 -   Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random so that equal numbers get the treatment and the control.
-
-```{=html}
-<!-- -->
-```
 -   Create a new variable called `Y` that contains the observed outcomes.
-
 -   What is the Average Treatment Effect (ATE) for this 8 person experiment?
-
 -   Do this a couple of times (at least 3) and note the differences.
 :::
 

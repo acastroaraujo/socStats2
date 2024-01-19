@@ -14,7 +14,7 @@ These are my personal recommendations for resources to start getting interested 
 
 -   [The Effect](https://theeffectbook.net/) by NHK [@huntington-klein2021]
 
-**Recommended (Short):**
+**Short:**
 
 -   Research questions and estimands [@lundberg2021]
 
@@ -24,15 +24,17 @@ These are my personal recommendations for resources to start getting interested 
 
 -   Don't interpret "control" or "adjustment" variables [@keele2020; @westreich2013; @hünermund2023].
 
-**Good books to play around with:**
+-   The effects of seemingly immutable characteristics [@sen2016; cf. @holland1986].
 
--   [Causal Inference: The Mixtape](https://mixtape.scunning.com/) [@cunningham2021]
-
-    Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.
+**Good to play around with:**
 
 -   *Counterfactuals and Causal Inference* [@morgan2014]
 
     I've been told many times that the first edition is better, so maybe try that one instead.
+
+-   [Causal Inference: The Mixtape](https://mixtape.scunning.com/) [@cunningham2021]
+
+    Covers a lot of the same ground as NHK, but has more math. It is also written by an economist.
 
 -   [Regression and Other Stories](https://users.aalto.fi/~ave/ROS.pdf) [@gelman2020]
 
@@ -48,4 +50,4 @@ These are my personal recommendations for resources to start getting interested 
 
 -   [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/wp-content/uploads/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf) [@hernan2023]
 
-    This gets used a lot in epidemiology.
+    This book gets used a lot in epidemiology.
