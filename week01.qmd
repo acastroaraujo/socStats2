@@ -4,7 +4,7 @@ callout-appearance: simple
 callout-icon: false
 ---
 
-## Exercise
+## Exercise {#sec-glossary}
 
 ::: callout-note
 Start reading [*What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory*](https://journals.sagepub.com/doi/full/10.1177/00031224211004187)*.*

@@ -22,6 +22,7 @@ book:
       chapters: 
         - week01.qmd
         - week02.qmd
+        - week03.qmd
     - references.qmd
 
 bibliography: references.bib
