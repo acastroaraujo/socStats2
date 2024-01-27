@@ -4,97 +4,314 @@
     "href": "index.html",
     "title": "Social Statistics II (Exercises)",
     "section": "",
-    "text": "Preface\nSyllabus\nHi everyone, I will be uploading the homework questions to this website.\nFeel free to reach out to me with any questions."
+    "text": "Preface\nSyllabus\nHi everyone, I will be uploading the homework questions to this website.\nFeel free to reach out to me with any questions.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "index.html#resources",
     "href": "index.html#resources",
     "title": "Social Statistics II (Exercises)",
     "section": "Resources",
-    "text": "Resources\nThese are my personal recommendations for resources to start getting interested in statistics. It’s somewhat incomplete—e.g., there are no dedicated textbooks to causal inference, which is what we’ll cover next semester.\nClass Resources:\n\nThe Effect by NHK (Huntington-Klein 2021)\n\nShort:\n\nResearch questions and estimands (Lundberg et al. 2021)\nIntroduction to DAGs (Rohrer 2018; Cinelli et al. 2022)\nThe Causal Diagrams edX course by Miguel Hernán is pretty good too.\nDon’t interpret “control” or “adjustment” variables (Westreich and Greenland 2013; Keele et al. 2020; Hünermund and Louw 2023).\nThe effects of seemingly immutable characteristics (Sen and Wasow 2016; cf. Holland 1986).\n\nGood to play around with:\n\nCounterfactuals and Causal Inference (Morgan and Winship 2014)\nI’ve been told many times that the first edition is better, so maybe try that one instead.\nCausal Inference: The Mixtape (Cunningham 2021)\nCovers a lot of the same ground as NHK, but has more math. It is also written by an economist.\nRegression and Other Stories (Gelman et al. 2020)\nChapters 18-21\nTheory & Credibility (Ashworth et al. 2021)\n\nAdvanced Resources:\n\nMostly Harmless Econometrics (Angrist and Pischke 2009)\nCausality: Models, Reasoning and Inference (Pearl 2009)\nCausal Inference: What If (Hernan and Robins 2023)\nThis book gets used a lot in epidemiology.\n\n\n\n\n\n\n\nAngrist, Joshua D., and Jörn-Steffen Pischke. 2009. Mostly Harmless Econometrics. Princeton university press.\n\n\nAshworth, Scott, Christopher R. Berry, and Ethan Bueno de Mesquita. 2021. Theory and Credibility: Integrating Theoretical and Empirical Social Science. Princeton University Press.\n\n\nCinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. “A Crash Course in Good and Bad Controls.” Sociological Methods & Research 00491241221099552.\n\n\nCunningham, Scott. 2021. Causal Inference. Yale University Press.\n\n\nGelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. Regression and Other Stories. Cambridge University Press.\n\n\nHernan, Miquel A., and James M. Robins. 2023. Causal Inference: What If. CRC Press.\n\n\nHolland, Paul W. 1986. “Statistics and Causal Inference.” Journal of the American Statistical Association 81(396): 945–60.\n\n\nHünermund, Paul, and Beyers Louw. 2023. “On the Nuisance of Control Variables in Causal Regression Analysis.” Organizational Research Methods 10944281231219274.\n\n\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. New York: Chapman; Hall/CRC.\n\n\nKeele, Luke, Randolph T. Stevenson, and Felix Elwert. 2020. “The Causal Interpretation of Estimated Associations in Regression Models.” Political Science Research and Methods 8(1): 113.\n\n\nLundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. “What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory.” American Sociological Review 00031224211004187.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals and Causal Inference: Methods and Principles for Social Research. 2nd edition. 2nd edition. New York, NY: Cambridge University Press.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning and Inference. 2nd edition. 2nd edition. Cambridge, U.K. ; New York: Cambridge University Press.\n\n\nRohrer, Julia M. 2018. “Thinking Clearly about Correlations and Causation: Graphical Causal Models for Observational Data.” Advances in Methods and Practices in Psychological Science 1(1): 2742.\n\n\nSen, Maya, and Omar Wasow. 2016. “Race as a Bundle of Sticks: Designs That Estimate Effects of Seemingly Immutable Characteristics.” Annual Review of Political Science 19(1): 499–522.\n\n\nWestreich, Daniel, and Sander Greenland. 2013. “The Table 2 Fallacy: Presenting and Interpreting Confounder and Modifier Coefficients.” American Journal of Epidemiology 177(4): 292–98."
+    "text": "Resources\nThese are my personal recommendations for resources to start getting interested in statistics. It’s somewhat incomplete—e.g., there are no dedicated textbooks to causal inference, which is what we’ll cover next semester.\nClass Resources:\n\nThe Effect by NHK (Huntington-Klein 2021)\n\nShort:\n\nResearch questions and estimands (Lundberg et al. 2021)\nIntroduction to DAGs (Rohrer 2018; Cinelli et al. 2022)\nThe Causal Diagrams edX course by Miguel Hernán is pretty good too.\nDon’t interpret “control” or “adjustment” variables (Westreich and Greenland 2013; Keele et al. 2020; Hünermund and Louw 2023).\nThe effects of seemingly immutable characteristics (Sen and Wasow 2016; cf. Holland 1986).\n\nGood to play around with:\n\nCounterfactuals and Causal Inference (Morgan and Winship 2014)\nI’ve been told many times that the first edition is better, so maybe try that one instead.\nCausal Inference: The Mixtape (Cunningham 2021)\nCovers a lot of the same ground as NHK, but has more math. It is also written by an economist.\nRegression and Other Stories (Gelman et al. 2020)\nChapters 18-21\nTheory & Credibility (Ashworth et al. 2021)\n\nAdvanced Resources:\n\nMostly Harmless Econometrics (Angrist and Pischke 2009)\nCausality: Models, Reasoning and Inference (Pearl 2009)\nCausal Inference: What If (Hernan and Robins 2023)\nThis book gets used a lot in epidemiology.\n\n\n\n\n\n\n\nAngrist, Joshua D., and Jörn-Steffen Pischke. 2009. Mostly Harmless Econometrics. Princeton university press.\n\n\nAshworth, Scott, Christopher R. Berry, and Ethan Bueno de Mesquita. 2021. Theory and Credibility: Integrating Theoretical and Empirical Social Science. Princeton University Press.\n\n\nCinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. “A Crash Course in Good and Bad Controls.” Sociological Methods & Research 00491241221099552.\n\n\nCunningham, Scott. 2021. Causal Inference. Yale University Press.\n\n\nGelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. Regression and Other Stories. Cambridge University Press.\n\n\nHernan, Miquel A., and James M. Robins. 2023. Causal Inference: What If. CRC Press.\n\n\nHolland, Paul W. 1986. “Statistics and Causal Inference.” Journal of the American Statistical Association 81(396): 945–60.\n\n\nHünermund, Paul, and Beyers Louw. 2023. “On the Nuisance of Control Variables in Causal Regression Analysis.” Organizational Research Methods 10944281231219274.\n\n\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. New York: Chapman; Hall/CRC.\n\n\nKeele, Luke, Randolph T. Stevenson, and Felix Elwert. 2020. “The Causal Interpretation of Estimated Associations in Regression Models.” Political Science Research and Methods 8(1): 113.\n\n\nLundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. “What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory.” American Sociological Review 00031224211004187.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals and Causal Inference: Methods and Principles for Social Research. 2nd edition. 2nd edition. New York, NY: Cambridge University Press.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning and Inference. 2nd edition. 2nd edition. Cambridge, U.K. ; New York: Cambridge University Press.\n\n\nRohrer, Julia M. 2018. “Thinking Clearly about Correlations and Causation: Graphical Causal Models for Observational Data.” Advances in Methods and Practices in Psychological Science 1(1): 2742.\n\n\nSen, Maya, and Omar Wasow. 2016. “Race as a Bundle of Sticks: Designs That Estimate Effects of Seemingly Immutable Characteristics.” Annual Review of Political Science 19(1): 499–522.\n\n\nWestreich, Daniel, and Sander Greenland. 2013. “The Table 2 Fallacy: Presenting and Interpreting Confounder and Modifier Coefficients.” American Journal of Epidemiology 177(4): 292–98.",
+    "crumbs": [
+      "Preface"
+    ]
   },
   {
     "objectID": "sec01.html",
     "href": "sec01.html",
     "title": "Part 1",
     "section": "",
-    "text": "…"
+    "text": "…",
+    "crumbs": [
+      "Part 1"
+    ]
+  },
+  {
+    "objectID": "week01.html",
+    "href": "week01.html",
+    "title": "1  Week 1",
+    "section": "",
+    "text": "1.1 Exercise\nWe will be digesting this article more fully in the coming weeks, so don’t worry if you don’t understand everything yet.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
+  },
+  {
+    "objectID": "week01.html#sec-glossary",
+    "href": "week01.html#sec-glossary",
+    "title": "1  Week 1",
+    "section": "",
+    "text": "Start reading What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory.\nKeep track of at least 5 terms that are new to you or that perhaps you don’t fully understand yet (e.g., estimand, DAG, potential outcome).\nI will be asking you to build a glossary of terms related to causal inference. I will not grade this yet, but still do your best attempt at defining each of these terms.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
   },
   {
     "objectID": "week01.html#exercise",
     "href": "week01.html#exercise",
     "title": "1  Week 1",
-    "section": "1.1 Exercise",
-    "text": "1.1 Exercise\n\n\n\n\n\n\nStart reading What Is Your Estimand? Defining the Target Quantity Connects Statistical Evidence to Theory.\nKeep track of at least 5 terms that are new to you or that perhaps you don’t fully understand yet (e.g., estimand, DAG, potential outcome).\nI will be asking you to build a glossary of terms related to causal inference. I will not grade this yet, but still do your best attempt at defining each of these terms.\n\n\n\nWe will be digesting this article more fully in the coming weeks, so don’t worry if you don’t understand everything yet."
+    "section": "1.2 Exercise",
+    "text": "1.2 Exercise\n\n\nPackages\nlibrary(tidyverse)\nlibrary(gt)",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
   },
   {
     "objectID": "week01.html#exercise-1",
     "href": "week01.html#exercise-1",
     "title": "1  Week 1",
-    "section": "1.2 Exercise",
-    "text": "1.2 Exercise\n\n\nPackages\nlibrary(tidyverse)\nlibrary(gt)"
+    "section": "1.3 Exercise",
+    "text": "1.3 Exercise\nThe following data frame contains the potential outcomes for 8 individuals.\n\n\nCode\nd &lt;- data.frame(\n  T = c(0, 0, 1, 0, 0, 1, 1, 1),\n  Y0 = c(5, 8, 5, 12, 4, 8, 4, 9),\n  Y1 = c(5, 10, 3, 13, 2, 9, 1, 13), \n  id = LETTERS[1:8]\n)\n\ngt(d, rowname_col = \"id\") # gt is used for fancy printing of tables\n\n\n\n\n\n\n\n\n\nT\nY0\nY1\n\n\n\n\nA\n0\n5\n5\n\n\nB\n0\n8\n10\n\n\nC\n1\n5\n3\n\n\nD\n0\n12\n13\n\n\nE\n0\n4\n2\n\n\nF\n1\n8\n9\n\n\nG\n1\n4\n1\n\n\nH\n1\n9\n13\n\n\n\n\n\n\n\nThe variable T depicts whether someone got the “treatment” or not.\n\n\n\n\n\n\n\nCreate a new variable called Y that contains the observed outcomes.\nWhat is the Average Treatment Effect (ATE) for this 8 person experiment?\n\n\n\n\nNote. I’m only asking for a simple difference in means; this is also sometimes called the “naive estimator” (or “naive comparison”), which works just fine in simple experimental settings.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
   },
   {
     "objectID": "week01.html#exercise-2",
     "href": "week01.html#exercise-2",
     "title": "1  Week 1",
-    "section": "1.3 Exercise",
-    "text": "1.3 Exercise\nThe following data frame contains the potential outcomes for 8 individuals.\n\n\nCode\nd &lt;- data.frame(\n  T = c(0, 0, 1, 0, 0, 1, 1, 1),\n  Y0 = c(5, 8, 5, 12, 4, 8, 4, 9),\n  Y1 = c(5, 10, 3, 13, 2, 9, 1, 13), \n  id = LETTERS[1:8]\n)\n\ngt(d, rowname_col = \"id\") # gt is used for fancy printing of tables\n\n\n\n\n\n\n  \n    \n    \n      \n      T\n      Y0\n      Y1\n    \n  \n  \n    A\n0\n5\n5\n    B\n0\n8\n10\n    C\n1\n5\n3\n    D\n0\n12\n13\n    E\n0\n4\n2\n    F\n1\n8\n9\n    G\n1\n4\n1\n    H\n1\n9\n13\n  \n  \n  \n\n\n\n\nThe variable T depicts whether someone got the “treatment” or not.\n\n\n\n\n\n\n\nCreate a new variable called Y that contains the observed outcomes.\nWhat is the Average Treatment Effect (ATE) for this 8 person experiment?\n\n\n\n\nNote. I’m only asking for a simple difference in means; this is also sometimes called the “naive estimator” (or “naive comparison”), which works just fine in simple experimental settings."
+    "section": "1.4 Exercise",
+    "text": "1.4 Exercise\n\n\n\n\n\n\n\nSimulate a new completely randomized experiment on these 8 people; that is, re sample \\(T\\) at random so that equal numbers get the treatment and the control.\nCreate a new variable called Y that contains the observed outcomes.\nWhat is the Average Treatment Effect (ATE) for this 8 person experiment?\nDo this a couple of times (at least 3) and note the differences.\n\n\n\n\n\n\n\n\n\n\nHint: You can re-sample \\(T\\) very easily using the sample() function.\nFor example:\n\n\nCode\nsample(d$T)\n\n\n[1] 0 1 0 1 0 1 0 1\n\n\n\n\n\n\n\n\n\n\n\nHow do these estimates compare to the “real” ATE?\nWhen I say “the real ATE” I basically mean this:\n\n\nCode\nmean(d$Y1 - d$Y0)\n\n\n[1] 0.125",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
   },
   {
     "objectID": "week01.html#exercise-3",
     "href": "week01.html#exercise-3",
     "title": "1  Week 1",
-    "section": "1.4 Exercise",
-    "text": "1.4 Exercise\n\n\n\n\n\n\n\nSimulate a new completely randomized experiment on these 8 people; that is, re sample \\(T\\) at random so that equal numbers get the treatment and the control.\nCreate a new variable called Y that contains the observed outcomes.\nWhat is the Average Treatment Effect (ATE) for this 8 person experiment?\nDo this a couple of times (at least 3) and note the differences.\n\n\n\n\n\n\n\n\n\n\nHint: You can re-sample \\(T\\) very easily using the sample() function.\nFor example:\n\n\nCode\nsample(d$T)\n\n\n[1] 0 1 0 0 0 1 1 1\n\n\n\n\n\n\n\n\n\n\n\nHow do these estimates compare to the “real” ATE?\nWhen I say “the real ATE” I basically mean this:\n\n\nCode\nmean(d$Y1 - d$Y0)\n\n\n[1] 0.125"
+    "section": "1.5 Exercise",
+    "text": "1.5 Exercise\n\n\n\n\n\n\nObviously, an experiment of 8 people will not give you enough “statistical power.”\n\nAssuming the ATE is \\(0.125\\), how many people would you need to enroll in this experiment to have enough statistical power?\n\n\n\n\n\n\n\n\n\n\nHint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Week 1</span>"
+    ]
   },
   {
-    "objectID": "week01.html#exercise-4",
-    "href": "week01.html#exercise-4",
-    "title": "1  Week 1",
-    "section": "1.5 Exercise",
-    "text": "1.5 Exercise\n\n\n\n\n\n\nObviously, an experiment of 8 people will not give you enough “statistical power.”\n\nAssuming the ATE is \\(0.125\\), how many people would you need to enroll in this experiment to have enough statistical power?\n\n\n\n\n\n\n\n\n\n\nHint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous."
+    "objectID": "week02.html",
+    "href": "week02.html",
+    "title": "2  Week 2",
+    "section": "",
+    "text": "2.1 Exercise",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
   },
   {
     "objectID": "week02.html#exercise",
     "href": "week02.html#exercise",
     "title": "2  Week 2",
-    "section": "2.1 Exercise",
-    "text": "2.1 Exercise\n\n\n\n\n\n\nWhich of the following is the best definition of the term identified as in “this variation has identified the effect we’re interested in”?\n\nWe’ve generated the data by conducting a controlled experiment in which treatment is randomly assigned.\nIn the data generating process, the only reason why we see variation in the outcome variable is because of the treatment variable.\nThe relationship we are looking at in the data actually tests a hypothesis.\nIn the variation we use, there’s no reason we’d see any relationship at all except for the effect we’re interested in."
+    "section": "",
+    "text": "Which of the following is the best definition of the term identified as in “this variation has identified the effect we’re interested in”?\n\nWe’ve generated the data by conducting a controlled experiment in which treatment is randomly assigned.\nIn the data generating process, the only reason why we see variation in the outcome variable is because of the treatment variable.\nThe relationship we are looking at in the data actually tests a hypothesis.\nIn the variation we use, there’s no reason we’d see any relationship at all except for the effect we’re interested in.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
   },
   {
     "objectID": "week02.html#exercise-1",
     "href": "week02.html#exercise-1",
     "title": "2  Week 2",
     "section": "2.2 Exercise",
-    "text": "2.2 Exercise\n\n\n\n\n\n\nYou read about a new study with the headline “eating caviar linked to longer lifespan.” The study’s research question is “does eating caviar make you live longer?” In the study’s data, they find that people who eat caviar have, on average, longer lifespans than people who don’t.\n\nWhat are some alternate explanations for this relationship?\nWhat sort of variation would identify the answer to the research question?\nGive one suggestion for how the study authors might isolate variation that would identify the answer to the research question"
+    "text": "2.2 Exercise\n\n\n\n\n\n\nYou read about a new study with the headline “eating caviar linked to longer lifespan.” The study’s research question is “does eating caviar make you live longer?” In the study’s data, they find that people who eat caviar have, on average, longer lifespans than people who don’t.\n\nWhat are some alternate explanations for this relationship?\nWhat sort of variation would identify the answer to the research question?\nGive one suggestion for how the study authors might isolate variation that would identify the answer to the research question",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
   },
   {
     "objectID": "week02.html#exercise-2",
     "href": "week02.html#exercise-2",
     "title": "2  Week 2",
     "section": "2.3 Exercise",
-    "text": "2.3 Exercise\n\n\n\n\n\n\nFor each of the following news headlines, assume that the underlying data actually only shows a correlation between the two variables mentioned. Give an alternate explanation for the correlation other than the causal relationship implied by the headline.\n\n“As stock market drops, presidential approval ratings decline.”\n“Dates are announced for the downtown summer concert series, driving up sales at downtown restaurants.”\n“Unsanitary? Hospital visits linked to 20% increased risk of disease.”\n“Dress for success! Every CEO follows this office-wear rule.”"
+    "text": "2.3 Exercise\n\n\n\n\n\n\nFor each of the following news headlines, assume that the underlying data actually only shows a correlation between the two variables mentioned. Give an alternate explanation for the correlation other than the causal relationship implied by the headline.\n\n“As stock market drops, presidential approval ratings decline.”\n“Dates are announced for the downtown summer concert series, driving up sales at downtown restaurants.”\n“Unsanitary? Hospital visits linked to 20% increased risk of disease.”\n“Dress for success! Every CEO follows this office-wear rule.”",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
   },
   {
     "objectID": "week02.html#exercise-3",
     "href": "week02.html#exercise-3",
     "title": "2  Week 2",
     "section": "2.4 Exercise",
-    "text": "2.4 Exercise\n\n\n\n\n\n\nWhy is a variable that causes both the “treatment” and “outcome” variables especially concerning for identification? You may want to use the phrase “alternate explanation” in your answer."
+    "text": "2.4 Exercise\n\n\n\n\n\n\nWhy is a variable that causes both the “treatment” and “outcome” variables especially concerning for identification? You may want to use the phrase “alternate explanation” in your answer.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
   },
   {
     "objectID": "week02.html#exercise-4",
     "href": "week02.html#exercise-4",
     "title": "2  Week 2",
     "section": "2.5 Exercise",
-    "text": "2.5 Exercise\n\n\n\n\n\n\nShoe company Crikey claims that people who wear their fancy and expensive professional running-shoe Cool Mistrunner brand run 4 to 5% faster than if they wore an average shoe.\n\nIn a few sentences, describe the data-generating process (you will probably leave some things out, that’s okay).\nWhat are possible alternative explanations for this claim, aside from the shoe making the person run faster?\nIn running their study, the researchers accounted for some alternative explanations, including: gender, enthusiasm for running, and whether runners have participated in marathons and/or half marathons. Think of an alternative explanation not on this list. What is the implication of not accounting for this alternative explanation?"
+    "text": "2.5 Exercise\n\n\n\n\n\n\nShoe company Crikey claims that people who wear their fancy and expensive professional running-shoe Cool Mistrunner brand run 4 to 5% faster than if they wore an average shoe.\n\nIn a few sentences, describe the data-generating process (you will probably leave some things out, that’s okay).\nWhat are possible alternative explanations for this claim, aside from the shoe making the person run faster?\nIn running their study, the researchers accounted for some alternative explanations, including: gender, enthusiasm for running, and whether runners have participated in marathons and/or half marathons. Think of an alternative explanation not on this list. What is the implication of not accounting for this alternative explanation?",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Week 2</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html",
+    "href": "week03.html",
+    "title": "3  Week 3",
+    "section": "",
+    "text": "3.1 Exercise\nIgnorability\nExperiments work because they make the distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator are independent.\nThis is how this idea was introduced in class:\n\\[\n\\begin{align}\nY^0 \\perp T, && Y^1 \\perp T\n\\end{align}\n\\]\nAssume the following table comes from perfectly executed experiment.\n*30% of the population is in group T = 1",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise",
+    "href": "week03.html#exercise",
+    "title": "3  Week 3",
+    "section": "",
+    "text": "Table 3.1: Perfect Experiment Example*\n\n\n\n\n\nGroup (\\(T\\))\n\\(E[Y^1]\\)\n\\(E[Y^0]\\)\n\n\n\n\n\\(T = 1\\)\n10,000\n?\n\n\n\\(T = 0\\)\n?\n5,000\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFill in the missing cells.\nWhat is the ATE?",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-1",
+    "href": "week03.html#exercise-1",
+    "title": "3  Week 3",
+    "section": "3.2 Exercise",
+    "text": "3.2 Exercise\nGo back to the glossary I asked you to start creating during Week 1.\nMake sure to add the following terms:\n\n\n\n\n\n\n\nDAG.\nPaths.\nDirect effects.\nIndirect effects.\nTotal effects.\nFront door paths.\nBack door paths.\nConfounding.\nCollider.\nOpen Path.\nClosed Path.\n\n\n\n\n\nSee: Section 1.1",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-2",
+    "href": "week03.html#exercise-2",
+    "title": "3  Week 3",
+    "section": "3.3 Exercise",
+    "text": "3.3 Exercise\nDrawing DAGs.\nThe following exercises are problems from NHK (Chapter 7).\n\n\n\n\n\n\nDraw a causal diagram for the research question “do long shift hours make doctors give lower-quality care?” that incorporates the following features (and only the following features):\n\nLong shift hours affect both how tired doctors are, and how much experience they have, both of which affect the quality of care\nHow long shifts are is often decided by the hospital the doctor works at. There are plenty of other things about a given hospital that also affect the quality of care, like its funding level, how crowded it is, and so on\nNew policies that reduce shift times may be implemented at the same time (with the timing determined by some unobservable change in policy preferences) as other policies that also attempt to improve the quality of care",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-3",
+    "href": "week03.html#exercise-3",
+    "title": "3  Week 3",
+    "section": "3.4 Exercise",
+    "text": "3.4 Exercise\n\n\n\n\n\n\nConsider this research question: Does the funding level of public schools affect student achievement for students in your country?\n\nWhat is the treatment and what is the outcome of interest?\nWrite down a list of relevant variables.\nWhich of the variables in your list in part b are causes of both treatment and outcome?\nWhy might we want to pay extra attention to the variables listed in part c?\nDraw a causal diagram of the variables listed in part b.\nSimplify the diagram from part e.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-4",
+    "href": "week03.html#exercise-4",
+    "title": "3  Week 3",
+    "section": "3.5 Exercise",
+    "text": "3.5 Exercise\n\n\n\n\n\n\nHow can a causal diagram be modified so as to avoid cyclic relationships?\nConsider the diagram below. It depicts a cyclical relationship between student achievement and motivation. If students achieve more (i.e., score well on exams), then their motivation goes up, and if their motivation goes up, they achieve more. Change the diagram so that the relationship is not cyclic anymore.\n\\[\n\\text{Student Achievement} \\longleftrightarrow \\text{Motivation}\n\\]\n\n\n\n\n\n\n\n\n\nHint: We didn’t see this in class, but you should be able to figure it out from the readings.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-5",
+    "href": "week03.html#exercise-5",
+    "title": "3  Week 3",
+    "section": "3.6 Exercise",
+    "text": "3.6 Exercise\nThe following exercises are problems from NHK (Chapter 8).\n\n\n\n\n\n\nAssuming that a path has no colliders on it, what is the difference between a path being Open and Closed?",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-6",
+    "href": "week03.html#exercise-6",
+    "title": "3  Week 3",
+    "section": "3.7 Exercise",
+    "text": "3.7 Exercise\n\n\n\n\n\n\nConsider the below generic causal diagram.\n\n\n\n\n\n\nList every path from X to Y.\nWhich of the paths are front-door paths?\nWhich of the paths are open back-door paths?\nWhat variables must be controlled for in order to identify the effect of X on Y? (only list what must be controlled for, not anything that additionally could be controlled for).",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-7",
+    "href": "week03.html#exercise-7",
+    "title": "3  Week 3",
+    "section": "3.8 Exercise",
+    "text": "3.8 Exercise\n\n\n\n\n\n\nWhich of the following describes a causal path where all the arrows point away from the treatment?\n\nOpen Path\nClosed Path\nFront Door Path\nBack Door Path",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-8",
+    "href": "week03.html#exercise-8",
+    "title": "3  Week 3",
+    "section": "3.9 Exercise",
+    "text": "3.9 Exercise\n\n\n\n\n\n\nConsider the figure below, which depicts the relationship between teaching quality, number of publications (e.g., articles, books), and popularity among scholars and students in a population of professors.\n\n\n\n\n\n\nWhat type of variable is Popularity in one path on this diagram?\nDiscuss what would happen if you controlled for Popularity.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-9",
+    "href": "week03.html#exercise-9",
+    "title": "3  Week 3",
+    "section": "3.10 Exercise",
+    "text": "3.10 Exercise\n\n\n\n\n\n\nGo to the app Steve showed us in class.\nhttps://cbdrh.shinyapps.io/daggle/\nSpend some time noodling around with it and upload screenshots with the right answer for three DAGs with 4, 6, and 8 nodes each. Set the complexity to “difficult.”",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-10",
+    "href": "week03.html#exercise-10",
+    "title": "3  Week 3",
+    "section": "3.11 Exercise",
+    "text": "3.11 Exercise\nHouse of DAG Simulation.\nI’ve included a little script with a couple of functions meant to illustrate the connection between DAGs and the estimands (ATE, ATT, ATC) we saw in class.\nSave it to your project and load it using the source() function.\nYou should see a function called hod_simulation() which creates a dataset that corresponds to the following DAG:\n\n\n\n\n\n\n\\(Y\\): outcome\n\\(T\\): treatment\n\\(U\\): unobserved confounder\n\\(S\\): affects selection into \\(T\\)\n\\(X\\): affects \\(Y\\) directly\n\n\n\nThe hod_simulation() function has the following arguments:\n\nN: Sample Size\nrho: The correlation between \\(S\\) and \\(X\\), it accepts values between -1 and 1.\nBt: this is the treatment effect.\nBx: this is the direct effect of \\(X\\) on \\(Y\\)\n\nNote. There’s bunch of stuff going on under the hood, but we won’t worry about that this week.\nThis is the dataset it creates:\n\n\nCode\nsource(\"hod_simulation_functions.R\")\nset.seed(12345) ## include this so that grading is easier for me.\nd &lt;- hod_simulation(N = 1e3, Bt = 2, Bx = 4, rho = 0.8)\n\n\nStandard Error ~ 0.405\n\n\nPower ~ 0.999\n\n\nNote. Ignore the “Standard Error” and “Power” messages.\n\n\nCode\nd\n\n\n# A tibble: 1,000 × 5\n         x     y0     y1     t      y\n *   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;\n 1  1.90    3.03   5.03      1  5.03 \n 2  0.545   5.20   7.20      1  7.20 \n 3 -0.355  -0.351  1.65      1  1.65 \n 4  1.03   -2.76  -0.764     1 -0.764\n 5  0.0507 -3.79  -1.79      0 -3.79 \n 6  2.57   12.9   14.9       0 12.9  \n 7  1.63    6.70   8.70      0  6.70 \n 8  1.40    3.68   5.68      0  3.68 \n 9  0.307  -1.65   0.353     1  0.353\n10  1.77   10.8   12.8       0 10.8  \n# ℹ 990 more rows\n\n\n\n\n\n\n\n\n\nWithout looking at the results just yet… do you think the naive estimate will be larger or smaller than the “real” estimate ( \\(ATE = 2\\) )?\nCheck your answer. What are the results given by the naive estimator?\nRe-do this but set rho to -0.8 (so that \\(S\\) and \\(X\\) are now negatively correlated).\n\n\n\n\n\n\n\n\n\n\nHint: You can use group_by() and then summarize() to create a table just like Table 3.1.",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
+  },
+  {
+    "objectID": "week03.html#exercise-11",
+    "href": "week03.html#exercise-11",
+    "title": "3  Week 3",
+    "section": "3.12 Exercise",
+    "text": "3.12 Exercise\n\n\n\n\n\n\nTake the dataset d created in the previous question and modify it so that the treatment is now randomized (this will destroy the path between \\(S\\) and \\(T\\)).\n\n\n\n\n\n\n\n\n\nHint: You can achieve this using the sample() function on d$t.\nYou will also want to create a new d$y using the ifelse() function (or something similar to that).\n\n\n\n\n\n\n\n\n\n\nWithout looking at the results just yet… do you think the naive estimate will be larger or smaller than the “real” estimate ( \\(ATE = 2\\) )?\nCheck your answer. What are the results given by the naive estimator?\nUse lm() to predict the newly created y from t. What are the coefficient values?\nUse lm() to predict the newly created y from t and x. What are the coefficient values?",
+    "crumbs": [
+      "Part 1",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week 3</span>"
+    ]
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Angrist, Joshua D., and Jörn-Steffen Pischke. 2009. Mostly Harmless\nEconometrics. Princeton university press.\n\n\nAshworth, Scott, Christopher R. Berry, and Ethan Bueno de Mesquita.\n2021. Theory and Credibility: Integrating Theoretical and Empirical\nSocial Science. Princeton University Press.\n\n\nCinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. “A Crash Course in Good\nand Bad Controls.” Sociological Methods &\nResearch 00491241221099552.\n\n\nCunningham, Scott. 2021. Causal Inference. Yale University\nPress.\n\n\nGelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. Regression and\nOther Stories. Cambridge University Press.\n\n\nHernan, Miquel A., and James M. Robins. 2023. Causal Inference: What\nIf. CRC Press.\n\n\nHolland, Paul W. 1986. “Statistics and Causal\nInference.” Journal of the American Statistical\nAssociation 81(396): 945–60.\n\n\nHünermund, Paul, and Beyers Louw. 2023. “On the Nuisance of\nControl Variables in Causal Regression Analysis.”\nOrganizational Research Methods 10944281231219274.\n\n\nHuntington-Klein, Nick. 2021. The Effect: An Introduction\nto Research Design and Causality. New York: Chapman; Hall/CRC.\n\n\nKeele, Luke, Randolph T. Stevenson, and Felix Elwert. 2020. “The\nCausal Interpretation of Estimated Associations in Regression\nModels.” Political Science Research and Methods 8(1):\n113.\n\n\nLundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. “What Is Your Estimand?\nDefining the Target Quantity Connects Statistical Evidence to\nTheory.” American Sociological Review\n00031224211004187.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals\nand Causal Inference: Methods and Principles for Social Research.\n2nd edition. 2nd edition. New York, NY: Cambridge University Press.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning and Inference.\n2nd edition. 2nd edition. Cambridge, U.K. ; New York: Cambridge\nUniversity Press.\n\n\nRohrer, Julia M. 2018. “Thinking Clearly about Correlations and\nCausation: Graphical Causal Models for Observational Data.”\nAdvances in Methods and Practices in Psychological Science\n1(1): 2742.\n\n\nSen, Maya, and Omar Wasow. 2016. “Race as a\nBundle of Sticks: Designs That Estimate Effects of Seemingly Immutable\nCharacteristics.” Annual Review of Political Science\n19(1): 499–522.\n\n\nWestreich, Daniel, and Sander Greenland. 2013. “The Table 2 Fallacy:\nPresenting and Interpreting Confounder and Modifier\nCoefficients.” American Journal of Epidemiology\n177(4): 292–98."
+    "text": "Angrist, Joshua D., and Jörn-Steffen Pischke. 2009. Mostly Harmless\nEconometrics. Princeton university press.\n\n\nAshworth, Scott, Christopher R. Berry, and Ethan Bueno de Mesquita.\n2021. Theory and Credibility: Integrating Theoretical and Empirical\nSocial Science. Princeton University Press.\n\n\nCinelli, Carlos, Andrew Forney, and Judea Pearl. 2022. “A Crash Course in Good\nand Bad Controls.” Sociological Methods &\nResearch 00491241221099552.\n\n\nCunningham, Scott. 2021. Causal Inference. Yale University\nPress.\n\n\nGelman, Andrew, Jennifer Hill, and Aki Vehtari. 2020. Regression and\nOther Stories. Cambridge University Press.\n\n\nHernan, Miquel A., and James M. Robins. 2023. Causal Inference: What\nIf. CRC Press.\n\n\nHolland, Paul W. 1986. “Statistics and Causal\nInference.” Journal of the American Statistical\nAssociation 81(396): 945–60.\n\n\nHünermund, Paul, and Beyers Louw. 2023. “On the Nuisance of\nControl Variables in Causal Regression Analysis.”\nOrganizational Research Methods 10944281231219274.\n\n\nHuntington-Klein, Nick. 2021. The Effect: An Introduction\nto Research Design and Causality. New York: Chapman; Hall/CRC.\n\n\nKeele, Luke, Randolph T. Stevenson, and Felix Elwert. 2020. “The\nCausal Interpretation of Estimated Associations in Regression\nModels.” Political Science Research and Methods 8(1):\n113.\n\n\nLundberg, Ian, Rebecca Johnson, and Brandon M. Stewart. 2021. “What Is Your Estimand?\nDefining the Target Quantity Connects Statistical Evidence to\nTheory.” American Sociological Review\n00031224211004187.\n\n\nMorgan, Stephen L., and Christopher Winship. 2014. Counterfactuals\nand Causal Inference: Methods and Principles for Social Research.\n2nd edition. 2nd edition. New York, NY: Cambridge University Press.\n\n\nPearl, Judea. 2009. Causality: Models, Reasoning and Inference.\n2nd edition. 2nd edition. Cambridge, U.K. ; New York: Cambridge\nUniversity Press.\n\n\nRohrer, Julia M. 2018. “Thinking Clearly about Correlations and\nCausation: Graphical Causal Models for Observational Data.”\nAdvances in Methods and Practices in Psychological Science\n1(1): 2742.\n\n\nSen, Maya, and Omar Wasow. 2016. “Race as a\nBundle of Sticks: Designs That Estimate Effects of Seemingly Immutable\nCharacteristics.” Annual Review of Political Science\n19(1): 499–522.\n\n\nWestreich, Daniel, and Sander Greenland. 2013. “The Table 2 Fallacy:\nPresenting and Interpreting Confounder and Modifier\nCoefficients.” American Journal of Epidemiology\n177(4): 292–98.",
+    "crumbs": [
+      "References"
+    ]
   }
 ]
