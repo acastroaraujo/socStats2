@@ -194,7 +194,7 @@ Spend some time noodling around with it and upload screenshots with the right an
 
 *House of DAG Simulation.*
 
-I've included a little script with a couple of functions meant to illustrate the connection between DAGs and the estimands (ATE, ATT, ATC) we saw in class.
+I've included a [little script](https://github.com/acastroaraujo/socStats2/blob/main/hod_simulation_functions.R) with a couple of functions meant to illustrate the connection between DAGs and the estimands we saw in class (ATE, ATT, ATC).
 
 Save it to your project and load it using the `source()` function.
 
