@@ -1,5 +1,4 @@
 
-
 hod_simulation <- function(
     N = 1e3,
     rho = 0.5,
@@ -35,42 +34,50 @@ hod_simulation <- function(
   
 }
 
-# hod_coverage_and_significance <- function(d, conf_interval = 0.95, S = 1e3) {
-#   
-#   stopifnot(inherits(d, "simulation"))
-#   pars <- attr(d, "pars")
-#   
-#   out <- replicate(S, {
-#     d$t <- sample(d$t)
-#     d$y <- ifelse(as.logical(d$t), d$y1, d$y0)
-#     ols <- lm(y ~ t, data = d) 
-#     confint(ols, "t", level = conf_interval)
-#     
-#   }, simplify = TRUE)  
-#   
-#   out <- t(out) 
-#   colnames(out) <- c("lower", "upper")
-#   out <- tibble::as_tibble(out)  
-#   
-#   out <- out |> 
-#     tibble::rowid_to_column("s") |> 
-#     dplyr::mutate(cov = pars$Bt > lower & pars$Bt < upper) |> 
-#     dplyr::mutate(sig = !(lower < 0 & upper > 0)) 
-#   
-#   structure(out, class = c("simulation", class(out)), pars = pars)
-#   
-# }
+hod_coverage_and_significance <- function(d, conf_interval = 0.95, S = 1e3) {
+  
+  stopifnot(inherits(d, "simulation"))
+  pars <- attr(d, "pars")
+  
+  out <- replicate(S, {
+    d$t <- sample(d$t)
+    d$y <- ifelse(as.logical(d$t), d$y1, d$y0)
+    ols <- lm(y ~ t, data = d) 
+    confint(ols, "t", level = conf_interval)
+    
+  }, simplify = TRUE)  
+  
+  out <- t(out) 
+  colnames(out) <- c("lower", "upper")
+  out <- tibble::as_tibble(out)  
+  
+  out <- out |> 
+    tibble::rowid_to_column("s") |> 
+    dplyr::mutate(cov = pars$Bt > lower & pars$Bt < upper) |> 
+    dplyr::mutate(sig = !(lower < 0 & upper > 0)) 
+  
+  structure(out, class = c("simulation", class(out)), pars = pars)
+  
+}
 
-# hod_cov_sig_plot <- function(sim) {
-#  
-#  stopifnot(inherits(d, "simulation"))
-# pars <- attr(d, "pars")
+hod_cov_sig_plot <- function(sim) {
+ 
+  stopifnot(inherits(d, "simulation"))
+  pars <- attr(d, "pars")
   
-#  sim |> 
-#    dplyr::sample_n(size = 500) |> 
-#    tibble::rowid_to_column("id") |> 
-#    ggplot2::ggplot(aes(y = id, color = sig)) + 
-#    ggplot2::geom_segment(ggplot2::aes(x = lower, xend = upper, yend = id), linewidth = 1/5) +
-#    ggplot2::geom_vline(xintercept = pars$Bt, linetype = "dashed")
-  
-# }
+  sim |> 
+   dplyr::sample_n(size = 500) |> 
+   tibble::rowid_to_column("id") |> 
+   ggplot2::ggplot(aes(y = id, color = sig)) + 
+   ggplot2::geom_segment(ggplot2::aes(x = lower, xend = upper, yend = id), linewidth = 1/5) +
+   ggplot2::geom_vline(xintercept = pars$Bt, linetype = "dashed")
+
+}
+
+d <- hod_simulation(Bt = 1, Bx = 10, rho = 0.5)
+sim <- hod_coverage_and_significance(d, S = 1e3, conf_interval = 0.95)
+
+sim |> 
+  summarize(across(c(cov, sig), mean))
+
+hod_cov_sig_plot(sim)
