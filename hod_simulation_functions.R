@@ -13,6 +13,7 @@ hod_simulation <- function(
   sigmas <- c(s = 1, x = 1)
   Rho <- rbind(c(1, rho), c(rho, 1))
   Sigma <- diag(sigmas) %*% Rho %*% diag(sigmas)
+  ## creates both s and x from a multivariate-normal distribution
   d <- tibble::as_tibble(mvtnorm::rmvnorm(N, Mu, Sigma))
   ## approximately 50% of sample gets treatment with this hack
   d$t <- rbinom(N, 1, pnorm(d$s, Mu[["s"]], sigmas[["s"]]))
@@ -25,10 +26,17 @@ hod_simulation <- function(
   
   std_error <- sqrt(2*(5^2 + Bx^2) / (N/2))
   pwr <- pnorm(std_error*qnorm(0.975), Bt, std_error, lower.tail = FALSE)
-  message("Standard Error ~ ", round(std_error, 3))
-  message("Power ~ ", round(pwr, 3))
+  cat("Standard Error ~ ", round(std_error, 3), "\n")
+  cat("Power ~ ", round(pwr, 3))
   
-  out <- d[, c("x", "y0", "y1", "t", "y")]
+  out <- d[, c("y0", "y1", "t", "y", "x", "s")]
+  
+  full_join(
+    dplyr::summarize_all(d[, c("y", "t", "x", "s")], sd) |> 
+    tidyr::pivot_longer(everything(), names_to = "variable", values_to = "sd"),
+    dplyr::summarize_all(d[, c("y", "t", "x", "s")], mean) |> 
+    tidyr::pivot_longer(everything(), names_to = "variable", values_to = "mean")
+  ) |> print()
   
   structure(out, class = c("simulation", class(out)), pars = list(N = N, Bt = Bt, Bx = Bx, rho = rho))
   
@@ -74,7 +82,7 @@ hod_cov_sig_plot <- function(sim) {
 
 }
 
-d <- hod_simulation(Bt = 1, Bx = 10, rho = 0.5)
+d <- hod_simulation(Bt = 1, Bx = 1, rho = 0.5)
 sim <- hod_coverage_and_significance(d, S = 1e3, conf_interval = 0.95)
 
 sim |> 

@@ -11,11 +11,12 @@ editor_options:
 ```{r}
 #| code-summary: Packages et al.
 #| message: false
+
 library(tidyverse)
 theme_set(theme_light(base_family = "Optima"))
 ```
 
-*Note. I will be asking you to draw some DAGs. There are many ways to do this---e.g., [ggdag](https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-ggdag.html), [shinydag](https://www.gerkelab.com/project/shinydag/). I tend to use [this](https://q.uiver.app/)[website](https://q.uiver.app/#q=WzAsMyxbMSwwLCJcXExhcmdlIFxcdGV4dGNpcmNsZWR7IFxcbm9ybWFsc2l6ZXtVfX0iXSxbMCwxLCJYIl0sWzIsMSwiWSJdLFswLDFdLFswLDJdLFsxLDJdXQ==) and then copy-paste a screen shot of the result. You can use whatever you want (whatever is easier, including Word or PowerPoint if you must insist).*
+*Note. I will be asking you to draw some DAGs. There are many ways to do this---e.g., [dagitty](https://dagitty.net/), [ggdag](https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-ggdag.html), [shinydag](https://www.gerkelab.com/project/shinydag/). I tend to use [this](https://q.uiver.app/)[website](https://q.uiver.app/#q=WzAsMyxbMSwwLCJcXExhcmdlIFxcdGV4dGNpcmNsZWR7IFxcbm9ybWFsc2l6ZXtVfX0iXSxbMCwxLCJYIl0sWzIsMSwiWSJdLFswLDFdLFswLDJdLFsxLDJdXQ==) and then copy-paste a screen shot of the result. You can use whatever you want (whatever is easier, including Word or PowerPoint if you must insist).*
 
 ## Exercise
 
