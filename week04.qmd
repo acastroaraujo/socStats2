@@ -125,18 +125,6 @@ d.	Variance-weighted average treatment effect
 
 ## Exercise
 
-Which of the following describes the average treatment effect of assigning treatment, whether or not treatment is actually received? 
-
-a.	Local average treatment effect 
-
-b.	Average treatment on the treated 
-
-c.	Intent-to-treat 
-
-d.	Variance-weighted average treatment effect
-
-## Exercise
-
 Suppose you are conducting an experiment to see whether pricing cookies at \$1.99 versus \$2 affects the decision to purchase the cookies. The population of interest is all adults in the United States. You recruit people from your university to participate and randomize them to either see cookies priced as \$1.99 or \$2, then write down whether they purchased cookies. What kind of average treatment effect can you identify from this experiment?
 
 ## Exercise
