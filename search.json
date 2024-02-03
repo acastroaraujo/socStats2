@@ -386,7 +386,7 @@
     "href": "week04.html#exercise-6",
     "title": "4  Week 4",
     "section": "4.7 Exercise",
-    "text": "4.7 Exercise\nWhich of the following describes the average treatment effect of assigning treatment, whether or not treatment is actually received?\n\nLocal average treatment effect\nAverage treatment on the treated\nIntent-to-treat\nVariance-weighted average treatment effect",
+    "text": "4.7 Exercise\nSuppose you are conducting an experiment to see whether pricing cookies at $1.99 versus $2 affects the decision to purchase the cookies. The population of interest is all adults in the United States. You recruit people from your university to participate and randomize them to either see cookies priced as $1.99 or $2, then write down whether they purchased cookies. What kind of average treatment effect can you identify from this experiment?",
     "crumbs": [
       "Part 1",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 4</span>"
@@ -397,18 +397,7 @@
     "href": "week04.html#exercise-7",
     "title": "4  Week 4",
     "section": "4.8 Exercise",
-    "text": "4.8 Exercise\nSuppose you are conducting an experiment to see whether pricing cookies at $1.99 versus $2 affects the decision to purchase the cookies. The population of interest is all adults in the United States. You recruit people from your university to participate and randomize them to either see cookies priced as $1.99 or $2, then write down whether they purchased cookies. What kind of average treatment effect can you identify from this experiment?",
-    "crumbs": [
-      "Part 1",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 4</span>"
-    ]
-  },
-  {
-    "objectID": "week04.html#exercise-8",
-    "href": "week04.html#exercise-8",
-    "title": "4  Week 4",
-    "section": "4.9 Exercise",
-    "text": "4.9 Exercise\nFor each of the following identification strategies, what kind of treatment effect(s) is most likely to be identified?\n\nA randomized experiment using a representative sample\nTrue randomization within only a certain demographic group\nClosing back door paths connected to variation in treatment\nIsolating the part of the variation in treatment variable that is driven by an exogenous variable\nThe control group is comparable to the treatment group, but treatment effects may be different across these groups",
+    "text": "4.8 Exercise\nFor each of the following identification strategies, what kind of treatment effect(s) is most likely to be identified?\n\nA randomized experiment using a representative sample\nTrue randomization within only a certain demographic group\nClosing back door paths connected to variation in treatment\nIsolating the part of the variation in treatment variable that is driven by an exogenous variable\nThe control group is comparable to the treatment group, but treatment effects may be different across these groups",
     "crumbs": [
       "Part 1",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Week 4</span>"
