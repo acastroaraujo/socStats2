@@ -1,0 +1,367 @@
+---
+title: "Week 5"
+callout-appearance: simple
+callout-icon: false
+editor_options: 
+  chunk_output_type: console
+---
+
+::: {style="text-align: right;"}
+*You don't know what you've got until it's gone.*
+:::
+
+Hi everyone, this is `marginaleffects` appreciation week. I will be asking you to re-do some of the things we did with Steve *without* using this package and then compare the results.
+
+You will need to run the following chunk of code before running anything else.
+
+```{r}
+#| message: false
+#| code-summary: "Set up"
+
+library(tidyverse)
+library(gssr)
+library(marginaleffects)
+library(broom)
+
+gss2022 <- gss_get_yr(2022)
+```
+
+*Note. We will be using data from the GSS instead of simulated "toy data." Don't give too much thought to the "validity" of these estimates; think about them as applying "toy DAGs" to real data. I only care that you understand the mechanics average treatment effects using regression.*
+
+*If you are done quickly, I recommend you skim this website:*
+
+<https://marginaleffects.com/>
+
+## Instructions
+
+::: callout-note
+This homework has three sections.
+
+Each exercise has two `marginaleffects` outputs: (1) the ATE estimate and (2) the ATT/ATU estimates.
+
+You will have to reproduce these estimates *without* using `marginaleffects`. There are a couple of ways to do this, but you will probably end up using the `predict()` function (from base R), or the `augment()` function (from the `broom` package).
+:::
+
+Both functions have an argument called `newdata`, which you can use doing something similar to this toy example:
+
+```{r}
+ols <- lm(mpg ~ disp + am, data = mtcars)
+
+new_am0 <- mtcars |> 
+  mutate(am = 0)
+
+new_am1 <- mtcars |> 
+  mutate(am = 1)
+
+p0 <- predict(ols, newdata = new_am0) ## predictions for am == 0
+p1 <- predict(ols, newdata = new_am1) ## predictions for am == 1
+```
+
+::: callout-tip
+**Bonus**
+
+The `avg_slopes()` function has an arguments called `hypothesis` which lets you estimate a standard error for the difference between the ATT and the ATU (among other things). This shows up in Steve's code for this week.
+
+If you are done early, I suggest you try and calculate one of these standard errors *without* `avg_slopes` (e.g., using a bootstrap).
+:::
+
+## Linear Regression
+
+*We will use this data.*
+
+```{r}
+d <- gss2022 |> 
+  select(tvhours, degree, madeg, padeg) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L)) |>
+  select(tvhours, college, parcol) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Additive link function, no interactions**
+
+```{r}
+mod1 <- lm(tvhours ~ college + parcol, data = d)
+
+# ATE estimate
+avg_slopes(mod1, variables = "college") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+# ATT/ATU estimate
+avg_slopes(
+  model = mod1, 
+  variables = "college",
+  by = "college" # separately by treatment group
+) |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Additive link function, with interactions**
+
+```{r}
+mod2 <- lm(tvhours ~ college * parcol, data = d)
+
+# ATE estimate
+avg_slopes(mod2, variables = "college") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+# ATT/ATU estimate
+avg_slopes(
+  model = mod2, 
+  variables = "college",
+  by = "college" # separately by treatment group
+) |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+## Poisson Regression
+
+*We will use this data.*
+
+```{r}
+d <- gss2022 |>
+  filter(wrkstat == 1) |> # full time workers
+  select(realrinc, degree, madeg, padeg, sex, age) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L),
+         female = if_else(sex == 2, 1L, 0L),
+         realrinc = floor(realrinc)) |>             # integer
+  select(realrinc, college, parcol, female, age) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Using the log-counts, no interactions**
+
+```{r}
+qp1 <- glm(realrinc ~ college + (parcol + female + age + I(age^2)), 
+           data = d,
+           family = "quasipoisson")
+
+avg_slopes(qp1,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "link",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Non-linear response, no interactions**
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "response",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+### Exercise
+
+**Using the log-counts, with interactions**
+
+```{r}
+qp2 <- glm(realrinc ~ college * (parcol + female + age + I(age^2)), 
+           data = d,
+           family = "quasipoisson")
+
+avg_slopes(qp2,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "link",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Non-linear response, with interactions**
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "response",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+ANSWER GOES HERE
+
+## Logistic Regression
+
+*We will use this data.*
+
+```{r}
+d <- gss2022 |>
+  select(abany, degree, madeg, padeg, sex, age) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L),
+         female = if_else(sex == 2, 1L, 0L),
+         abany = if_else(abany == 1, 1L, 0L)) |>
+  select(abany, college, parcol, female, age) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Using log-odds, no interactions**
+
+```{r}
+lr1 <- glm(abany ~ college + (parcol + female + age + I(age^2)),
+          data = d,
+          family = binomial)
+
+# ATE estimate
+avg_slopes(lr1,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(lr1,
+           variables = "college",
+           by = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Using non-linear response (aka probabilities), no interactions**
+
+```{r}
+# ATE estimate
+avg_slopes(lr1,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(lr1,
+           variables = "college",
+           by = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Using log-odds, with interactions**
+
+```{r}
+lr2 <- glm(abany ~ college * (parcol + female + age + I(age^2)),
+          data = d,
+          family = binomial)
+
+# ATE estimate
+avg_slopes(lr2,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(lr2,
+           variables = "college",
+           by = "college",
+           type = "link") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+### Exercise
+
+**Using non-linear response (aka probabilities), with interactions**
+
+```{r}
+# ATE estimate
+avg_slopes(lr2,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE
+
+```{r}
+avg_slopes(lr2,
+           variables = "college",
+           by = "college",
+           type = "response") |> 
+  tidy()
+```
+
+ANSWER GOES HERE

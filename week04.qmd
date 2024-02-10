@@ -98,14 +98,13 @@ Consider the data in the table below that shows the hypothetical treatment effec
 |  E   | 15  |    Man     |   7    |
 |  F   | 25  |   Woman    |   4    |
 
+a.  What is the overall average treatment effect for the population?
 
-a.	What is the overall average treatment effect for the population? 
+b.  What is the average treatment effect for Women?
 
-b.	What is the average treatment effect for Women? 
+c.  If nearly all Non-binary people get treated, and about half of all Women get treated, and we control for the differences between Women and Non-binary people, what kind of treatment effect average will we get, and what can we say about the numerical estimate we’ll get?
 
-c.	If nearly all Non-binary people get treated, and about half of all Women get treated, and we control for the differences between Women and Non-binary people, what kind of treatment effect average will we get, and what can we say about the numerical estimate we’ll get? 
-
-d.	If we assume that, in the absence of treatment, everyone would have had the same outcome, and also only teenagers (19 or younger) ever receive treatment, and we compare treated people to control people, what kind of treatment effect average will we get, and what can we say about the numerical estimate we’ll get?
+d.  If we assume that, in the absence of treatment, everyone would have had the same outcome, and also only teenagers (19 or younger) ever receive treatment, and we compare treated people to control people, what kind of treatment effect average will we get, and what can we say about the numerical estimate we’ll get?
 
 ## Exercise
 
@@ -113,15 +112,15 @@ Give an example where the average treatment effect on the treated would be more 
 
 ## Exercise
 
-Which of the following describes the average treatment effect of assigning treatment, whether or not treatment is actually received? 
+Which of the following describes the average treatment effect of assigning treatment, whether or not treatment is actually received?
 
-a.	Local average treatment effect 
+a.  Local average treatment effect
 
-b.	Average treatment on the treated 
+b.  Average treatment on the treated
 
-c.	Intent-to-treat 
+c.  Intent-to-treat
 
-d.	Variance-weighted average treatment effect
+d.  Variance-weighted average treatment effect
 
 ## Exercise
 
@@ -129,14 +128,14 @@ Suppose you are conducting an experiment to see whether pricing cookies at \$1.9
 
 ## Exercise
 
-For each of the following identification strategies, what kind of treatment effect(s) is most likely to be identified? 
+For each of the following identification strategies, what kind of treatment effect(s) is most likely to be identified?
 
-a.	A randomized experiment using a representative sample 
+a.  A randomized experiment using a representative sample
 
-b.	True randomization within only a certain demographic group
+b.  True randomization within only a certain demographic group
 
-c.	Closing back door paths connected to variation in treatment 
+c.  Closing back door paths connected to variation in treatment
 
-d.	Isolating the part of the variation in treatment variable that is driven by an exogenous variable 
+d.  Isolating the part of the variation in treatment variable that is driven by an exogenous variable
 
-e.	The control group is comparable to the treatment group, but treatment effects may be different across these groups
+e.  The control group is comparable to the treatment group, but treatment effects may be different across these groups
