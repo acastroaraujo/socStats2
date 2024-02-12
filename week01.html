@@ -59,9 +59,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./week02.html" rel="next">
 <link href="./sec01.html" rel="prev">
-<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,6 +76,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -159,6 +174,9 @@ window.Quarto = {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec01.html">Part 1</a></li><li class="breadcrumb-item"><a href="./week01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
@@ -166,6 +184,11 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -215,6 +238,47 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sec-solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Solutions 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Solutions 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solutions 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Solutions 4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Solutions 5</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -235,7 +299,6 @@ window.Quarto = {
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">1.2</span> Exercise</a></li>
   <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">1.3</span> Exercise</a></li>
   <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">1.4</span> Exercise</a></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">1.5</span> Exercise</a></li>
   </ul>
 </nav>
     </div>
@@ -286,9 +349,6 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="exercise-1" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">1.3</span> Exercise</h2>
 <p>The following data frame contains the potential outcomes for 8 individuals.</p>
 <div class="cell">
 <details open="" class="code-fold">
@@ -303,23 +363,23 @@ window.Quarto = {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(d, <span class="at">rowname_col =</span> <span class="st">"id"</span>) <span class="co"># gt is used for fancy printing of tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="hsfhdqjaez" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hsfhdqjaez table {
+<div id="mdbqhewzsb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mdbqhewzsb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hsfhdqjaez thead, #hsfhdqjaez tbody, #hsfhdqjaez tfoot, #hsfhdqjaez tr, #hsfhdqjaez td, #hsfhdqjaez th {
+#mdbqhewzsb thead, #mdbqhewzsb tbody, #mdbqhewzsb tfoot, #mdbqhewzsb tr, #mdbqhewzsb td, #mdbqhewzsb th {
   border-style: none;
 }
 
-#hsfhdqjaez p {
+#mdbqhewzsb p {
   margin: 0;
   padding: 0;
 }
 
-#hsfhdqjaez .gt_table {
+#mdbqhewzsb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -345,12 +405,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_caption {
+#mdbqhewzsb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hsfhdqjaez .gt_title {
+#mdbqhewzsb .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -362,7 +422,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#hsfhdqjaez .gt_subtitle {
+#mdbqhewzsb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -374,7 +434,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#hsfhdqjaez .gt_heading {
+#mdbqhewzsb .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -386,13 +446,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_bottom_border {
+#mdbqhewzsb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_col_headings {
+#mdbqhewzsb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -407,7 +467,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_col_heading {
+#mdbqhewzsb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -427,7 +487,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#hsfhdqjaez .gt_column_spanner_outer {
+#mdbqhewzsb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -439,15 +499,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#hsfhdqjaez .gt_column_spanner_outer:first-child {
+#mdbqhewzsb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hsfhdqjaez .gt_column_spanner_outer:last-child {
+#mdbqhewzsb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hsfhdqjaez .gt_column_spanner {
+#mdbqhewzsb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -459,11 +519,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#hsfhdqjaez .gt_spanner_row {
+#mdbqhewzsb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hsfhdqjaez .gt_group_heading {
+#mdbqhewzsb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -489,7 +549,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#hsfhdqjaez .gt_empty_group_heading {
+#mdbqhewzsb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -504,15 +564,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#hsfhdqjaez .gt_from_md > :first-child {
+#mdbqhewzsb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hsfhdqjaez .gt_from_md > :last-child {
+#mdbqhewzsb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hsfhdqjaez .gt_row {
+#mdbqhewzsb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -531,7 +591,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#hsfhdqjaez .gt_stub {
+#mdbqhewzsb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -544,7 +604,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hsfhdqjaez .gt_stub_row_group {
+#mdbqhewzsb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -558,15 +618,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#hsfhdqjaez .gt_row_group_first td {
+#mdbqhewzsb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hsfhdqjaez .gt_row_group_first th {
+#mdbqhewzsb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hsfhdqjaez .gt_summary_row {
+#mdbqhewzsb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -576,16 +636,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hsfhdqjaez .gt_first_summary_row {
+#mdbqhewzsb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_first_summary_row.thick {
+#mdbqhewzsb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hsfhdqjaez .gt_last_summary_row {
+#mdbqhewzsb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -595,7 +655,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_grand_summary_row {
+#mdbqhewzsb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -605,7 +665,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hsfhdqjaez .gt_first_grand_summary_row {
+#mdbqhewzsb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -615,7 +675,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_last_grand_summary_row_top {
+#mdbqhewzsb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -625,11 +685,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_striped {
+#mdbqhewzsb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hsfhdqjaez .gt_table_body {
+#mdbqhewzsb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -638,7 +698,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_footnotes {
+#mdbqhewzsb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +712,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_footnote {
+#mdbqhewzsb .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -661,7 +721,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hsfhdqjaez .gt_sourcenotes {
+#mdbqhewzsb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -675,7 +735,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#hsfhdqjaez .gt_sourcenote {
+#mdbqhewzsb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -683,63 +743,63 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#hsfhdqjaez .gt_left {
+#mdbqhewzsb .gt_left {
   text-align: left;
 }
 
-#hsfhdqjaez .gt_center {
+#mdbqhewzsb .gt_center {
   text-align: center;
 }
 
-#hsfhdqjaez .gt_right {
+#mdbqhewzsb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hsfhdqjaez .gt_font_normal {
+#mdbqhewzsb .gt_font_normal {
   font-weight: normal;
 }
 
-#hsfhdqjaez .gt_font_bold {
+#mdbqhewzsb .gt_font_bold {
   font-weight: bold;
 }
 
-#hsfhdqjaez .gt_font_italic {
+#mdbqhewzsb .gt_font_italic {
   font-style: italic;
 }
 
-#hsfhdqjaez .gt_super {
+#mdbqhewzsb .gt_super {
   font-size: 65%;
 }
 
-#hsfhdqjaez .gt_footnote_marks {
+#mdbqhewzsb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hsfhdqjaez .gt_asterisk {
+#mdbqhewzsb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hsfhdqjaez .gt_indent_1 {
+#mdbqhewzsb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hsfhdqjaez .gt_indent_2 {
+#mdbqhewzsb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hsfhdqjaez .gt_indent_3 {
+#mdbqhewzsb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hsfhdqjaez .gt_indent_4 {
+#mdbqhewzsb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hsfhdqjaez .gt_indent_5 {
+#mdbqhewzsb .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -824,8 +884,8 @@ window.Quarto = {
 </div>
 <p><em>Note. I’m only asking for a simple difference in means; this is also sometimes called the “naive estimator” (or “naive comparison”), which works just fine in simple experimental settings.</em></p>
 </section>
-<section id="exercise-2" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">1.4</span> Exercise</h2>
+<section id="exercise-1" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">1.3</span> Exercise</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -855,7 +915,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(d<span class="sc">$</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0 1 0 1 0 1 0 1</code></pre>
+<pre><code>[1] 1 0 1 0 0 1 0 1</code></pre>
 </div>
 </div>
 </div>
@@ -882,8 +942,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="exercise-3" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">1.5</span> Exercise</h2>
+<section id="exercise-2" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">1.4</span> Exercise</h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1393,71 +1453,69 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>The following data frame contains the potential outcomes for 8 individuals.</span>
 <span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>The following data frame contains the potential outcomes for 8 individuals.</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">T =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y0 =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>),</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y1 =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">13</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">13</span>), </span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(d, <span class="at">rowname_col =</span> <span class="st">"id"</span>) <span class="co"># gt is used for fancy printing of tables</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">T =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y0 =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>),</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y1 =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">13</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">13</span>), </span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>(d, <span class="at">rowname_col =</span> <span class="st">"id"</span>) <span class="co"># gt is used for fancy printing of tables</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>The variable <span class="in">`T`</span> depicts whether someone got the "treatment" or not.</span>
 <span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>The variable <span class="in">`T`</span> depicts whether someone got the "treatment" or not.</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Create a new variable called <span class="in">`Y`</span> that contains the observed outcomes.</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is the Average Treatment Effect (ATE) for this 8 person experiment?</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Create a new variable called <span class="in">`Y`</span> that contains the observed outcomes.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is the Average Treatment Effect (ATE) for this 8 person experiment?</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>*Note. I'm only asking for a simple difference in means; this is also sometimes called the "naive estimator" (or "naive comparison"), which works just fine in simple experimental settings.*</span>
 <span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>*Note. I'm only asking for a simple difference in means; this is also sometimes called the "naive estimator" (or "naive comparison"), which works just fine in simple experimental settings.*</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
 <span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random so that equal numbers get the treatment and the control.</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Create a new variable called <span class="in">`Y`</span> that contains the observed outcomes.</span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is the Average Treatment Effect (ATE) for this 8 person experiment?</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Do this a couple of times (at least 3) and note the differences.</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>Hint: You can re-sample $T$ very easily using the <span class="in">`sample()`</span> function.</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Simulate a new completely randomized experiment on these 8 people; that is, re sample $T$ at random so that equal numbers get the treatment and the control.</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Create a new variable called <span class="in">`Y`</span> that contains the observed outcomes.</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is the Average Treatment Effect (ATE) for this 8 person experiment?</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Do this a couple of times (at least 3) and note the differences.</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>Hint: You can re-sample $T$ very easily using the <span class="in">`sample()`</span> function.</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>For example:</span>
 <span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>For example:</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(d<span class="sc">$</span>T)</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>How do these estimates compare to the "real" ATE?</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(d<span class="sc">$</span>T)</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>How do these estimates compare to the "real" ATE?</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>When I say "the real ATE" I basically mean this:</span>
 <span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>When I say "the real ATE" I basically mean this:</span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>Y1 <span class="sc">-</span> d<span class="sc">$</span>Y0)</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>Y1 <span class="sc">-</span> d<span class="sc">$</span>Y0)</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
 <span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>Obviously, an experiment of 8 people will not give you enough "statistical power."</span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Assuming the ATE is $0.125$, how many people would you need to enroll in this experiment to have enough statistical power?</span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>Hint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous.</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>Obviously, an experiment of 8 people will not give you enough "statistical power."</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Assuming the ATE is $0.125$, how many people would you need to enroll in this experiment to have enough statistical power?</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>Hint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
