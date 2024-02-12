@@ -1,0 +1,117 @@
+---
+title: "Solutions 3"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+```
+
+## Exercise
+
+*House of DAG Simulation.*
+
+I've included a [little script](https://github.com/acastroaraujo/socStats2/blob/main/hod_simulation_functions.R) with a couple of functions meant to illustrate the connection between DAGs and the estimands we saw in class (ATE, ATT, ATC).
+
+Save it to your project and load it using the `source()` function.
+
+You should see a function called `hod_simulation()` which creates a dataset that corresponds to the following DAG:
+
+::: grid
+::: g-col-7
+![](images/house-of-dag.png){width="100%"}
+:::
+
+::: g-col-5
+-   $Y$: outcome
+-   $T$: treatment
+-   $U$: unobserved confounder
+-   $S$: affects selection into $T$
+-   $X$: affects $Y$ directly
+:::
+:::
+
+The `hod_simulation()` function has the following arguments:
+
+-   `N`: Sample Size
+
+-   `rho`: The correlation between $S$ and $X$, it accepts values between -1 and 1.
+
+-   `Bt`: this is the treatment effect.
+
+-   `Bx`: this is the direct effect of $X$ on $Y$
+
+*Note. There's bunch of stuff going on under the hood, but we won't worry about that this week.*
+
+This is the dataset it creates:
+
+```{r}
+source("hod_simulation_functions.R")
+set.seed(12345) ## include this so that grading is easier for me.
+d <- hod_simulation(N = 1e3, Bt = 2, Bx = 4, rho = 0.8)
+```
+
+*Note. Ignore the "Standard Error" and "Power" messages.*
+
+```{r}
+d
+```
+
+-   Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate ( $ATE = 2$ )?
+
+-   Check your answer. What are the results given by the naive estimator?
+
+```{r}
+d |> 
+  group_by(t) |> 
+  summarize(y = mean(y))
+
+lm(y ~ t, data = d)
+```
+
+-   Re-do this but set `rho` to -0.8 (so that $S$ and $X$ are now negatively correlated).
+
+```{r}
+d <- hod_simulation(N = 1e5, Bt = 2, Bx = 4, rho = -0.8)
+
+d |> 
+  group_by(t) |> 
+  summarize(y = mean(y))
+
+lm(y ~ t, data = d)
+```
+
+## Exercise
+
+Take the dataset `d` created in the previous question and modify it so that the treatment is now randomized (this will destroy the path between $S$ and $T$).
+
+```{r}
+d$t <- sample(d$t)
+
+d <- d |> 
+  mutate(y = ifelse(
+    test = as.logical(t), 
+    yes = y1, 
+    no = y0
+  )
+)
+```
+
+```{r}
+lm(y ~ t, data = d)
+```
+
+::: callout-tip
+Hint: You can achieve this using the `sample()` function on `d$t`.
+
+You will also want to create a new `d$y` using the `ifelse()` function (or something similar to that).
+:::
+
+-   Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate ( $ATE = 2$ )?
+
+-   Check your answer. What are the results given by the naive estimator?
+
+-   Use `lm()` to predict the newly created `y` from `t`. What are the coefficient values?
+
+-   Use `lm()` to predict the newly created `y` from `t` and `x`. What are the coefficient values?

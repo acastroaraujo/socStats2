@@ -6,7 +6,8 @@ book:
   title: "Social Statistics II (Exercises)"
   author: "andrés castro araújo"
   date: last-modified
-  search: false
+  search: 
+    location: sidebar
   navbar:
     right:
       - icon: github
@@ -25,6 +26,13 @@ book:
         - week03.qmd
         - week04.qmd
         - week05.qmd
+    - part: sec-solutions.qmd
+      chapters: 
+        - solutions01.qmd
+        - solutions02.qmd
+        - solutions03.qmd
+        - solutions04.qmd
+        - solutions05.qmd
     - references.qmd
 
 bibliography: references.bib

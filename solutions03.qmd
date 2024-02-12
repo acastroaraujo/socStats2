@@ -1,0 +1,261 @@
+---
+title: "Solutions 3"
+---
+
+```{r}
+#| code-summary: Packages et al.
+#| message: false
+
+
+library(tidyverse)
+theme_set(theme_light(base_family = "Optima"))
+```
+
+## Exercise
+
+| Group ($T$) |  $E[Y^1]$  | $E[Y^0]$  |
+|:-----------:|:----------:|:---------:|
+|   $T = 1$   |   10,000   | **5,000** |
+|   $T = 0$   | **10,000** |   5,000   |
+
+The missing cells are like this because of the ignorability assumption in a perfectly executed experiment.
+
+ATE: 5,000
+
+## Exercise
+
+*Draw a causal diagram for the research question "do long shift hours make doctors give lower-quality care?" that incorporates the following features (and only the following features):*
+
+a.  *Long shift hours affect both how tired doctors are, and how much experience they have, both of which affect the quality of care*
+
+b.  *How long shifts are is often decided by the hospital the doctor works at. There are plenty of other things about a given hospital that also affect the quality of care, like its funding level, how crowded it is, and so on*
+
+c.  *New policies that reduce shift times may be implemented at the same time (with the timing determined by some unobservable change in policy preferences) as other policies that also attempt to improve the quality of care*
+
+![](images/te-7.2.png){fig-align="center" width="70%"}
+
+## Exercise
+
+Consider this research question: Does the funding level of public schools affect student achievement for students in your country?
+
+a.  **What is the treatment and what is the outcome of interest?**
+
+    *Outcome: student achievement. Treatment: funding level.*
+
+b.  **Write down a list of relevant variables.**
+
+    *Relevant variables: government budget, student SES, class size, staff salary, other social welfare policies.*
+
+c.  **Which of the variables in your list in part b are causes of both treatment and outcome?**
+
+    *Government budget*
+
+d.  **Why might we want to pay extra attention to the variables listed in part c?**
+
+    *Because they are confounders*
+
+e.  **Draw a causal diagram of the variables listed in part b.**
+
+    ![](images/clipboard-645414427.png){width="80%"}
+
+f.  **Simplify the diagram from part e.**
+
+    ![](images/clipboard-2197633242.png){width="80%"}
+
+## Exercise
+
+*How can a causal diagram be modified so as to avoid cyclic relationships?*
+
+*Consider the diagram below. It depicts a cyclical relationship between student achievement and motivation. If students achieve more (i.e., score well on exams), then their motivation goes up, and if their motivation goes up, they achieve more. Change the diagram so that the relationship is not cyclic anymore.*
+
+$$
+\text{Student Achievement} \longleftrightarrow \text{Motivation}
+$$
+
+**Possible answer:**
+
+![](images/clipboard-321003852.png){fig-align="center" width="50%"}
+
+## Exercise
+
+*Assuming that a path has no colliders on it, what is the difference between a path being Open and Closed?*
+
+**At least one of the variables in the path has been adjusted for—i.e., variation is removed or "controlled" for.**
+
+*Note. Remember that you'll always sound smarter if you say "adjusted" instead of "controlled" in the context of regression with observational data.*
+
+## Exercise
+
+Consider the below generic causal diagram.
+
+![](images/te-8.2.png){fig-align="center" width="60%"}
+
+a.  **List every path from X to Y.**
+
+    $$
+    \begin{align}
+    &1. &&X \to A \to Y, \\
+    &2. &&X \leftarrow B \to Y, \\
+    &3. &&X \leftarrow B \leftarrow D \to Y, \\
+    &4. &&X \to C \leftarrow D \to Y, \\
+    &5. &&X \to C \leftarrow D \to B \to Y
+    \end{align}
+    $$
+
+b.  **Which of the paths are front-door paths?**
+
+    1
+
+c.  **Which of the paths are open back-door paths?**
+
+    2 and 3
+
+d.  **What variables must be controlled for in order to identify the effect of X on Y? (only list what must be controlled for, not anything that additionally could be controlled for).**
+
+    $B$
+
+## Exercise
+
+Which of the following describes a causal path where all the arrows point away from the treatment?
+
+a.  Open Path
+
+b.  Closed Path
+
+c.  **Front Door Path (this one)**
+
+d.  Back Door Path
+
+## Exercise
+
+*Consider the figure below, which depicts the relationship between teaching quality, number of publications (e.g., articles, books), and popularity among scholars and students in a population of professors.*
+
+![](images/te-8.5.png){fig-align="center" width="60%"}
+
+a.  *What type of variable is Popularity in one path on this diagram?*
+
+b.  *Discuss what would happen if you controlled for Popularity.*
+
+**Popularity is a collider variable. If we "control" (remove variation) for Popularity we will artificially create a negative association between Teaching Quality and Number of Publications**
+
+## Exercise
+
+*Go to the app Steve showed us in class.*
+
+[*https://cbdrh.shinyapps.io/daggle/*](https://cbdrh.shinyapps.io/daggle/){.uri}
+
+*Spend some time noodling around with it and upload screenshots with the right answer for three DAGs with 4, 6, and 8 nodes each. Set the complexity to "difficult."*
+
+**Grading based is conditional on screenshots.**
+
+## Exercise
+
+*House of DAG Simulation.*
+
+I've included a [little script](https://github.com/acastroaraujo/socStats2/blob/main/hod_simulation_functions.R) with a couple of functions meant to illustrate the connection between DAGs and the estimands we saw in class (ATE, ATT, ATC).
+
+Save it to your project and load it using the `source()` function.
+
+You should see a function called `hod_simulation()` which creates a dataset that corresponds to the following DAG:
+
+::: grid
+::: g-col-7
+![](images/house-of-dag.png){width="100%"}
+:::
+
+::: g-col-5
+-   $Y$: outcome
+-   $T$: treatment
+-   $U$: unobserved confounder
+-   $S$: affects selection into $T$
+-   $X$: affects $Y$ directly
+:::
+:::
+
+The `hod_simulation()` function has the following arguments:
+
+-   `N`: Sample Size
+
+-   `rho`: The correlation between $S$ and $X$, it accepts values between -1 and 1.
+
+-   `Bt`: this is the treatment effect.
+
+-   `Bx`: this is the direct effect of $X$ on $Y$
+
+This is the dataset it creates:
+
+```{r}
+#| message: false
+source("hod_simulation_functions.R")
+set.seed(12345) ## include this so that grading is easier for me.
+d <- hod_simulation(N = 1e3, Bt = 2, Bx = 4, rho = 0.8)
+```
+
+*Note. Ignore the "Standard Error" and "Power" messages.*
+
+```{r}
+glimpse(d)
+```
+
+**Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate (** $ATE = 2$ **)?**
+
+The results should be larger because people who get the treatment should also a higher $X$, and the effect of $X$ is positive.
+
+**Check your answer. What are the results given by the naive estimator?**
+
+```{r}
+d |> 
+  group_by(t) |> 
+  summarize(across(c(y0, y1), mean))
+
+mean(d$y[d$t == 1]) - mean(d$y[d$t == 0])
+```
+
+**Re-do this but set `rho` to -0.8 (so that** $S$ **and** $X$ **are now negatively correlated).**
+
+```{r}
+d <- hod_simulation(N = 1e3, Bt = 2, Bx = 4, rho = -0.8)
+
+d |> 
+  group_by(t) |> 
+  summarize(across(c(y0, y1), mean))
+
+mean(d$y[d$t == 1]) - mean(d$y[d$t == 0])
+```
+
+*Note. You should have been able to figure out that the "naive estimator" (difference between groups) was going to be biased in the opposite side (i.e., smaller or even negative).*
+
+## Exercise
+
+**Take the dataset `d` created in the previous question and modify it so that the treatment is now randomized (this will destroy the path between** $S$ **and** $T$**).**
+
+```{r}
+d$t <- sample(d$t)
+d$y <- ifelse(as.logical(d$t), d$y1, d$y0)
+```
+
+**Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate (** $ATE = 2$ **)?**
+
+The answers should be roughly the same as the "real" estimate because we have effectively destroyed the backdoor path via the randomization of the treatment. But there's still margin for sampling error, so we should also look at the standard error.
+
+**Check your answer. What are the results given by the naive estimator?**
+
+```{r}
+mean(d$y[d$t == 1]) - mean(d$y[d$t == 0])
+```
+
+**Use `lm()` to predict the newly created `y` from `t`. What are the coefficient values?**
+
+```{r}
+lm(y ~ t, data = d) |> 
+  broom::tidy(conf.int = TRUE) ## 95% confidence interval
+```
+
+**Use `lm()` to predict the newly created `y` from `t` and `x`. What are the coefficient values?**
+
+```{r}
+lm(y ~ t + x, data = d) |> 
+  broom::tidy(conf.int = TRUE) ## 95% confidence interval
+```
+
+*Note that in both of these cases the estimate was correctly "identified" (from a causal inference perspective) but the second answer is closer to the "truth." Look at the standard errors, they are smaller!*

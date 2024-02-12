@@ -101,6 +101,8 @@ coef_tbl(m4)
 
 # More daggity ------------------------------------------------------------
 
+# https://www.quantargo.com/help/r/latest/packages/dagitty/0.3-1/simulateSEM
+
 ## Simulate data with pre-defined path coefficients of -.6
 g <- dagitty('dag{z -> x [beta=-.6] x <- y [beta=-.6] }')
 impliedCovarianceMatrix(g)

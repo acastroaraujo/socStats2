@@ -27,8 +27,6 @@ library(tidyverse)
 library(gt)
 ```
 
-## Exercise
-
 The following data frame contains the potential outcomes for 8 individuals.
 
 ```{r}

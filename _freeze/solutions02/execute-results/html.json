@@ -1,0 +1,15 @@
+{
+  "hash": "eea1b04a600a1efa94f047e6c7a16b27",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Solutions 2\"\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

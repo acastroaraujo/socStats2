@@ -1,0 +1,542 @@
+---
+title: "Solutions 5"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| code-summary: "Set up"
+
+library(tidyverse)
+library(gssr)
+library(marginaleffects)
+library(broom)
+
+gss2022 <- gss_get_yr(2022)
+```
+
+## Linear Regression
+
+*We will use this data.*
+
+```{r}
+dols <- gss2022 |> 
+  select(tvhours, degree, madeg, padeg) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L)) |>
+  select(tvhours, college, parcol) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Additive link function, no interactions**
+
+```{r}
+mod1 <- glm(tvhours ~ college + parcol, data = dols)
+
+# ATE estimate
+avg_slopes(mod1, variables = "college") |> 
+  tidy()
+```
+
+**Answer (using base R):**
+
+```{r}
+p0 <- predict(mod1, newdata = dols |> mutate(college = 0))
+p1 <- predict(mod1, newdata = dols |> mutate(college = 1))
+
+mean(p1 - p0)
+```
+
+ATT/ATU estimate
+
+```{r}
+avg_slopes(
+  model = mod1, 
+  variables = "college",
+  by = "college" # separately by treatment group
+) |> 
+  tidy()
+```
+
+**Answer (using using base R):**
+
+*Note. You should be able to know that the answer will be exactly the same because of the model being used.*
+
+```{r}
+dols$p0 <- predict(mod1, newdata = dols |> mutate(college = 0))
+dols$p1 <- predict(mod1, newdata = dols |> mutate(college = 1))
+
+dols |> 
+  mutate(estimate = p1 - p0) |> 
+  group_by(college) |> 
+  summarize(estimate = mean(estimate))
+```
+
+### Exercise
+
+**Additive link function, with interactions**
+
+```{r}
+mod2 <- lm(tvhours ~ college * parcol, data = dols)
+
+# ATE estimate
+avg_slopes(mod2, variables = "college") |> 
+  tidy()
+```
+
+**Answer (using matrix algebra):**
+
+```{r}
+beta <- coefficients(mod2) |> as.matrix(ncol = 1) ## ensures this is a column vector
+
+M0 <- model.matrix(tvhours ~ college * parcol, data = dols |> mutate(college = 0))
+pred0 <- M0 %*% beta
+
+M1 <- model.matrix(tvhours ~ college * parcol, data = dols |> mutate(college = 1))
+pred1 <- M1 %*% beta
+
+mean(pred1 - pred0)
+```
+
+ATT/ATU estimate
+
+```{r}
+avg_slopes(
+  model = mod2, 
+  variables = "college",
+  by = "college" # separately by treatment group
+) |> 
+  tidy()
+```
+
+**Answer (using previous calculations)**
+
+```{r}
+dols$p1 <- pred1
+dols$p0 <- pred0
+
+dols |> 
+  group_by(college) |> 
+  summarize(estimate = mean(p1 - p0))
+```
+
+## Poisson Regression
+
+*We will use this data.*
+
+```{r}
+dqp <- gss2022 |>
+  filter(wrkstat == 1) |> # full time workers
+  select(realrinc, degree, madeg, padeg, sex, age) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L),
+         female = if_else(sex == 2, 1L, 0L),
+         realrinc = floor(realrinc)) |>             # integer
+  select(realrinc, college, parcol, female, age) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Using the log-counts, no interactions**
+
+```{r}
+qp1 <- glm(realrinc ~ college + (parcol + female + age + I(age^2)), 
+           data = dqp,
+           family = "quasipoisson")
+
+avg_slopes(qp1,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+**Answer:**
+
+```{r}
+pred0 <- predict(qp1, newdata = mutate(dqp, college = 0), type = "link")
+pred1 <- predict(qp1, newdata = mutate(dqp, college = 1), type = "link")
+
+mean(pred1 - pred0)
+```
+
+ATU/ATT
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "link",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+**Answer**:
+
+```{r}
+dqp$pred0 <- pred0
+dqp$pred1 <- pred1
+
+dqp |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Non-linear response, no interactions**
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+**Answer:**
+
+```{r}
+## use appropriate link function for Poisson
+dqp$pred0 <- exp(pred0)
+dqp$pred1 <- exp(pred1)
+
+dqp |> 
+  summarize(ate = mean(pred1 - pred0))
+```
+
+ATT/ ATU
+
+```{r}
+avg_slopes(qp1,
+           variables = "college",
+           type = "response",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+**Answer:**
+
+```{r}
+dqp |> 
+  group_by(college) |> 
+  summarize(ate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Using the log-counts, with interactions**
+
+```{r}
+qp2 <- glm(realrinc ~ college * (parcol + female + age + I(age^2)), 
+           data = dqp,
+           family = "quasipoisson")
+
+avg_slopes(qp2,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+**Answer**:
+
+```{r}
+dqp$pred0 <- predict(qp2, newdata = mutate(dqp, college = 0), type = "link")
+dqp$pred1 <- predict(qp2, newdata = mutate(dqp, college = 1), type = "link")
+
+dqp |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "link",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+```{r}
+dqp |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Non-linear response, with interactions**
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+**Answer:**
+
+```{r}
+dqp$pred0 <- predict(qp2, newdata = mutate(dqp, college = 0), type = "response")
+dqp$pred1 <- predict(qp2, newdata = mutate(dqp, college = 1), type = "response")
+
+dqp |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+```{r}
+avg_slopes(qp2,
+           variables = "college",
+           type = "response",
+           by = "college") |> # separately by treatment group
+  tidy()
+```
+
+Answer:
+
+```{r}
+dqp |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+## Logistic Regression
+
+*We will use this data.*
+
+```{r}
+dlr <- gss2022 |>
+  select(abany, degree, madeg, padeg, sex, age) |> 
+  mutate(pardeg = pmax(madeg, padeg, na.rm = TRUE),
+         college = if_else(degree >= 3, 1L, 0L),
+         parcol = if_else(pardeg >= 3, 1L, 0L),
+         female = if_else(sex == 2, 1L, 0L),
+         abany = if_else(abany == 1, 1L, 0L)) |>
+  select(abany, college, parcol, female, age) |> 
+  drop_na()
+```
+
+### Exercise
+
+**Using log-odds, no interactions**
+
+```{r}
+lr1 <- glm(abany ~ college + (parcol + female + age + I(age^2)),
+          data = dlr,
+          family = binomial)
+
+# ATE estimate
+avg_slopes(lr1,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr$pred0 <- predict(lr1, newdata = dlr |> mutate(college = 0), type = "link")
+dlr$pred1 <- predict(lr1, newdata = dlr |> mutate(college = 1), type = "link")
+
+dlr |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+ATT/ATU
+
+```{r}
+avg_slopes(lr1,
+           variables = "college",
+           by = "college",
+           type = "link") |> 
+  tidy()
+```
+
+```{r}
+dlr |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Using non-linear response (aka probabilities), no interactions**
+
+```{r}
+# ATE estimate
+avg_slopes(lr1,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr |> 
+  mutate(across(starts_with("pred"), plogis)) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+ATT/ATU
+
+```{r}
+avg_slopes(lr1,
+           variables = "college",
+           by = "college",
+           type = "response") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr |> 
+  mutate(across(starts_with("pred"), plogis)) |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Using log-odds, with interactions**
+
+```{r}
+lr2 <- glm(abany ~ college * (parcol + female + age + I(age^2)),
+          data = dlr,
+          family = binomial)
+
+# ATE estimate
+avg_slopes(lr2,
+           variables = "college",
+           type = "link") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr$pred0 <- predict(lr2, newdata = dlr |> mutate(college = 0), type = "link")
+dlr$pred1 <- predict(lr2, newdata = dlr |> mutate(college = 1), type = "link")
+
+dlr |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+ATT/ATU:
+
+```{r}
+avg_slopes(lr2,
+           variables = "college",
+           by = "college",
+           type = "link") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+### Exercise
+
+**Using non-linear response (aka probabilities), with interactions**
+
+```{r}
+# ATE estimate
+avg_slopes(lr2,
+           variables = "college",
+           type = "response") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr$pred0 <- predict(lr2, newdata = dlr |> mutate(college = 0), type = "response")
+dlr$pred1 <- predict(lr2, newdata = dlr |> mutate(college = 1), type = "response")
+
+dlr |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+ATT/ATU
+
+```{r}
+avg_slopes(lr2,
+           variables = "college",
+           by = "college",
+           type = "response") |> 
+  tidy()
+```
+
+Answer:
+
+```{r}
+dlr |> 
+  group_by(college) |> 
+  summarize(estimate = mean(pred1 - pred0))
+```
+
+## Standard Errors
+
+So far, we haven't calculated the standard errors at all. And yet `marginaleffects` does this seamlessly.
+
+Here is a potential bootstrap implementation. To make things easier, I will wrap up the calculation of the ATE in a function.
+
+*Note. This code is inefficient and will only work with "glm" objects.*
+
+```{r}
+bootstrap_ate <- function(obj, variable, type = c("link", "response"), S = 1e3) {
+  
+  type <- match.arg(type)
+  data <- obj$data
+  data0 <- mutate(data, {{variable}} := 0)
+  data1 <- mutate(data, {{variable}} := 1)
+  
+  replicate(S, {
+    i <- sample(nrow(data), replace = TRUE)
+    nobj <- glm(obj$formula, data = data[i, ], family = obj$family)
+    pred0 <- predict(nobj, newdata = data0[i, ], type = type)
+    pred1 <- predict(nobj, newdata = data1[i, ], type = type)
+    mean(pred1 - pred0)
+  })
+}
+```
+
+Logistic Regression using link function:
+
+```{r}
+avg_slopes(lr2, variables = "college", type = "link")
+out <- bootstrap_ate(lr2, college, type = "link")
+c("estimate" = mean(out), "std. error" = sd(out))
+```
+
+Logistic Regression using response function:
+
+```{r}
+avg_slopes(lr2, variables = "college", type = "response")
+out <- bootstrap_ate(lr2, college, type = "response")
+c("estimate" = mean(out), "std. error" = sd(out))
+```
+
+Poisson Regression using link function:
+
+```{r}
+avg_slopes(qp1, variables = "college", type = "link")
+out <- bootstrap_ate(qp1, college, type = "link")
+c("estimate" = mean(out), "std. error" = sd(out))
+```
+
+Poisson Regression using response function:
+
+```{r}
+avg_slopes(qp2, variables = "college", type = "response")
+out <- bootstrap_ate(qp2, college, type = "response")
+c("estimate" = mean(out), "std. error" = sd(out))
+```
