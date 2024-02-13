@@ -4,10 +4,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Exercise {#sec-glossary}
-
-**Glossary**
-
 ## Exercise
 
 ```{r}
@@ -139,11 +135,7 @@ $$
 \text{SE} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}} = \sqrt{\frac{2(\sigma_1^2 + \sigma_2^2)}{n}}
 $$
 
-<aside>
-
-$\frac{n}{2} = n_1 = n_2$
-
-</aside>
+<aside>$\frac{n}{2} = n_1 = n_2$</aside>
 
 Step 3. Choose a simple heuristic so that my standard error is good enough.
 

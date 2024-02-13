@@ -35,7 +35,7 @@ dols <- gss2022 |>
 **Additive link function, no interactions**
 
 ```{r}
-mod1 <- glm(tvhours ~ college + parcol, data = dols)
+mod1 <- lm(tvhours ~ college + parcol, data = dols)
 
 # ATE estimate
 avg_slopes(mod1, variables = "college") |> 
@@ -483,29 +483,31 @@ dlr |>
   summarize(estimate = mean(pred1 - pred0))
 ```
 
-## Standard Errors
+## Bootstrap Standard Errors
 
 So far, we haven't calculated the standard errors at all. And yet `marginaleffects` does this seamlessly.
 
-Here is a potential bootstrap implementation. To make things easier, I will wrap up the calculation of the ATE in a function.
-
-*Note. This code is inefficient and will only work with "glm" objects.*
+Here is a potential bootstrap implementation.
 
 ```{r}
-bootstrap_ate <- function(obj, variable, type = c("link", "response"), S = 1e3) {
-  
+bootstrap_ate <- function(obj, treatment, type = c("response", "link"), S = 5e3) {
+  ## Note. This code is inefficient and will only work with "glm" objects.  
   type <- match.arg(type)
   data <- obj$data
-  data0 <- mutate(data, {{variable}} := 0)
-  data1 <- mutate(data, {{variable}} := 1)
   
-  replicate(S, {
+  ## will only work if "treatment" is binary (0, 1)
+  data0 <- mutate(data, {{treatment}} := 0)
+  data1 <- mutate(data, {{treatment}} := 1)
+  
+  out <- replicate(S, {
     i <- sample(nrow(data), replace = TRUE)
     nobj <- glm(obj$formula, data = data[i, ], family = obj$family)
     pred0 <- predict(nobj, newdata = data0[i, ], type = type)
     pred1 <- predict(nobj, newdata = data1[i, ], type = type)
     mean(pred1 - pred0)
   })
+  
+  return(out)
 }
 ```
 
@@ -513,7 +515,7 @@ Logistic Regression using link function:
 
 ```{r}
 avg_slopes(lr2, variables = "college", type = "link")
-out <- bootstrap_ate(lr2, college, type = "link")
+out <- bootstrap_ate(lr2, treatment = "college", type = "link")
 c("estimate" = mean(out), "std. error" = sd(out))
 ```
 
@@ -529,14 +531,108 @@ Poisson Regression using link function:
 
 ```{r}
 avg_slopes(qp1, variables = "college", type = "link")
-out <- bootstrap_ate(qp1, college, type = "link")
-c("estimate" = mean(out), "std. error" = sd(out))
+out <- bootstrap_ate(qp1, treatment = "college", type = "link")
+mean(out)
+sd(out)
 ```
 
 Poisson Regression using response function:
 
 ```{r}
 avg_slopes(qp2, variables = "college", type = "response")
-out <- bootstrap_ate(qp2, college, type = "response")
+out <- bootstrap_ate(qp2, treatment = "college", type = "response")
 c("estimate" = mean(out), "std. error" = sd(out))
 ```
+
+### Linear Regression
+
+Here is a function that designed to work with `lm` objects.
+
+```{r}
+bootstrap_ate_ols <- function(obj, data, treatment, S = 5e3) {
+  
+  ## will only work if "treatment" is binary (0, 1)
+  data0 <- mutate(data, {{treatment}} := 0)
+  data1 <- mutate(data, {{treatment}} := 1)
+  
+  out <- replicate(S, {
+    i <- sample(nrow(data), replace = TRUE)
+    nobj <- lm(obj$call$formula, data = data[i, ])
+    pred0 <- predict(nobj, newdata = data0[i, ])
+    pred1 <- predict(nobj, newdata = data1[i, ])
+    mean(pred1 - pred0)
+  })
+  
+  return(out)
+}
+
+avg_slopes(mod2, variables = "college")
+out <- bootstrap_ate_ols(mod2, data = dols, treatment = "college")
+mean(out)
+sd(out)
+```
+
+*Wait a minute! Something is wrong...*
+
+The bootstrap standard error is much smaller than the standard error calculated by `avg_slopes()`.
+
+However, if you ask `marginaleffects` to re-calculate the standard errors using a bootstrap you'll see that the answers coincide.
+
+```{r}
+avg_slopes(mod2, variables = "college") |> 
+  inferences(method = "boot")
+```
+
+But there's still something weird with just accepting this weird fact and moving on.
+
+*What is happening?*
+
+**Read on *if and only if* you want to go down a rabbit hole.**
+
+The reason for this—and I will change this explanation if Steve tells me it's incorrect—is that the results were similar enough for Logistic and Poisson regression because they have no extra parameter for the *variance.*
+
+Recall that we can write down a linear regression as follows:
+
+$$
+\begin{align}
+y_i = \alpha + \beta x_i + \varepsilon_i, && \varepsilon \sim \text{Normal}(0, \sigma)
+\end{align}
+$$
+
+This extra $\sigma$ parameter only exists in normal linear regression.
+
+I think what is going on in the bootstrap is that the uncertainty about the variance isn't "propagating" when calculating the ATE. *This means that the standard error for the ATE is always going to be underestimated* unless we do something about this.
+
+I am pretty sure the `marginaleffects` package estimates the standard error for the ATE in a way that takes into account this additional source of uncertainty.
+
+So I modified the previous bootstrap function to incorporate some extra noise coming from $\sigma$. The results are not exactly the same, but they are closer.
+
+```{r}
+bootstrap_ate_ols2 <- function(obj, data, treatment, S = 5e3) {
+  
+  data0 <- mutate(data, {{treatment}} := 0)
+  data1 <- mutate(data, {{treatment}} := 1)
+  
+  out <- replicate(S, {
+    i <- sample(nrow(data), replace = TRUE)
+    nobj <- lm(obj$call$formula, data = data[i, ])
+    
+    pred0 <- predict(nobj, newdata = data0[i, ])
+    pred1 <- predict(nobj, newdata = data1[i, ])
+    
+    ## extra noise:
+    n <- nrow(data)
+    sigma <- sd(nobj$residuals)
+    mean(rnorm(n, pred1, sigma) - rnorm(n, pred0, sigma))
+    
+  })
+  
+  return(out)
+}
+
+out <- bootstrap_ate_ols2(mod2, data = dols, treatment = "college")
+mean(out)
+sd(out)
+```
+
+This result is *better*.

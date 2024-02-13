@@ -32,7 +32,7 @@ book:
         - solutions02.qmd
         - solutions03.qmd
         - solutions04.qmd
-        #- solutions05.qmd
+        - solutions05.qmd
     - references.qmd
 
 bibliography: references.bib
