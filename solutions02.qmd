@@ -2,6 +2,90 @@
 title: "Solutions 2"
 ---
 
-```{r}
+Dear all,
 
-```
+The homework for this week was severely hampered by me getting Covid. Sorry!
+
+## Exercise
+
+Which of the following is the best definition of the term *identified* as in "this variation has identified the effect we're interested in"?
+
+a.  We've generated the data by conducting a controlled experiment in which treatment is randomly assigned.
+
+b.  In the data generating process, the only reason why we see variation in the outcome variable is because of the treatment variable.
+
+    **This is very convoluted wording, but it's wrong. The outcome variable can be a function of many other things. What we care about is that there's no backdoor paths confounding the effect we are interested in.**
+
+c.  The relationship we are looking at in the data actually tests a hypothesis.
+
+d.  In the variation we use, there's no reason we'd see any relationship at all except for the effect we're interested in.
+
+    **This is very convoluted wording, but it is correct. It's closer to the idea of *isolating* a causal path.**
+
+## Exercise
+
+You read about a new study with the headline "eating caviar linked to longer lifespan." The study's research question is "does eating caviar make you live longer?" In the study's data, they find that people who eat caviar have, on average, longer lifespans than people who don't.
+
+a.  What are some alternate explanations for this relationship?
+
+    **Possible confounders: education, income, ...**
+
+b.  What sort of variation would identify the answer to the research question?
+
+    **We would need to close the backdoor path between "eating caviar" and longer lifespans. There are a couple of ways to do this, some easier than others. For example, I can't imagine an experimental set up in which we could randomly assign a special diet to people and then follow them until they die.**
+
+    **Thus, we would look at variation *within* different levels of income and education.**
+
+c.  Give one suggestion for how the study authors might isolate variation that would identify the answer to the research question
+
+    **We could close the back door path via (1) regression with "adjustment" for *all* confounders; and (2) matching and weighting on *all* relevant features of the population.**
+
+    **Both approaches ensure we are looking at the variation *within* mentioned in B.**
+
+## Exercise
+
+For each of the following news headlines, assume that the underlying data actually only shows a correlation between the two variables mentioned. Give an alternate explanation for the correlation other than the causal relationship implied by the headline.
+
+a.  "As stock market drops, presidential approval ratings decline."
+
+    **Possible answers: economic growth (and contraction), political stability**
+
+b.  "Dates are announced for the downtown summer concert series, driving up sales at downtown restaurants."
+
+    **Possible answers: (summer) weather**
+
+c.  "Unsanitary? Hospital visits linked to 20% increased risk of disease."
+
+    **Possible answers: sickness (i.e., sick people self-select into hospital visits)**
+
+d.  "Dress for success! Every CEO follows this office-wear rule."
+
+    **Possible answers: professional norms (CEOs are more likely to wear fancier clothing), wealth (CEOs have the money to dress up nicely)**
+
+## Exercise
+
+Why is a variable that causes both the "treatment" and "outcome" variables especially concerning for identification? You may want to use the phrase "alternate explanation" in your answer.
+
+**Variables that cause both treatment *and* outcome open confounding paths—i.e., it makes researchers unable to separate the variation in the outcome that's due to the treatment from the variation that's due to alternative explanations (confounding variables).**
+
+## Exercise
+
+Shoe company Crikey claims that people who wear their fancy and expensive professional running-shoe Cool Mistrunner brand run 4 to 5% faster than if they wore an average shoe.
+
+a.  In a few sentences, describe the data-generating process (you will probably leave some things out, that's okay).
+
+    **This special shoe will increase your running speed.**
+
+    $\text{special shoe} \to \text{running speed}$
+
+b.  What are possible alternative explanations for this claim, aside from the shoe making the person run faster?
+
+    **Professional runners and hobbyists like to buy sport related articles of clothes, including special shoes. This opens a confounding path.**
+
+    $\text{special shoe} \leftarrow \text{likes to run} \to \text{running speed}$
+
+    **There are many more alternative explanations, including ones mentioned in (C).**
+
+c.  In running their study, the researchers accounted for some alternative explanations, including: gender, enthusiasm for running, and whether runners have participated in marathons and/or half marathons. Think of an alternative explanation not on this list. What is the implication of not accounting for this alternative explanation?
+
+    **It could be that the Cool Mistrunner brand targets younger sports enthusiasts and that younger people run faster than older people. Maybe?**
