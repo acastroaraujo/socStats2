@@ -382,7 +382,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fork_simulation <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N =</span> <span class="fl">1e5</span>, <span class="at">a0 =</span> <span class="dv">1</span>, <span class="at">a1 =</span> <span class="dv">1</span>, <span class="at">b0 =</span> <span class="dv">1</span>, <span class="at">b1 =</span> <span class="dv">1</span>, <span class="at">b2 =</span> <span class="dv">1</span>) {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">w =</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">w =</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">20</span>),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> a0 <span class="sc">+</span> a1<span class="sc">*</span>w <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>),</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> b0 <span class="sc">+</span> b1<span class="sc">*</span>x <span class="sc">+</span> b2<span class="sc">*</span>w <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  )</span>
@@ -410,8 +410,8 @@ window.Quarto = {
 <pre><code># A tibble: 2 × 5
   term        estimate std.error statistic p.value
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
-1 (Intercept)    0.501   0.00821      61.1       0
-2 x              1.50    0.00274     548.        0</code></pre>
+1 (Intercept)  0.00584  0.00889      0.657   0.511
+2 x            1.99     0.000441  4514.      0    </code></pre>
 </div>
 </div>
 <p><em>Can some high school algebra help us be a little more precise about this?</em></p>
@@ -601,7 +601,6 @@ $ nprenatal &lt;dbl&gt; 10, 6, 10, 10, 12, 9, 16, 11, 20, 9, 14, 5, 13, 8, 4, 10
 <li><p>What is the effect of practicing cursive that we would estimate using this data?</p></li>
 </ol>
 </blockquote>
-<p>CHANGE TO RNORM()</p>
 
 
 <!-- -->
@@ -1111,7 +1110,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>fork_simulation <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N =</span> <span class="fl">1e5</span>, <span class="at">a0 =</span> <span class="dv">1</span>, <span class="at">a1 =</span> <span class="dv">1</span>, <span class="at">b0 =</span> <span class="dv">1</span>, <span class="at">b1 =</span> <span class="dv">1</span>, <span class="at">b2 =</span> <span class="dv">1</span>) {</span>
 <span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">w =</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>),</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">w =</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">20</span>),</span>
 <span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> a0 <span class="sc">+</span> a1<span class="sc">*</span>w <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>),</span>
 <span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> b0 <span class="sc">+</span> b1<span class="sc">*</span>x <span class="sc">+</span> b2<span class="sc">*</span>w <span class="sc">+</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">2</span>)</span>
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  )</span>
@@ -1283,8 +1282,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; d.  What is the weighted average penmanship score in the treated group?</span></span>
 <span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
 <span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; e.  What is the effect of practicing cursive that we would estimate using this data?</span></span>
-<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>CHANGE TO RNORM()</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
