@@ -49,7 +49,7 @@ This is what a little simulation looks like:
 fork_simulation <- function(N = 1e5, a0 = 1, a1 = 1, b0 = 1, b1 = 1, b2 = 1) {
   
   tibble(
-    w = rnorm(N, 0, 2),
+    w = rnorm(N, 0, 20),
     x = a0 + a1*w + rnorm(N, 0, 2),
     y = b0 + b1*x + b2*w + rnorm(N, 0, 2)
   )
@@ -221,5 +221,3 @@ This question is copied from NHK's exercises. To answer this question you need t
 > d.  What is the weighted average penmanship score in the treated group?
 >
 > e.  What is the effect of practicing cursive that we would estimate using this data?
-
-CHANGE TO RNORM()
