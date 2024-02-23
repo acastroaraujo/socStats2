@@ -11,14 +11,14 @@
   "Packages": {
     "DBI": {
       "Package": "DBI",
-      "Version": "1.2.1",
+      "Version": "1.2.2",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
         "R",
         "methods"
       ],
-      "Hash": "9b4993e98e0e19da84c168460c032fef"
+      "Hash": "164809cd72e1d5160b4cb3aa57f510fe"
     },
     "MASS": {
       "Package": "MASS",
@@ -34,6 +34,24 @@
         "utils"
       ],
       "Hash": "b765b28387acc8ec9e9c1530713cb19c"
+    },
+    "MatchIt": {
+      "Package": "MatchIt",
+      "Version": "4.5.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "Rcpp",
+        "RcppProgress",
+        "backports",
+        "chk",
+        "graphics",
+        "rlang",
+        "stats",
+        "utils"
+      ],
+      "Hash": "f3bceab061c8d2da3c674d0b0cc3dd54"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -96,9 +114,16 @@
       ],
       "Hash": "acb0a5bf38490f26ab8661b467f4f53a"
     },
+    "RcppProgress": {
+      "Package": "RcppProgress",
+      "Version": "0.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1c0aa18b97e6aaa17f93b8b866c0ace5"
+    },
     "V8": {
       "Package": "V8",
-      "Version": "4.4.1",
+      "Version": "4.4.2",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -107,7 +132,25 @@
         "jsonlite",
         "utils"
       ],
-      "Hash": "435359b59b8a9b8f9235135da471ea3c"
+      "Hash": "ca98390ad1cef2a5a609597b49d3d042"
+    },
+    "WeightIt": {
+      "Package": "WeightIt",
+      "Version": "0.14.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "backports",
+        "chk",
+        "cobalt",
+        "crayon",
+        "ggplot2",
+        "rlang",
+        "stats",
+        "utils"
+      ],
+      "Hash": "30092d55749705627984e4d836032c0f"
     },
     "askpass": {
       "Package": "askpass",
@@ -141,7 +184,7 @@
     },
     "bayestestR": {
       "Package": "bayestestR",
-      "Version": "0.13.1",
+      "Version": "0.13.2",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -153,7 +196,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "61f643ea5ee9fe0e70ab0246340b3c2e"
+      "Hash": "4a6a2eebe2db1dfb1c792c4ed91e73dc"
     },
     "bigD": {
       "Package": "bigD",
@@ -310,6 +353,20 @@
       ],
       "Hash": "c01cab1cb0f9125211a6fc99d540e315"
     },
+    "chk": {
+      "Package": "chk",
+      "Version": "0.9.1",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "lifecycle",
+        "methods",
+        "rlang",
+        "tools"
+      ],
+      "Hash": "426a04600c755952486b5242e55e3baf"
+    },
     "cli": {
       "Package": "cli",
       "Version": "3.6.2",
@@ -330,6 +387,27 @@
         "utils"
       ],
       "Hash": "3f038e5ac7f41d4ac41ce658c85e3042"
+    },
+    "cobalt": {
+      "Package": "cobalt",
+      "Version": "4.5.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "backports",
+        "chk",
+        "crayon",
+        "ggplot2",
+        "grDevices",
+        "grid",
+        "gridExtra",
+        "gtable",
+        "rlang",
+        "stats",
+        "utils"
+      ],
+      "Hash": "14d2f9b891d7ddf016a7dcfc64b1d5eb"
     },
     "colorspace": {
       "Package": "colorspace",
@@ -729,6 +807,20 @@
         "withr"
       ],
       "Hash": "d6db1667059d027da730decdc214b959"
+    },
+    "gridExtra": {
+      "Package": "gridExtra",
+      "Version": "2.3",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "grDevices",
+        "graphics",
+        "grid",
+        "gtable",
+        "utils"
+      ],
+      "Hash": "7d7f283939f563670a697165b2cf5560"
     },
     "gssr": {
       "Package": "gssr",
@@ -1157,7 +1249,7 @@
     },
     "modelsummary": {
       "Package": "modelsummary",
-      "Version": "1.4.3",
+      "Version": "1.4.5",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -1170,9 +1262,10 @@
         "kableExtra",
         "parameters",
         "performance",
-        "tables"
+        "tables",
+        "tinytable"
       ],
-      "Hash": "ab3f79e32ad9ea51af4f20d0c43ca67e"
+      "Hash": "6886c182abb9ed529d50d615c0955a7e"
     },
     "munsell": {
       "Package": "munsell",
@@ -1239,7 +1332,7 @@
     },
     "performance": {
       "Package": "performance",
-      "Version": "0.10.8",
+      "Version": "0.10.9",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
@@ -1251,7 +1344,7 @@
         "stats",
         "utils"
       ],
-      "Hash": "92873fb57cc5b73fe2aa0b09056a789a"
+      "Hash": "ef9fcec8b9afc2bc3f8d49544681f6fe"
     },
     "pillar": {
       "Package": "pillar",
@@ -1546,9 +1639,9 @@
     },
     "rvest": {
       "Package": "rvest",
-      "Version": "1.0.3",
+      "Version": "1.0.4",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
         "cli",
@@ -1559,10 +1652,9 @@
         "rlang",
         "selectr",
         "tibble",
-        "withr",
         "xml2"
       ],
-      "Hash": "a4a5ac819a467808c60e36e92ddf195e"
+      "Hash": "0bcf0c6f274e90ea314b812a6d19a519"
     },
     "sass": {
       "Package": "sass",
@@ -1830,6 +1922,16 @@
       ],
       "Hash": "c5f3c201b931cd6474d17d8700ccb1c8"
     },
+    "tinytable": {
+      "Package": "tinytable",
+      "Version": "0.0.5",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "16cb77502d7ff23b064352def93006c8"
+    },
     "tinytex": {
       "Package": "tinytex",
       "Version": "0.49",
@@ -1935,14 +2037,15 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.41",
+      "Version": "0.42",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
+        "grDevices",
         "stats",
         "tools"
       ],
-      "Hash": "460a5e0fe46a80ef87424ad216028014"
+      "Hash": "fd1349170df31f7a10bd98b0189e85af"
     },
     "xml2": {
       "Package": "xml2",

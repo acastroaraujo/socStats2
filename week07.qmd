@@ -1,0 +1,113 @@
+---
+title: "Week 7"
+---
+
+```{r}
+#| code-summary: Packages and Helper Functions
+#| message: false
+
+# Packages ---
+
+library(tidyverse)
+library(broom)
+library(cobalt)
+library(MatchIt)
+library(WeightIt)
+
+# Helper Functions ---
+
+love_plot <- function(x) {
+  cobalt::love.plot(x, 
+    binary = "std" ,
+    stats = c("m", "ks") ,
+    thresholds = c(.1, .05),
+    var.order = "adjusted",
+    abs = TRUE
+  )
+}
+```
+
+## Matching and Weighting
+
+*Note. The following exercises where adapted from last year's class.*
+
+For these exercises, we are going to use one of the versions of the "Lalonde data," which is used in almost every paper on matching.[^week07-1] This is data on a job training program (the treatment) that was intended to raise future earnings (the outcome).
+
+[^week07-1]: Lalonde, R. (1986). "Evaluating the econometric evaluations of training programs with experimental data." *American Economic Review* 76: 604-620.
+
+You can load the data by typing the following:
+
+```{r}
+load("data/exercise_data.Rdata")
+```
+
+This will bring two objects into the global environment: `d_exper`, which is the experimental subset of the data and `d`, which comprises the treated cases and a sample of observational controls from the PSID. The treatment is `treat` and the outcome is `re78`, which is income in \$1000s. We are going to use the experimental subset to set an experimental benchmark and then see how close we can get to this benchmark using various matching and weighting methods.
+
+The rest of the variables are as follows:
+
+| Variable  | Description                    |
+|:----------|:-------------------------------|
+| `age`     | Age in years                   |
+| `educ`    | Years of education             |
+| `black`   | 1 = Black; 0 otherwise         |
+| `hisp`    | 1 = Hispanic; 0 otherwise      |
+| `married` | 1 = married; 0 otherwise       |
+| `nodegr`  | 1 = no degree; 0 otherwise     |
+| `re74`    | 1974 income in \$1000s         |
+| `re75`    | 1975 income in \$1000s         |
+| `u74`     | 1 = no '74 income; 0 otherwise |
+| `u75`     | 1 = no '75 income; 0 otherwise |
+
+Before starting the exercises, you may want to consider a few things that will make your life easier:
+
+-   add a factor version of the treatment to the data frame for easy plotting
+-   create formula objects that contain the propensity score (or matching) models with and without quadratic terms
+
+You can get by without doing these steps but they avoid extra typing down the road.
+
+You will begin by looking at the experimental data (`d_exper`). After that, you will conduct various forms of matching and weighting on the observational data (`d`). For each exercise *after the first four*, your basic workflow will be:
+
+1.  Match or weight, as directed
+2.  Check balance (overall, if applicable and by covariate) using graphical and numeric means
+3.  Estimate the ATT
+
+### Exercise
+
+*Use the experimental data to estimate the effect of the job training treatment. How much does it appear to affect 1978 income? Now look at the observational data (for all exercises from now on). How large is the raw difference in 1978 income between the treatment group and the PSID comparison group?*
+
+### Exercise
+
+*Try to estimate the effect of the treatment using regression. What does regression say the effect of the program is?*
+
+### Exercise
+
+*Begin by exact matching on all the dummy variables. How many treated cases cannot be matched? What is the (FS)ATT estimate?*
+
+### Exercise
+
+*Use the observational data to estimate each case's propensity to receive treatment using `glm()`. Use a logistic regression with quadratic terms for age, education, 1974 income, and 1975 income. Spend a few moments thinking about what this model says. Look at the density plots of the p-score for treated and untreated groups.*
+
+### Exercise
+
+*Estimate propensity scores and ATT weights using `weightit()`. Ignore the warning you get. We'll discuss that more in class. Estimate the ATT. Check for covariate balance.*
+
+### Exercise
+
+*Now do the same as above using "entropy balancing."* *Confirm that you've achieved balance on the means and the variances of the covariates. Estimate the ATT.*
+
+::: callout-tip
+Don't worry (for now) if you don't understand what this is; simply change the method argument to `"cbps"`, we will cover this in class.
+
+```{r}
+#| eval: false
+OUTPUT <- weightit(FORMULA, 
+                   data = d,
+                   method = "ebal",
+                   moments = 3,
+                   estimand = "ATT")
+```
+:::
+
+### Bonus
+
+*Implement a bootstrap of your preferred estimate. What is the bootstrapped standard error?*

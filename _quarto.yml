@@ -27,6 +27,7 @@ book:
         - week04.qmd
         - week05.qmd
         - week06.qmd
+        - week07.qmd
     - part: sec-solutions.qmd
       chapters: 
         - solutions01.qmd
@@ -34,6 +35,7 @@ book:
         - solutions03.qmd
         - solutions04.qmd
         - solutions05.qmd
+        #- solutions06.qmd
     - references.qmd
 
 bibliography: references.bib
