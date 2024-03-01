@@ -1,0 +1,96 @@
+---
+title: "Week 8"
+---
+
+```{r}
+#| code-summary: "Packages and Set up"
+#| message: false
+
+library(tidyverse)
+library(WeightIt)
+library(cobalt)
+
+```
+
+## Evaluating a child care program
+
+This dataset is taken from @gelman2020. The dataset contains measurements on the development of nearly 4500 children born in the 1980s.
+
+> A subset of 290 of these children received special services in the first few years of life, including high-quality child care (five full days a week) in the second and third years of life as part of a formal intervention, the Infant Health and Development Program (IHDP). These children were targeted because they were born prematurely, had low birth weight (less than or equal to 2500 grams), and lived in the eight cities where the intervention took place. Children in the sample who did not receive the intervention exhibited a more representative range of birth timing and birth weight.
+>
+> We want to evaluate the impact of this intervention on the children’s subsequent cognitive outcomes by comparing the outcomes for children in the intervention group to the outcomes in a comparison group of 4091 children who did not participate in the program. The outcome of interest is test score at age 3; this test is similar to an IQ measure, so we simplistically refer to these scores as IQ scores from now on.
+>
+> pp. 394-5
+
+*Note. We should all be grateful for Noah Greifer's WeightIt package. You should skim this [website](https://avehtari.github.io/ROS-Examples/Childcare/childcare.html) to get a sense of how the R code for this kind of analysis used to look like in the old days!*
+
+The **outcome** variable will be `ppvtr.36` (which simply means "test score at age 3").[^week08-1]
+
+[^week08-1]: It's not an IQ test, wtf.
+
+Here is the data dictionary:
+
+```{r}
+dict_url <- "https://raw.githubusercontent.com/avehtari/ROS-Examples/master/Childcare/data/datadict.txt"
+
+read_file(dict_url) |> 
+  writeLines()
+```
+
+And here is the data:
+
+```{r}
+var_names <- c("momage", "b.marr", "momed", "work.dur", "prenatal", "cig", "booze", "sex", "first", "bw", "bwg", "preterm", "black", "hispanic", "white", "lths", "hs", "ltcoll", "college", "dayskidh", "st5", "st9", "st12", "st25", "st36", "st42", "st48", "st53", "st99", "income", "treat", "ppvtr.36")
+
+url <- "https://raw.githubusercontent.com/avehtari/ROS-Examples/master/Childcare/data/cc2.csv"
+
+d <- read_csv(url) |> 
+  select(var_names) |> 
+  mutate(across(matches("st\\d{2}"), as.integer))
+
+glimpse(d)
+```
+
+### Exercise
+
+@gelman2020 say: *We excluded the most severely low-birth-weight children (those at or below 1500 grams) from the sample because they are so different from the comparison sample.*
+
+::: callout-note
+In your own words.
+
+-   Why did they decide to exclude these children? What problem could we encounter by not omitting them?
+
+-   Would *you* have excluded them from the dataset?[^week08-2] Why?
+:::
+
+[^week08-2]: I wouldn't!
+
+### Exercise
+
+::: callout-note
+Look at the variables.
+
+Which ones are you planning to use for covariate balancing? Justify your answer, but *keep it short!*
+:::
+
+::: callout-tip
+Note.
+
+Depending on what you end up doing you might need to reconsider this answer.
+:::
+
+### Exercise
+
+*Note. This exercise should take most of your time. Basically, you have to re-do the kind of analysis we did for last week's homework and at the beginning of this week with Steve ([here](https://github.com/vaiseys/soc-stats-2/blob/main/demos/week-08.R)).*
+
+::: callout-note
+Use the `WeightIt` package and try to achieve balance before estimating the ATT for the effect of this child care program.
+
+You will have to do this three separate times, using the following:
+
+-   Propensity Scores
+
+-   CBPS
+
+-   Entropy Balancing
+:::
