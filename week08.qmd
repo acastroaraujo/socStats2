@@ -40,12 +40,14 @@ read_file(dict_url) |>
 And here is the data:
 
 ```{r}
+#| message: false
+
 var_names <- c("momage", "b.marr", "momed", "work.dur", "prenatal", "cig", "booze", "sex", "first", "bw", "bwg", "preterm", "black", "hispanic", "white", "lths", "hs", "ltcoll", "college", "dayskidh", "st5", "st9", "st12", "st25", "st36", "st42", "st48", "st53", "st99", "income", "treat", "ppvtr.36")
 
 url <- "https://raw.githubusercontent.com/avehtari/ROS-Examples/master/Childcare/data/cc2.csv"
 
 d <- read_csv(url) |> 
-  select(var_names) |> 
+  select(all_of(var_names)) |> 
   mutate(across(matches("st\\d{2}"), as.integer))
 
 glimpse(d)
