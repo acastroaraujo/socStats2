@@ -1,0 +1,15 @@
+{
+  "hash": "d6b31cf5cee6115859474990b8bd67fc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 9\"\n---\n\n\n## End of an Era\n\n*This homework is relatively straightforward, but it might take some time.*\n\n### Exercise\n\nLoad the GSS dataset for 2022 and choose one outcome variable and one \"treatment\" variable. They can be any two variables you want and the treatment can be either binary or continuous, it shouldn't matter.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(gssr)\ngss2022 <- gss_get_yr(2022)\n```\n:::\n\n\nWhat is the \"naive\" estimate for the effect of $T$ on $Y$?\n\n### Exercise\n\n*Some theory.*\n\nThink very hard about the list of possible confounding variables that might affect this estimate.\n\n1.  Draw a DAG.\n2.  What is your estimand (ATE, ATT, ATU)?\n\n### Exercise\n\nSelect the appropriate covariates in the GSS that allow for causal identification.\n\nBe very careful when selecting these variables and make a note for any transformation you decide is adequate—e.g., coding a covariate to be binary.\n\nAre there any variables missing from the DAG you drew earlier?\n\n### Exercise\n\nUse regression to get the effect of $T$ on $Y$.\n\n*Note. Remember that it's relatively straightforward to get the ATT using the `marginaleffects` package.*\n\n### Exercise\n\n*Weighting.*\n\nSpend some time trying to achieve covariate balancing. You should at least show a \"Love plot.\"\n\n*Note. Use any method you think is appropriate (e.g., propensity scores, CBPS, entropy balancing).*\n\n*What is the effect of* $T$ *on* $Y$*?*\n\n### Exercise\n\n*Double Robustness.*\n\n*Combining weighting and regression, what is the effect of* $T$ *on* $Y$*?*\n\n### Exercise\n\n*Write 3-5 paragraphs explaining your research question, the methods you used, and the answer you came up with.*\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

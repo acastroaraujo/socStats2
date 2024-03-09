@@ -29,6 +29,7 @@ book:
         - week06.qmd
         - week07.qmd
         - week08.qmd
+        - week09.qmd
     - part: sec-solutions.qmd
       chapters: 
         - solutions01.qmd

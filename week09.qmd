@@ -1,0 +1,62 @@
+---
+title: "Week 9"
+---
+
+## End of an Era
+
+*This homework is relatively straightforward, but it might take some time.*
+
+### Exercise
+
+Load the GSS dataset for 2022 and choose one outcome variable and one "treatment" variable. They can be any two variables you want and the treatment can be either binary or continuous, it shouldn't matter.
+
+```{r}
+#| message: false
+library(gssr)
+gss2022 <- gss_get_yr(2022)
+```
+
+What is the "naive" estimate for the effect of $T$ on $Y$?
+
+### Exercise
+
+*Some theory.*
+
+Think very hard about the list of possible confounding variables that might affect this estimate.
+
+1.  Draw a DAG.
+2.  What is your estimand (ATE, ATT, ATU)?
+
+### Exercise
+
+Select the appropriate covariates in the GSS that allow for causal identification.
+
+Be very careful when selecting these variables and make a note for any transformation you decide is adequate—e.g., coding a covariate to be binary.
+
+Are there any variables missing from the DAG you drew earlier?
+
+### Exercise
+
+Use regression to get the effect of $T$ on $Y$.
+
+*Note. Remember that it's relatively straightforward to get the ATT using the `marginaleffects` package.*
+
+### Exercise
+
+*Weighting.*
+
+Spend some time trying to achieve covariate balancing. You should at least show a "Love plot."
+
+*Note. Use any method you think is appropriate (e.g., propensity scores, CBPS, entropy balancing).*
+
+*What is the effect of* $T$ *on* $Y$*?*
+
+### Exercise
+
+*Double Robustness.*
+
+*Combining weighting and regression, what is the effect of* $T$ *on* $Y$*?*
+
+### Exercise
+
+*Write 3-5 paragraphs explaining your research question, the methods you used, and the answer you came up with.*
