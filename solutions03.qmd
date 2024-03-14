@@ -214,6 +214,7 @@ mean(d$y[d$t == 1]) - mean(d$y[d$t == 0])
 **Re-do this but set `rho` to -0.8 (so that** $S$ **and** $X$ **are now negatively correlated).**
 
 ```{r}
+set.seed(12345)
 d <- hod_simulation(N = 1e3, Bt = 2, Bx = 4, rho = -0.8)
 
 d |> 
