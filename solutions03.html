@@ -301,6 +301,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Solutions 5</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Solutions 7</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -536,10 +542,10 @@ window.Quarto = {
 Power ~  0.873# A tibble: 4 × 3
   variable    sd  mean
   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
-1 y        5.23  1.53 
-2 t        0.500 0.493
-3 x        1.02  0.999
-4 s        0.985 1.00 </code></pre>
+1 y        5.23  1.49 
+2 t        0.500 0.503
+3 x        1.03  0.979
+4 s        0.990 1.00 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -603,7 +609,8 @@ $ s  &lt;dbl&gt; 1.84099574, 0.69942604, 0.72890759, 1.44006399, 0.33470650, 1.7
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">hod_simulation</span>(<span class="at">N =</span> <span class="fl">1e3</span>, <span class="at">Bt =</span> <span class="dv">2</span>, <span class="at">Bx =</span> <span class="dv">4</span>, <span class="at">rho =</span> <span class="sc">-</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">hod_simulation</span>(<span class="at">N =</span> <span class="fl">1e3</span>, <span class="at">Bt =</span> <span class="dv">2</span>, <span class="at">Bx =</span> <span class="dv">4</span>, <span class="at">rho =</span> <span class="sc">-</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Standard Error ~  0.405 
@@ -616,10 +623,10 @@ Power ~  0.999</code></pre>
 <pre><code># A tibble: 4 × 3
   variable    sd  mean
   &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;
-1 y        6.35  4.89 
+1 y        5.96  4.88 
 2 t        0.500 0.512
-3 x        0.992 0.962
-4 s        1.00  1.03 </code></pre>
+3 x        0.995 0.983
+4 s        0.984 1.02 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -631,15 +638,15 @@ Power ~  0.999</code></pre>
 <pre><code># A tibble: 2 × 3
       t    y0    y1
   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-1     0  5.70  7.70
-2     1  2.12  4.12</code></pre>
+1     0  5.92  7.92
+2     1  1.88  3.88</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.576179</code></pre>
+<pre><code>[1] -2.043275</code></pre>
 </div>
 </div>
 <p><em>Note. You should have been able to figure out that the “naive estimator” (difference between groups) was going to be biased in the opposite side (i.e., smaller or even negative).</em></p>
@@ -663,7 +670,7 @@ Power ~  0.999</code></pre>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.537577</code></pre>
+<pre><code>[1] 1.929149</code></pre>
 </div>
 </div>
 <p><strong>Use <code>lm()</code> to predict the newly created <code>y</code> from <code>t</code>. What are the coefficient values?</strong></p>
@@ -677,8 +684,8 @@ Power ~  0.999</code></pre>
 <pre><code># A tibble: 2 × 7
   term        estimate std.error statistic  p.value conf.low conf.high
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1 (Intercept)     4.11     0.297     13.8  5.15e-40    3.52       4.69
-2 t               1.54     0.414      3.71 2.18e- 4    0.724      2.35</code></pre>
+1 (Intercept)     3.89     0.281     13.8  6.95e-40     3.34      4.44
+2 t               1.93     0.393      4.91 1.08e- 6     1.16      2.70</code></pre>
 </div>
 </div>
 <p><strong>Use <code>lm()</code> to predict the newly created <code>y</code> from <code>t</code> and <code>x</code>. What are the coefficient values?</strong></p>
@@ -692,9 +699,9 @@ Power ~  0.999</code></pre>
 <pre><code># A tibble: 3 × 7
   term        estimate std.error statistic   p.value conf.low conf.high
   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
-1 (Intercept)    0.197     0.281     0.703 4.82e-  1   -0.354     0.748
-2 t              1.49      0.325     4.57  5.53e-  6    0.848     2.13 
-3 x              4.09      0.164    24.9   6.09e-107    3.77      4.41 </code></pre>
+1 (Intercept)  -0.0981     0.262    -0.374 7.08e-  1   -0.612     0.416
+2 t             1.99       0.301     6.62  5.87e- 11    1.40      2.58 
+3 x             4.02       0.151    26.6   1.76e-118    3.73      4.32 </code></pre>
 </div>
 </div>
 <p><em>Note that in both of these cases the estimate was correctly “identified” (from a causal inference perspective) but the second answer is closer to the “truth.” Look at the standard errors, they are smaller!</em></p>
@@ -1393,51 +1400,52 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb27-222"><a href="#cb27-222" aria-hidden="true" tabindex="-1"></a>**Re-do this but set `rho` to -0.8 (so that** $S$ **and** $X$ **are now negatively correlated).**</span>
 <span id="cb27-223"><a href="#cb27-223" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-226"><a href="#cb27-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-227"><a href="#cb27-227" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">hod_simulation</span>(<span class="at">N =</span> <span class="fl">1e3</span>, <span class="at">Bt =</span> <span class="dv">2</span>, <span class="at">Bx =</span> <span class="dv">4</span>, <span class="at">rho =</span> <span class="sc">-</span><span class="fl">0.8</span>)</span>
-<span id="cb27-228"><a href="#cb27-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-229"><a href="#cb27-229" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
-<span id="cb27-230"><a href="#cb27-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(t) <span class="sc">|&gt;</span> </span>
-<span id="cb27-231"><a href="#cb27-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">c</span>(y0, y1), mean))</span>
-<span id="cb27-232"><a href="#cb27-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-233"><a href="#cb27-233" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span>
-<span id="cb27-234"><a href="#cb27-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb27-235"><a href="#cb27-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-236"><a href="#cb27-236" aria-hidden="true" tabindex="-1"></a>*Note. You should have been able to figure out that the "naive estimator" (difference between groups) was going to be biased in the opposite side (i.e., smaller or even negative).*</span>
-<span id="cb27-237"><a href="#cb27-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-238"><a href="#cb27-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
-<span id="cb27-239"><a href="#cb27-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-240"><a href="#cb27-240" aria-hidden="true" tabindex="-1"></a>**Take the dataset `d` created in the previous question and modify it so that the treatment is now randomized (this will destroy the path between** $S$ **and** $T$**).**</span>
-<span id="cb27-241"><a href="#cb27-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-244"><a href="#cb27-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-245"><a href="#cb27-245" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>t <span class="ot">&lt;-</span> <span class="fu">sample</span>(d<span class="sc">$</span>t)</span>
-<span id="cb27-246"><a href="#cb27-246" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">as.logical</span>(d<span class="sc">$</span>t), d<span class="sc">$</span>y1, d<span class="sc">$</span>y0)</span>
-<span id="cb27-247"><a href="#cb27-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb27-248"><a href="#cb27-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-249"><a href="#cb27-249" aria-hidden="true" tabindex="-1"></a>**Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate (** $ATE = 2$ **)?**</span>
-<span id="cb27-250"><a href="#cb27-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-251"><a href="#cb27-251" aria-hidden="true" tabindex="-1"></a>The answers should be roughly the same as the "real" estimate because we have effectively destroyed the backdoor path via the randomization of the treatment. But there's still margin for sampling error, so we should also look at the standard error.</span>
-<span id="cb27-252"><a href="#cb27-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-253"><a href="#cb27-253" aria-hidden="true" tabindex="-1"></a>**Check your answer. What are the results given by the naive estimator?**</span>
-<span id="cb27-254"><a href="#cb27-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-257"><a href="#cb27-257" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-258"><a href="#cb27-258" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span>
-<span id="cb27-259"><a href="#cb27-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb27-260"><a href="#cb27-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-261"><a href="#cb27-261" aria-hidden="true" tabindex="-1"></a>**Use `lm()` to predict the newly created `y` from `t`. What are the coefficient values?**</span>
-<span id="cb27-262"><a href="#cb27-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-265"><a href="#cb27-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-266"><a href="#cb27-266" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> t, <span class="at">data =</span> d) <span class="sc">|&gt;</span> </span>
-<span id="cb27-267"><a href="#cb27-267" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="do">## 95% confidence interval</span></span>
-<span id="cb27-268"><a href="#cb27-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb27-269"><a href="#cb27-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-270"><a href="#cb27-270" aria-hidden="true" tabindex="-1"></a>**Use `lm()` to predict the newly created `y` from `t` and `x`. What are the coefficient values?**</span>
-<span id="cb27-271"><a href="#cb27-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-274"><a href="#cb27-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-275"><a href="#cb27-275" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> t <span class="sc">+</span> x, <span class="at">data =</span> d) <span class="sc">|&gt;</span> </span>
-<span id="cb27-276"><a href="#cb27-276" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="do">## 95% confidence interval</span></span>
-<span id="cb27-277"><a href="#cb27-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb27-278"><a href="#cb27-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-279"><a href="#cb27-279" aria-hidden="true" tabindex="-1"></a>*Note that in both of these cases the estimate was correctly "identified" (from a causal inference perspective) but the second answer is closer to the "truth." Look at the standard errors, they are smaller!*</span>
+<span id="cb27-227"><a href="#cb27-227" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb27-228"><a href="#cb27-228" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">hod_simulation</span>(<span class="at">N =</span> <span class="fl">1e3</span>, <span class="at">Bt =</span> <span class="dv">2</span>, <span class="at">Bx =</span> <span class="dv">4</span>, <span class="at">rho =</span> <span class="sc">-</span><span class="fl">0.8</span>)</span>
+<span id="cb27-229"><a href="#cb27-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-230"><a href="#cb27-230" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb27-231"><a href="#cb27-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(t) <span class="sc">|&gt;</span> </span>
+<span id="cb27-232"><a href="#cb27-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(<span class="fu">c</span>(y0, y1), mean))</span>
+<span id="cb27-233"><a href="#cb27-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-234"><a href="#cb27-234" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb27-235"><a href="#cb27-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-236"><a href="#cb27-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-237"><a href="#cb27-237" aria-hidden="true" tabindex="-1"></a>*Note. You should have been able to figure out that the "naive estimator" (difference between groups) was going to be biased in the opposite side (i.e., smaller or even negative).*</span>
+<span id="cb27-238"><a href="#cb27-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-239"><a href="#cb27-239" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb27-240"><a href="#cb27-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-241"><a href="#cb27-241" aria-hidden="true" tabindex="-1"></a>**Take the dataset `d` created in the previous question and modify it so that the treatment is now randomized (this will destroy the path between** $S$ **and** $T$**).**</span>
+<span id="cb27-242"><a href="#cb27-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-245"><a href="#cb27-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-246"><a href="#cb27-246" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>t <span class="ot">&lt;-</span> <span class="fu">sample</span>(d<span class="sc">$</span>t)</span>
+<span id="cb27-247"><a href="#cb27-247" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>y <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">as.logical</span>(d<span class="sc">$</span>t), d<span class="sc">$</span>y1, d<span class="sc">$</span>y0)</span>
+<span id="cb27-248"><a href="#cb27-248" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-249"><a href="#cb27-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-250"><a href="#cb27-250" aria-hidden="true" tabindex="-1"></a>**Without looking at the results just yet... do you think the naive estimate will be larger or smaller than the "real" estimate (** $ATE = 2$ **)?**</span>
+<span id="cb27-251"><a href="#cb27-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-252"><a href="#cb27-252" aria-hidden="true" tabindex="-1"></a>The answers should be roughly the same as the "real" estimate because we have effectively destroyed the backdoor path via the randomization of the treatment. But there's still margin for sampling error, so we should also look at the standard error.</span>
+<span id="cb27-253"><a href="#cb27-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-254"><a href="#cb27-254" aria-hidden="true" tabindex="-1"></a>**Check your answer. What are the results given by the naive estimator?**</span>
+<span id="cb27-255"><a href="#cb27-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-258"><a href="#cb27-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-259"><a href="#cb27-259" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">1</span>]) <span class="sc">-</span> <span class="fu">mean</span>(d<span class="sc">$</span>y[d<span class="sc">$</span>t <span class="sc">==</span> <span class="dv">0</span>])</span>
+<span id="cb27-260"><a href="#cb27-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-261"><a href="#cb27-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-262"><a href="#cb27-262" aria-hidden="true" tabindex="-1"></a>**Use `lm()` to predict the newly created `y` from `t`. What are the coefficient values?**</span>
+<span id="cb27-263"><a href="#cb27-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-266"><a href="#cb27-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-267"><a href="#cb27-267" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> t, <span class="at">data =</span> d) <span class="sc">|&gt;</span> </span>
+<span id="cb27-268"><a href="#cb27-268" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="do">## 95% confidence interval</span></span>
+<span id="cb27-269"><a href="#cb27-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-270"><a href="#cb27-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-271"><a href="#cb27-271" aria-hidden="true" tabindex="-1"></a>**Use `lm()` to predict the newly created `y` from `t` and `x`. What are the coefficient values?**</span>
+<span id="cb27-272"><a href="#cb27-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-275"><a href="#cb27-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-276"><a href="#cb27-276" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(y <span class="sc">~</span> t <span class="sc">+</span> x, <span class="at">data =</span> d) <span class="sc">|&gt;</span> </span>
+<span id="cb27-277"><a href="#cb27-277" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="do">## 95% confidence interval</span></span>
+<span id="cb27-278"><a href="#cb27-278" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb27-279"><a href="#cb27-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-280"><a href="#cb27-280" aria-hidden="true" tabindex="-1"></a>*Note that in both of these cases the estimate was correctly "identified" (from a causal inference perspective) but the second answer is closer to the "truth." Look at the standard errors, they are smaller!*</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
