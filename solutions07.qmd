@@ -71,7 +71,7 @@ f_linear
 
 # treatment equation (quadratics for numeric variables)
 f_quadratic <- reformulate(
-  termlabels = c(cat_vars, num_vars, str_glue("I({num_vars}^2)")), 
+  termlabels = c(cat_vars, num_vars, str_glue("I({num_vars}^2)")),
   response = "treat"
 )
 
@@ -80,7 +80,7 @@ f_quadratic
 
 ## Exercise
 
-_Use the experimental data to estimate the effect of the job training treatment. How much does it appear to affect 1978 income? Now look at the observational data (for all exercises from now on). How large is the raw difference in 1978 income between the treatment group and the PSID comparison group?_
+*Use the experimental data to estimate the effect of the job training treatment. How much does it appear to affect 1978 income? Now look at the observational data (for all exercises from now on). How large is the raw difference in 1978 income between the treatment group and the PSID comparison group?*
 
 > Since the first part of this question is about the experimental data, we'll use `d_exper` (the only time we'll use it). This will be our "target" interval for the rest of the exercises.
 
@@ -99,11 +99,11 @@ According to the experimental estimate, people who participated in the job train
 
 According to the naive estimate on observational data, people who participated in the job training program earned (on average) 16,541 *less* dollars (with a standard error of 928 dollars).
 
-> If we took this seriously, we'd think the training program *reduced* income by over $16,000! This is because there are *a lot* of differences between the treated and non-treated cases *other* than treatment assignment in the observational data.
+> If we took this seriously, we'd think the training program *reduced* income by over \$16,000! This is because there are *a lot* of differences between the treated and non-treated cases *other* than treatment assignment in the observational data.
 
 ## Exercise
 
-_Try to estimate the effect of the treatment using regression. What does regression say the effect of the program is?_
+*Try to estimate the effect of the treatment using regression. What does regression say the effect of the program is?*
 
 ```{r}
 regression_formula <- reformulate(
@@ -125,15 +125,15 @@ msummary(
 
 > Undoubtedly we could do somewhat better than this specification. The model estimates that the treatment *reduces* income between \$230 and \$3,660. This is not very close to the estimate from the experiment!
 
-_Note. Take a look at how I added the 95% confidence intervals in the `msummary` function. This might come in handy in the future_.
+*Note. Take a look at how I added the 95% confidence intervals in the `msummary` function. This might come in handy in the future*.
 
 ## Exercise
 
-_Begin by exact matching on all the dummy variables. How many treated cases cannot be matched? What is the (FS)ATT estimate?_
+*Begin by exact matching on all the dummy variables. How many treated cases cannot be matched? What is the (FS)ATT estimate?*
 
 > Exact matching is pretty easy to understand so we start with that. Let's match on the binary variables and see what we get.
 
-Before that, however, notice that the six binary variables produce are 64 possible groupings, some of will be empty for both treated and untreated groups (e.g.,, the "missing" observations for which both `black` and `hisp` are set to 1). 
+Before that, however, notice that the six binary variables produce are 64 possible groupings, some of will be empty for both treated and untreated groups (e.g.,, the "missing" observations for which both `black` and `hisp` are set to 1).
 
 ```{r}
 2^6
@@ -160,14 +160,14 @@ groupings |>
   summarize(across(c(treat0, treat1), \(x) sum(x, na.rm = TRUE)))
 ```
 
-Thus, given that we lose 10 of our treatment cases, we are going to be estimating a _feasible ATT_ on this sample (FSATT).
+Thus, given that we lose 10 of our treatment cases, we are going to be estimating a *feasible ATT* on this sample (FSATT).
 
 ```{r}
 exact_out <- matchit(f_cat_only, data = d, estimand = "ATT", method = "exact")
 exact_out
 ```
 
-_Note. `exact_out$weights` gives dropped observations a "weight" of zero; all the other observations get a weight of one._
+*Note. `exact_out$weights` gives dropped observations a "weight" of zero; all the other observations get a weight of one.*
 
 ```{r}
 exact_mod <- lm(re78 ~ treat, data = d, weights = exact_out$weights) 
@@ -179,18 +179,18 @@ msummary(
 )
 ```
 
-_Note. Exact matching can't "match" on continuous covariates, and this is the reason why our estimate is so far away from the experimental estimate._
+*Note. Exact matching can't "match" on continuous covariates, and this is the reason why our estimate is so far away from the experimental estimate.*
 
 ## Exercise
 
-_Use the observational data to estimate each case’s propensity to receive treatment using `glm()`. Use a logistic regression with quadratic terms for age, education, 1974 income, and 1975 income. Spend a few moments thinking about what this model says. Look at the density plots of the p-score for treated and untreated groups._
+*Use the observational data to estimate each case’s propensity to receive treatment using `glm()`. Use a logistic regression with quadratic terms for age, education, 1974 income, and 1975 income. Spend a few moments thinking about what this model says. Look at the density plots of the p-score for treated and untreated groups.*
 
 ```{r}
 prob_mod <- glm(f_quadratic, data = d, family = "binomial")
 d$p <- predict(prob_mod, type = "response")
 ```
 
-_Note. `weightit()` can estimate p-scores for us, but we are not going to do this here._
+*Note. `weightit()` can estimate p-scores for us, but we are not going to do this here.*
 
 Density Plots:
 
@@ -209,10 +209,9 @@ d |>
 
 This second graph is easier to read. It shows how different the treatment and control groups are in their pre-treatment characteristics (balance). However, it is worth noting that there’s not a clear lack of common support; the range of both groups is pretty extensive.
 
-
 ## Exercise
 
-_Estimate propensity scores and ATT weights using weightit(). Ignore the warning you get. We’ll discuss that more in class. Estimate the ATT. Check for covariate balance._
+*Estimate propensity scores and ATT weights using weightit(). Ignore the warning you get. We’ll discuss that more in class. Estimate the ATT. Check for covariate balance.*
 
 ```{r}
 ps_out <- weightit(f_quadratic, data = d, method = "glm", estimand = "ATT")
@@ -227,13 +226,13 @@ msummary(
 )
 ```
 
-This estimate looks much better. It may be a little more positive than the experimental estimate, but it overlaps a good deal with it. 
+This estimate looks much better. It may be a little more positive than the experimental estimate, but it overlaps a good deal with it.
 
 Remember that the standard errors are underestimated, so we might have to bootstrap the results if we want a reasonable confidence interval.
 
 Now let's check for covariate balance.
 
-_Note. You should check for covariate balance BEFORE estimating the ATT_.
+*Note. You should check for covariate balance BEFORE estimating the ATT*.
 
 ```{r}
 bal.plot(
@@ -256,7 +255,7 @@ It’s not that great when we use K-S distance to compare the distributions, isn
 
 ## Exercise
 
-_Now do the same as above using “entropy balancing.” Confirm that you’ve achieved balance on the means and the variances of the covariates. Then estimate the ATT._
+*Now do the same as above using “entropy balancing.” Confirm that you’ve achieved balance on the means and the variances of the covariates. Then estimate the ATT.*
 
 ```{r}
 ebal_out <- weightit(
@@ -284,6 +283,7 @@ msummary(
 ## Bonus
 
 ```{r}
+#| message: false
 
 ## this package will allow you to use the replicate function in "parallel"
 ## this will make things run much faster, depending on the number of "cores" 
@@ -294,17 +294,16 @@ plan(multisession, workers = parallel::detectCores() - 1L)
 
 get_att <- function() {
   
-  i <- sample(nrow(d))
-  
+  i <- sample(nrow(d), replace = TRUE)
   ps_out <- weightit(f_quadratic, data = d[i, ], method = "glm", estimand = "ATT")
-  ps_mod <- lm(re78 ~ treat, data = d, weights = ps_out$weights)
-  
+  ps_mod <- lm(re78 ~ treat, data = d[i, ], weights = ps_out$weights)
   out <- coefficients(ps_mod)
+  
   return(out[["treat"]])
   
 }
 
-boot <- replicate(1e3, suppressWarnings(get_att()))
+boot <- future_replicate(1e4, suppressWarnings(get_att()))
 
 ## previous standard error
 tidy(ps_mod) |> 
@@ -313,4 +312,3 @@ tidy(ps_mod) |>
 ## new standard error
 sd(boot)
 ```
-

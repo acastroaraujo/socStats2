@@ -18,7 +18,7 @@ theme_set(theme_linedraw(base_family = "Avenir Next Condensed"))
 
 ## Regression
 
-_Note. There where two exercises here about simulation and omitted variable bias which you can now find in the solutions. It's a story about how I used simulations to realize I was being misled by information contained in a famous textbook._
+*Note. There where two exercises here about simulation and omitted variable bias which you can now find in the solutions. It's a story about how I used simulations to realize I was being misled by information contained in a famous textbook.*
 
 ## Balance and Overlap
 

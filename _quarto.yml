@@ -37,8 +37,10 @@ book:
         - solutions03.qmd
         - solutions04.qmd
         - solutions05.qmd
-        #- solutions06.qmd
+        - solutions06.qmd
         - solutions07.qmd
+        - solutions08.qmd
+        - solutions09.qmd
     - references.qmd
 
 bibliography: references.bib
