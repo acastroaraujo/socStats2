@@ -584,7 +584,7 @@
     "href": "week10.html#exercise",
     "title": "10  Week 10",
     "section": "",
-    "text": "Exercise:\n\nUse the panelr package to turn the dataset back to its original long form and save it as gap_long.\nUse the panelr package to turn the gap_long into gap_wide, essentially replicating what I did earlier with pivot_wider()\n\n\n\n\n\n\n\n\n\n\nHint: The functions you are looking for are called long_panel() and wide_panel().",
+    "text": "Exercise:\n\nUse the panelr package to turn the dataset back to its original long form and save it as gap_long.\nUse the panelr package to turn the gap_long into gap_wide, essentially replicating what I did earlier with pivot_wider()\n\n\n\n\n\n\n\n\n\n\nHint: The functions you are looking for are called long_panel() and widen_panel().",
     "crumbs": [
       "Part 1",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Week 10</span>"
