@@ -43,7 +43,7 @@ Exercise:
 :::
 
 ::: callout-tip
-Hint: The functions you are looking for are called `long_panel()` and `wide_panel()`.
+Hint: The functions you are looking for are called `long_panel()` and `widen_panel()`.
 :::
 
 ## Exercise
