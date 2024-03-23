@@ -1,0 +1,97 @@
+---
+title: "Week 10"
+callout-appearance: simple
+callout-icon: false
+---
+
+```{r}
+#| message: false
+#| code-summary: "Packages and Setup"
+
+library(tidyverse)
+library(panelr)
+library(gapminder)
+library(ggeffects)        # to get and plot predictions from models using ggpredict
+```
+
+## Exercise
+
+**Reshaping data.**
+
+Take a look at the `gapminder` dataset contained in the gapminder pakacage.
+
+The following chunk of code uses the `pivot_wider()` function to turn this dataset into wider form.
+
+```{r}
+gap_wide <- gapminder::gapminder |> 
+  select(continent, country, year, lifeExp, gdpPercap) |> 
+  pivot_wider(
+    names_from = year, 
+    values_from = c(lifeExp, gdpPercap), 
+    names_sep = ""
+  )
+
+gap_wide
+```
+
+::: callout-note
+Exercise:
+
+-   Use the `panelr` package to turn the dataset back to its original long form and save it as `gap_long`.
+
+-   Use the `panelr` package to turn the `gap_long` into `gap_wide`, essentially replicating what I did earlier with `pivot_wider()`
+:::
+
+::: callout-tip
+Hint: The functions you are looking for are called `long_panel()` and `wide_panel()`.
+:::
+
+## Exercise
+
+::: callout-note
+Slide 33 contains a very simple visualization made using the `line_plot()` function.
+
+Try your best to make a similar graph for the `gapminder` dataset, with year on the x-axis and `lifeExp` on the y-axis for a random subset of 10 countries.
+
+*Use `ggplot2`, do not use `line_plot()`*
+:::
+
+## Exercise
+
+*ICC*
+
+::: callout-note
+Steve introduced the measurement of "intra class correlation" (ICC) in class.
+
+What is the ICC for `lifeExp`, `pop`, and `gdpPercap` in the `gapminder` dataset?
+:::
+
+## Exercise
+
+::: callout-note
+Use the `WageData` from the `panelr` package. You don't need to make a `panel_data` version of `WageData` for this analysis, but you can if you want. We will use it later. Estimate the following mixed models using `lmer()` with maximum likelihood (`REML = FALSE`):
+
+1.  Log wage as a function of college and linear time
+2.  As #1, plus a random slope on time
+3.  As #2, but with time as a quadratic
+
+You may get some warning messages. The correct specifications of these models fit well, but you can use `lme4::allFit()` if you *really* want to make sure that you're getting trustworthy results.
+
+Once you have estimated the models, compare their BIC values using `BIC()`. Select the best model (here, the one with the lowest BIC) then do the following:
+
+1.  Report the estimated effect of college on log wages given the data and model. You can get this using `tidy()`, `summary()`, or any other function you prefer.
+2.  Use `ggpredict() |> plot()` (or another approach if you like) to plot predictions for a sample of 9 individuals over time.
+
+```{r}
+data("WageData", package = "panelr")
+
+WageData <- WageData |> 
+  mutate(
+    college = if_else(ed >= 16, 1L, 0L),  # college variable
+    t0 = t - 1                             # start time at 0
+  )
+
+```
+
+The model output that comes from the `lmer()` looks very different from the ones produced by `lm()` and `glm()`. Take note of anything you don't understand in the output and be ready to ask questions in class about the things you don't understand.
+:::
