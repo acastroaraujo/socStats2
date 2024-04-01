@@ -1,0 +1,267 @@
+---
+title: "Solutions 10"
+callout-appearance: simple
+callout-icon: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+#| code-summary: "Packages and Setup"
+
+library(tidyverse)
+library(panelr)
+library(gapminder)
+library(ggeffects)  
+library(performance)
+
+theme_set(theme_light(base_family = "Crimson Text"))
+```
+
+## Exercise
+
+The `gapminder` dataset is as good as any to practice moving from *wide* to *long* format.
+
+I'm going to show you how to do this with `tidyverse` and with `panelr`, the later of which is much more intuitive.
+
+*Note. The `gapminder` dataset already comes in long format.*
+
+**`tidyverse`**
+
+```{r}
+## from long to wide
+
+glimpse(gapminder)
+
+gap_wide <- gapminder::gapminder |> 
+  pivot_wider(
+    names_from = year, 
+    values_from = c(lifeExp, gdpPercap, pop), 
+    names_sep = ""
+  ) 
+
+glimpse(gap_wide)
+
+## from wide to long
+
+gap_long <- gap_wide |> 
+  pivot_longer(
+    cols = matches("\\d$"),                    # good luck
+    names_to = c(".value", "year"),            # figuring this
+    names_pattern = "([A-Za-z]*)(\\d+)",       # out!!!
+    names_transform = list(year = as.integer)
+  )  
+
+glimpse(gap_long)
+```
+
+**`panelr`**
+
+```{r}
+gap_long_panelr <- gap_wide |> 
+  long_panel(
+    id = "country",
+    wave = "year",
+    begin = 1952,
+    end = 2007
+  )
+
+gap_long_panelr
+```
+
+*Note that `panelr` has made the missing values explicit, which is something you may want (or not).*
+
+Once you `gap_long_panelr` you'll notice that this object has an extra class called "panel_data." The `widen_panel()` function understands this and can make the change to "wide" effortlessly.
+
+```{r}
+widen_panel(gap_long_panelr)
+```
+
+Note that there's a lot of columns with missing values. You'll have to drop them first with `drop_na()` if you don't want them.
+
+```{r}
+gap_long_panelr |> 
+  tidyr::drop_na() |> 
+  widen_panel()
+```
+
+## Exercise
+
+::: callout-note
+Slide 33 contains a very simple visualization made using the `line_plot()` function.
+
+Try your best to make a similar graph for the `gapminder` dataset, with year on the x-axis and `lifeExp` on the y-axis for a random subset of 10 countries.
+
+*Use `ggplot2`, do not use `line_plot()`*
+:::
+
+The trick to answering this question is to first figure out how to select a random subset of countries when the rows of `gapminder` don't represent countries but country-years.
+
+```{r}
+country_list <- unique(gapminder$country)
+
+gapminder |> 
+  filter(country %in% sample(country_list, 10)) |> 
+  ggplot(aes(year, lifeExp, group = country)) +
+  geom_point(size = 1/2) +
+  geom_line(alpha = 1/2)
+```
+
+If you want the lines distinguished by colors, you can do something like this:
+
+```{r}
+gapminder |> 
+  filter(country %in% sample(country_list, 10)) |> 
+  ggplot(aes(year, lifeExp, color = country)) +
+  geom_point(size = 1/2) +
+  geom_line(alpha = 1/2)
+```
+
+...or maybe by continent:
+
+```{r}
+gapminder |> 
+  filter(country %in% sample(country_list, 10)) |> 
+  ggplot(aes(year, lifeExp, color = continent, group = country)) +
+  geom_point(size = 1/2) +
+  geom_line(alpha = 1/2)
+```
+
+## Exercise
+
+The ICC is a summary statistic that only makes sense when you have data whose variance can be partitioned in terms of *within* and *between.*
+
+Two typical situations:
+
+-   Clusters (e.g., "students nested" in classrooms)
+
+-   Repeated observations (e.g., observations "nested in" individuals).
+
+Panel data is case of the latter. In class we saw an example of a **multilevel model**, which extends typical regression models by adding a second error term.
+
+For example:
+
+$$
+\text{lwage}_{it} = \beta_0 + \beta_1 \text{college}_i + \alpha_i + \epsilon_{it}
+$$
+
+```{r}
+
+
+```
+
+How much of the variance is within and how much is between? We can get a simple answer to this question by examining the **intraclass correlation**, defined as:$$\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2}$$where $\tau^2$ is the between-person variance and $\sigma^2$ is the within-person variance.
+
+::: callout-note
+What is the ICC for `lifeExp`, `pop`, and `gdpPercap` in the `gapminder` dataset?
+:::
+
+There are many ways to do this
+
+**Method 1 (full manual)**
+
+```{r}
+## Steve's code
+
+# BETWEEN VARIANCE
+b_var <- gapminder |>
+  group_by(country) |>                            # do calculations separately for ids
+  summarize(mean_lifeExp = mean(lifeExp)) |>      # get each id's mean [lifeExp]
+  summarize(b_var = var(mean_lifeExp)) |>         # get variance of means
+  as.numeric()                                    # output as a number
+
+b_var
+
+# WITHIN VARIANCE
+w_var <- gapminder |>                             
+  group_by(country) |>                            # do calculations separately for ids
+  mutate(dev_lifeExp = lifeExp - mean(lifeExp)) |># create time devs from each id's mean
+  ungroup() |>                                    # calcs on whole data frame
+  summarize(w_var = var(dev_lifeExp)) |>          # get variance of deviations
+  as.numeric()                                    # output as number
+
+w_var
+
+## ICC
+b_var / (b_var + w_var)
+```
+
+**Method 2 (using OLS)**
+
+```{r}
+ols <- lm(lifeExp ~ country, data = gapminder)
+1 - (var(ols$residuals) / var(gapminder$lifeExp))
+```
+
+*Note. Here I took advantage of the fact that `var(gapminder$lifeExp)` is the sum of the between and within variance. If you're curious about this I encourage you to search for "the law of total variance" in probability theory.*
+
+**Method 3 (using `lmer`)**
+
+```{r}
+mlm <- lmer(lifeExp ~ (1 | country), data = gapminder, REML = FALSE)
+performance::icc(mlm)
+```
+
+*Excuse me! The results are too different... what gives?*
+
+*The numbers differ a bit because `lmer()` "shrinks" the estimates of the means towards the population mean a bit (in exchange for better "efficiency"). This issue is outside the scope of this homework, but both results are OK!*
+
+If you want some intuition of what this "shrinkage" business is all about, I recommend squinting at the following graph:
+
+```{r}
+#| fig-height: 15
+#| message: false
+#| code-fold: true
+
+pred_ols <- broom::augment(ols, newdata = tibble(country = country_list))
+
+df <- coefficients(mlm)$country |> 
+  rownames_to_column("country") |> 
+  full_join(pred_ols)
+
+df |> 
+  rename(lm = ".fitted", lmer = "(Intercept)") |> 
+  mutate(diff = abs(lm - lmer)) |> 
+  mutate(country = fct_reorder(country, diff)) |> 
+  ggplot(aes(y = country)) + 
+  geom_point(aes(x = lm, color = "lm"), size = 1/2) + 
+  geom_point(aes(x = lmer, color = "lmer"), size = 1/2) + 
+  labs(x = "average lifeExp", y = NULL)
+```
+
+## Exercise
+
+*Note. In case you didn't notice, this exercise was taken straight from Steve's `ldar` course materials.*
+
+```{r}
+data("WageData", package = "panelr")
+
+WageData <- WageData |> 
+  mutate(
+    college = if_else(ed >= 16, 1L, 0L),  # college variable
+    t0 = t - 1                            # start time at 0
+  )
+
+mod1 <- lmer(lwage ~ college + t0 + (1 | id), REML = FALSE, data = WageData)
+mod2 <- lmer(lwage ~ college + t0 + (t0 | id), REML = FALSE, data = WageData)
+mod3 <- lmer(lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id), REML = FALSE, 
+             data = WageData, 
+             ## I got this part from Stack Overflow, will update if something's wrong
+             control = lmerControl(optimizer = 'optimx', optCtrl = list(method = 'nlminb')))
+
+# compare BICs
+BIC(mod1, mod2, mod3)
+
+# get coef
+summary(mod1)
+
+ggpredict(mod1, terms = c("t0 [all]", "id [sample = 9]"), type = "random") |> 
+  plot()
+
+ggpredict(mod2, terms = c("t0 [all]", "id [sample = 9]"), type = "random") |> 
+  plot()
+
+ggpredict(mod3, terms = c("t0 [all]", "id [sample = 9]"), type = "random") |> 
+  plot()
+```

@@ -42,6 +42,7 @@ book:
         - solutions07.qmd
         - solutions08.qmd
         - solutions09.qmd
+        - solutions10.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -88,7 +88,7 @@ data("WageData", package = "panelr")
 WageData <- WageData |> 
   mutate(
     college = if_else(ed >= 16, 1L, 0L),  # college variable
-    t0 = t - 1                             # start time at 0
+    t0 = t - 1                            # start time at 0
   )
 
 ```
