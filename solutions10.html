@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.552">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Social Statistics II (Exercises) - 20&nbsp; Solutions 10</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./solutions09.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Social Statistics II (Exercises)</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/vaiseys/soc-stats-2"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">steve</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/acastroaraujo/socStats2"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">andrés</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-solutions.html">Solutions</a></li><li class="breadcrumb-item"><a href="./solutions10.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Solutions 10</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sec01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 10</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sec-solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Solutions 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Solutions 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Solutions 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Solutions 4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Solutions 5</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Solutions 6</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Solutions 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Solutions 8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Solutions 9</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions10.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Solutions 10</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise"><span class="header-section-number">20.1</span> Exercise</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1"><span class="header-section-number">20.2</span> Exercise</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2"><span class="header-section-number">20.3</span> Exercise</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3"><span class="header-section-number">20.4</span> Exercise</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sec-solutions.html">Solutions</a></li><li class="breadcrumb-item"><a href="./solutions10.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Solutions 10</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Solutions 10</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Packages and Setup</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(panelr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects)  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>(<span class="at">base_family =</span> <span class="st">"Crimson Text"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="exercise" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">20.1</span> Exercise</h2>
+<p>The <code>gapminder</code> dataset is as good as any to practice moving from <em>wide</em> to <em>long</em> format.</p>
+<p>I’m going to show you how to do this with <code>tidyverse</code> and with <code>panelr</code>, the later of which is much more intuitive.</p>
+<p><em>Note. The <code>gapminder</code> dataset already comes in long format.</em></p>
+<p><strong><code>tidyverse</code></strong></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## from long to wide</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,704
+Columns: 6
+$ country   &lt;fct&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", …
+$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …
+$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …
+$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…
+$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…
+$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gap_wide <span class="ot">&lt;-</span> gapminder<span class="sc">::</span>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(lifeExp, gdpPercap, pop), </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">""</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 142
+Columns: 38
+$ country       &lt;fct&gt; "Afghanistan", "Albania", "Algeria", "Angola", "Argentin…
+$ continent     &lt;fct&gt; Asia, Europe, Africa, Africa, Americas, Oceania, Europe,…
+$ lifeExp1952   &lt;dbl&gt; 28.801, 55.230, 43.077, 30.015, 62.485, 69.120, 66.800, …
+$ lifeExp1957   &lt;dbl&gt; 30.33200, 59.28000, 45.68500, 31.99900, 64.39900, 70.330…
+$ lifeExp1962   &lt;dbl&gt; 31.99700, 64.82000, 48.30300, 34.00000, 65.14200, 70.930…
+$ lifeExp1967   &lt;dbl&gt; 34.02000, 66.22000, 51.40700, 35.98500, 65.63400, 71.100…
+$ lifeExp1972   &lt;dbl&gt; 36.08800, 67.69000, 54.51800, 37.92800, 67.06500, 71.930…
+$ lifeExp1977   &lt;dbl&gt; 38.43800, 68.93000, 58.01400, 39.48300, 68.48100, 73.490…
+$ lifeExp1982   &lt;dbl&gt; 39.854, 70.420, 61.368, 39.942, 69.942, 74.740, 73.180, …
+$ lifeExp1987   &lt;dbl&gt; 40.822, 72.000, 65.799, 39.906, 70.774, 76.320, 74.940, …
+$ lifeExp1992   &lt;dbl&gt; 41.674, 71.581, 67.744, 40.647, 71.868, 77.560, 76.040, …
+$ lifeExp1997   &lt;dbl&gt; 41.763, 72.950, 69.152, 40.963, 73.275, 78.830, 77.510, …
+$ lifeExp2002   &lt;dbl&gt; 42.129, 75.651, 70.994, 41.003, 74.340, 80.370, 78.980, …
+$ lifeExp2007   &lt;dbl&gt; 43.828, 76.423, 72.301, 42.731, 75.320, 81.235, 79.829, …
+$ gdpPercap1952 &lt;dbl&gt; 779.4453, 1601.0561, 2449.0082, 3520.6103, 5911.3151, 10…
+$ gdpPercap1957 &lt;dbl&gt; 820.8530, 1942.2842, 3013.9760, 3827.9405, 6856.8562, 10…
+$ gdpPercap1962 &lt;dbl&gt; 853.1007, 2312.8890, 2550.8169, 4269.2767, 7133.1660, 12…
+$ gdpPercap1967 &lt;dbl&gt; 836.1971, 2760.1969, 3246.9918, 5522.7764, 8052.9530, 14…
+$ gdpPercap1972 &lt;dbl&gt; 739.9811, 3313.4222, 4182.6638, 5473.2880, 9443.0385, 16…
+$ gdpPercap1977 &lt;dbl&gt; 786.1134, 3533.0039, 4910.4168, 3008.6474, 10079.0267, 1…
+$ gdpPercap1982 &lt;dbl&gt; 978.0114, 3630.8807, 5745.1602, 2756.9537, 8997.8974, 19…
+$ gdpPercap1987 &lt;dbl&gt; 852.3959, 3738.9327, 5681.3585, 2430.2083, 9139.6714, 21…
+$ gdpPercap1992 &lt;dbl&gt; 649.3414, 2497.4379, 5023.2166, 2627.8457, 9308.4187, 23…
+$ gdpPercap1997 &lt;dbl&gt; 635.3414, 3193.0546, 4797.2951, 2277.1409, 10967.2820, 2…
+$ gdpPercap2002 &lt;dbl&gt; 726.7341, 4604.2117, 5288.0404, 2773.2873, 8797.6407, 30…
+$ gdpPercap2007 &lt;dbl&gt; 974.5803, 5937.0295, 6223.3675, 4797.2313, 12779.3796, 3…
+$ pop1952       &lt;int&gt; 8425333, 1282697, 9279525, 4232095, 17876956, 8691212, 6…
+$ pop1957       &lt;int&gt; 9240934, 1476505, 10270856, 4561361, 19610538, 9712569, …
+$ pop1962       &lt;int&gt; 10267083, 1728137, 11000948, 4826015, 21283783, 10794968…
+$ pop1967       &lt;int&gt; 11537966, 1984060, 12760499, 5247469, 22934225, 11872264…
+$ pop1972       &lt;int&gt; 13079460, 2263554, 14760787, 5894858, 24779799, 13177000…
+$ pop1977       &lt;int&gt; 14880372, 2509048, 17152804, 6162675, 26983828, 14074100…
+$ pop1982       &lt;int&gt; 12881816, 2780097, 20033753, 7016384, 29341374, 15184200…
+$ pop1987       &lt;int&gt; 13867957, 3075321, 23254956, 7874230, 31620918, 16257249…
+$ pop1992       &lt;int&gt; 16317921, 3326498, 26298373, 8735988, 33958947, 17481977…
+$ pop1997       &lt;int&gt; 22227415, 3428038, 29072015, 9875024, 36203463, 18565243…
+$ pop2002       &lt;int&gt; 25268405, 3508512, 31287142, 10866106, 38331121, 1954679…
+$ pop2007       &lt;int&gt; 31889923, 3600523, 33333216, 12420476, 40301927, 2043417…</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## from wide to long</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>gap_long <span class="ot">&lt;-</span> gap_wide <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),                    <span class="co"># good luck</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"year"</span>),            <span class="co"># figuring this</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">"([A-Za-z]*)(</span><span class="sc">\\</span><span class="st">d+)"</span>,       <span class="co"># out!!!</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_transform =</span> <span class="fu">list</span>(<span class="at">year =</span> as.integer)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  )  </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,704
+Columns: 6
+$ country   &lt;fct&gt; "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan", …
+$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …
+$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …
+$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…
+$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …
+$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…</code></pre>
+</div>
+</div>
+<p><strong><code>panelr</code></strong></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gap_long_panelr <span class="ot">&lt;-</span> gap_wide <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">long_panel</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"country"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">wave =</span> <span class="st">"year"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">begin =</span> <span class="dv">1952</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">end =</span> <span class="dv">2007</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>gap_long_panelr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># Panel data:    7,952 × 6
+# Entities:      country [142]
+# Wave variable: year [1952, 1953, 1954, ... (56 waves)]
+   country      year continent lifeExp gdpPercap     pop
+   &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt;     &lt;dbl&gt;   &lt;int&gt;
+ 1 Afghanistan  1952 Asia         28.8      779. 8425333
+ 2 Afghanistan  1953 Asia         NA         NA       NA
+ 3 Afghanistan  1954 Asia         NA         NA       NA
+ 4 Afghanistan  1955 Asia         NA         NA       NA
+ 5 Afghanistan  1956 Asia         NA         NA       NA
+ 6 Afghanistan  1957 Asia         30.3      821. 9240934
+ 7 Afghanistan  1958 Asia         NA         NA       NA
+ 8 Afghanistan  1959 Asia         NA         NA       NA
+ 9 Afghanistan  1960 Asia         NA         NA       NA
+10 Afghanistan  1961 Asia         NA         NA       NA
+# ℹ 7,942 more rows</code></pre>
+</div>
+</div>
+<p><em>Note that <code>panelr</code> has made the missing values explicit, which is something you may want (or not).</em></p>
+<p>Once you <code>gap_long_panelr</code> you’ll notice that this object has an extra class called “panel_data.” The <code>widen_panel()</code> function understands this and can make the change to “wide” effortlessly.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">widen_panel</span>(gap_long_panelr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 142 × 170
+   country     continent lifeExp_1952 gdpPercap_1952 pop_1952 lifeExp_1953
+   &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;          &lt;dbl&gt;    &lt;int&gt;        &lt;dbl&gt;
+ 1 Afghanistan Asia              28.8           779.  8425333           NA
+ 2 Albania     Europe            55.2          1601.  1282697           NA
+ 3 Algeria     Africa            43.1          2449.  9279525           NA
+ 4 Angola      Africa            30.0          3521.  4232095           NA
+ 5 Argentina   Americas          62.5          5911. 17876956           NA
+ 6 Australia   Oceania           69.1         10040.  8691212           NA
+ 7 Austria     Europe            66.8          6137.  6927772           NA
+ 8 Bahrain     Asia              50.9          9867.   120447           NA
+ 9 Bangladesh  Asia              37.5           684. 46886859           NA
+10 Belgium     Europe            68            8343.  8730405           NA
+# ℹ 132 more rows
+# ℹ 164 more variables: gdpPercap_1953 &lt;dbl&gt;, pop_1953 &lt;int&gt;,
+#   lifeExp_1954 &lt;dbl&gt;, gdpPercap_1954 &lt;dbl&gt;, pop_1954 &lt;int&gt;,
+#   lifeExp_1955 &lt;dbl&gt;, gdpPercap_1955 &lt;dbl&gt;, pop_1955 &lt;int&gt;,
+#   lifeExp_1956 &lt;dbl&gt;, gdpPercap_1956 &lt;dbl&gt;, pop_1956 &lt;int&gt;,
+#   lifeExp_1957 &lt;dbl&gt;, gdpPercap_1957 &lt;dbl&gt;, pop_1957 &lt;int&gt;,
+#   lifeExp_1958 &lt;dbl&gt;, gdpPercap_1958 &lt;dbl&gt;, pop_1958 &lt;int&gt;, …</code></pre>
+</div>
+</div>
+<p>Note that there’s a lot of columns with missing values. You’ll have to drop them first with <code>drop_na()</code> if you don’t want them.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>gap_long_panelr <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">widen_panel</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 142 × 38
+   country     continent lifeExp_1952 gdpPercap_1952 pop_1952 lifeExp_1957
+   &lt;fct&gt;       &lt;fct&gt;            &lt;dbl&gt;          &lt;dbl&gt;    &lt;int&gt;        &lt;dbl&gt;
+ 1 Afghanistan Asia              28.8           779.  8425333         30.3
+ 2 Albania     Europe            55.2          1601.  1282697         59.3
+ 3 Algeria     Africa            43.1          2449.  9279525         45.7
+ 4 Angola      Africa            30.0          3521.  4232095         32.0
+ 5 Argentina   Americas          62.5          5911. 17876956         64.4
+ 6 Australia   Oceania           69.1         10040.  8691212         70.3
+ 7 Austria     Europe            66.8          6137.  6927772         67.5
+ 8 Bahrain     Asia              50.9          9867.   120447         53.8
+ 9 Bangladesh  Asia              37.5           684. 46886859         39.3
+10 Belgium     Europe            68            8343.  8730405         69.2
+# ℹ 132 more rows
+# ℹ 32 more variables: gdpPercap_1957 &lt;dbl&gt;, pop_1957 &lt;int&gt;,
+#   lifeExp_1962 &lt;dbl&gt;, gdpPercap_1962 &lt;dbl&gt;, pop_1962 &lt;int&gt;,
+#   lifeExp_1967 &lt;dbl&gt;, gdpPercap_1967 &lt;dbl&gt;, pop_1967 &lt;int&gt;,
+#   lifeExp_1972 &lt;dbl&gt;, gdpPercap_1972 &lt;dbl&gt;, pop_1972 &lt;int&gt;,
+#   lifeExp_1977 &lt;dbl&gt;, gdpPercap_1977 &lt;dbl&gt;, pop_1977 &lt;int&gt;,
+#   lifeExp_1982 &lt;dbl&gt;, gdpPercap_1982 &lt;dbl&gt;, pop_1982 &lt;int&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-1" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="exercise-1"><span class="header-section-number">20.2</span> Exercise</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Slide 33 contains a very simple visualization made using the <code>line_plot()</code> function.</p>
+<p>Try your best to make a similar graph for the <code>gapminder</code> dataset, with year on the x-axis and <code>lifeExp</code> on the y-axis for a random subset of 10 countries.</p>
+<p><em>Use <code>ggplot2</code>, do not use <code>line_plot()</code></em></p>
+</div>
+</div>
+</div>
+<p>The trick to answering this question is to first figure out how to select a random subset of countries when the rows of <code>gapminder</code> don’t represent countries but country-years.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>country_list <span class="ot">&lt;-</span> <span class="fu">unique</span>(gapminder<span class="sc">$</span>country)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If you want the lines distinguished by colors, you can do something like this:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>…or maybe by continent:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">color =</span> continent, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="exercise-2"><span class="header-section-number">20.3</span> Exercise</h2>
+<p>The ICC is a summary statistic that only makes sense when you have data whose variance can be partitioned in terms of <em>within</em> and <em>between.</em></p>
+<p>Two typical situations:</p>
+<ul>
+<li><p>Clusters (e.g., “students nested” in classrooms)</p></li>
+<li><p>Repeated observations (e.g., observations “nested in” individuals).</p></li>
+</ul>
+<p>Panel data is case of the latter. In class we saw an example of a <strong>multilevel model</strong>, which extends typical regression models by adding a second error term.</p>
+<p>For example:</p>
+<p><span class="math display">\[
+\text{lwage}_{it} = \beta_0 + \beta_1 \text{college}_i + \alpha_i + \epsilon_{it}
+\]</span></p>
+<p>How much of the variance is within and how much is between? We can get a simple answer to this question by examining the <strong>intraclass correlation</strong>, defined as:<span class="math display">\[\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2}\]</span>where <span class="math inline">\(\tau^2\)</span> is the between-person variance and <span class="math inline">\(\sigma^2\)</span> is the within-person variance.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>What is the ICC for <code>lifeExp</code>, <code>pop</code>, and <code>gdpPercap</code> in the <code>gapminder</code> dataset?</p>
+</div>
+</div>
+</div>
+<p>There are many ways to do this</p>
+<p><strong>Method 1 (full manual)</strong></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Steve's code</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># BETWEEN VARIANCE</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>b_var <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>                            <span class="co"># do calculations separately for ids</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_lifeExp =</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">|&gt;</span>      <span class="co"># get each id's mean [lifeExp]</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">b_var =</span> <span class="fu">var</span>(mean_lifeExp)) <span class="sc">|&gt;</span>         <span class="co"># get variance of means</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>()                                    <span class="co"># output as a number</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>b_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 124.2174</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># WITHIN VARIANCE</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>w_var <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span>                             </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>                            <span class="co"># do calculations separately for ids</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dev_lifeExp =</span> lifeExp <span class="sc">-</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">|&gt;</span><span class="co"># create time devs from each id's mean</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>                                    <span class="co"># calcs on whole data frame</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">w_var =</span> <span class="fu">var</span>(dev_lifeExp)) <span class="sc">|&gt;</span>          <span class="co"># get variance of deviations</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>()                                    <span class="co"># output as number</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>w_var</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 43.43659</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ICC</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>b_var <span class="sc">/</span> (b_var <span class="sc">+</span> w_var)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7409153</code></pre>
+</div>
+</div>
+<p><strong>Method 2 (using OLS)</strong></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> country, <span class="at">data =</span> gapminder)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (<span class="fu">var</span>(ols<span class="sc">$</span>residuals) <span class="sc">/</span> <span class="fu">var</span>(gapminder<span class="sc">$</span>lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7396694</code></pre>
+</div>
+</div>
+<p><em>Note. Here I took advantage of the fact that <code>var(gapminder$lifeExp)</code> is the sum of the between and within variance. If you’re curious about this I encourage you to search for “the law of total variance” in probability theory.</em></p>
+<p><strong>Method 3 (using <code>lmer</code>)</strong></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mlm <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lifeExp <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country), <span class="at">data =</span> gapminder, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(mlm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># Intraclass Correlation Coefficient
+
+    Adjusted ICC: 0.716
+  Unadjusted ICC: 0.716</code></pre>
+</div>
+</div>
+<p><em>Excuse me! The results are too different… what gives?</em></p>
+<p><em>The numbers differ a bit because <code>lmer()</code> “shrinks” the estimates of the means towards the population mean a bit (in exchange for better “efficiency”). This issue is outside the scope of this homework, but both results are OK!</em></p>
+<p>If you want some intuition of what this “shrinkage” business is all about, I recommend squinting at the following graph:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pred_ols <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment</span>(ols, <span class="at">newdata =</span> <span class="fu">tibble</span>(<span class="at">country =</span> country_list))</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">coefficients</span>(mlm)<span class="sc">$</span>country <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"country"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(pred_ols)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">lm =</span> <span class="st">".fitted"</span>, <span class="at">lmer =</span> <span class="st">"(Intercept)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff =</span> <span class="fu">abs</span>(lm <span class="sc">-</span> lmer)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">fct_reorder</span>(country, diff)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> country)) <span class="sc">+</span> </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lm, <span class="at">color =</span> <span class="st">"lm"</span>), <span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lmer, <span class="at">color =</span> <span class="st">"lmer"</span>), <span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"average lifeExp"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="exercise-3"><span class="header-section-number">20.4</span> Exercise</h2>
+<p><em>Note. In case you didn’t notice, this exercise was taken straight from Steve’s <code>ldar</code> course materials.</em></p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"WageData"</span>, <span class="at">package =</span> <span class="st">"panelr"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>WageData <span class="ot">&lt;-</span> WageData <span class="sc">|&gt;</span> </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">college =</span> <span class="fu">if_else</span>(ed <span class="sc">&gt;=</span> <span class="dv">16</span>, <span class="dv">1</span>L, <span class="dv">0</span>L),  <span class="co"># college variable</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">t0 =</span> t <span class="sc">-</span> <span class="dv">1</span>                            <span class="co"># start time at 0</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, <span class="at">data =</span> WageData)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> (t0 <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, <span class="at">data =</span> WageData)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> <span class="fu">I</span>(t0<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> (t0 <span class="sc">+</span> <span class="fu">I</span>(t0<span class="sc">^</span><span class="dv">2</span>) <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> WageData, </span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>             <span class="do">## I got this part from Stack Overflow, will update if something's wrong</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">control =</span> <span class="fu">lmerControl</span>(<span class="at">optimizer =</span> <span class="st">'optimx'</span>, <span class="at">optCtrl =</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">'nlminb'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required namespace: optimx</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare BICs</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">BIC</span>(mod1, mod2, mod3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>     df       BIC
+mod1  5 -1574.123
+mod2  7 -1930.822
+mod3 11 -1996.860</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get coef</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by maximum likelihood  ['lmerMod']
+Formula: lwage ~ college + t0 + (1 | id)
+   Data: WageData
+
+     AIC      BIC   logLik deviance df.resid 
+ -1605.8  -1574.1    807.9  -1615.8     4160 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-11.7145  -0.3543   0.0322   0.4068  12.6683 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ id       (Intercept) 0.12694  0.3563  
+ Residual             0.02356  0.1535  
+Number of obs: 4165, groups:  id, 595
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 6.288711   0.017731  354.68
+college     0.353487   0.033183   10.65
+t0          0.096933   0.001189   81.51
+
+Correlation of Fixed Effects:
+        (Intr) colleg
+college -0.513       
+t0      -0.201  0.000</code></pre>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod2, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod3, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="solutions10_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./solutions09.html" class="pagination-link" aria-label="Solutions 9">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Solutions 9</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb37" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Solutions 10"</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="an">callout-appearance:</span><span class="co"> simple</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="an">callout-icon:</span><span class="co"> false</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="an">editor_options:</span><span class="co"> </span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co">  chunk_output_type: console</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Packages and Setup"</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(panelr)</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects)  </span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>(<span class="at">base_family =</span> <span class="st">"Crimson Text"</span>))</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>The <span class="in">`gapminder`</span> dataset is as good as any to practice moving from *wide* to *long* format.</span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>I'm going to show you how to do this with <span class="in">`tidyverse`</span> and with <span class="in">`panelr`</span>, the later of which is much more intuitive.</span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>*Note. The `gapminder` dataset already comes in long format.*</span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>**`tidyverse`**</span>
+<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a><span class="do">## from long to wide</span></span>
+<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gapminder)</span>
+<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-41"><a href="#cb37-41" aria-hidden="true" tabindex="-1"></a>gap_wide <span class="ot">&lt;-</span> gapminder<span class="sc">::</span>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb37-42"><a href="#cb37-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb37-43"><a href="#cb37-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year, </span>
+<span id="cb37-44"><a href="#cb37-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="fu">c</span>(lifeExp, gdpPercap, pop), </span>
+<span id="cb37-45"><a href="#cb37-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">""</span></span>
+<span id="cb37-46"><a href="#cb37-46" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb37-47"><a href="#cb37-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-48"><a href="#cb37-48" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap_wide)</span>
+<span id="cb37-49"><a href="#cb37-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-50"><a href="#cb37-50" aria-hidden="true" tabindex="-1"></a><span class="do">## from wide to long</span></span>
+<span id="cb37-51"><a href="#cb37-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-52"><a href="#cb37-52" aria-hidden="true" tabindex="-1"></a>gap_long <span class="ot">&lt;-</span> gap_wide <span class="sc">|&gt;</span> </span>
+<span id="cb37-53"><a href="#cb37-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb37-54"><a href="#cb37-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">matches</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">d$"</span>),                    <span class="co"># good luck</span></span>
+<span id="cb37-55"><a href="#cb37-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"year"</span>),            <span class="co"># figuring this</span></span>
+<span id="cb37-56"><a href="#cb37-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">"([A-Za-z]*)(</span><span class="sc">\\</span><span class="st">d+)"</span>,       <span class="co"># out!!!</span></span>
+<span id="cb37-57"><a href="#cb37-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_transform =</span> <span class="fu">list</span>(<span class="at">year =</span> as.integer)</span>
+<span id="cb37-58"><a href="#cb37-58" aria-hidden="true" tabindex="-1"></a>  )  </span>
+<span id="cb37-59"><a href="#cb37-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-60"><a href="#cb37-60" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap_long)</span>
+<span id="cb37-61"><a href="#cb37-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-62"><a href="#cb37-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-63"><a href="#cb37-63" aria-hidden="true" tabindex="-1"></a>**`panelr`**</span>
+<span id="cb37-64"><a href="#cb37-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-67"><a href="#cb37-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-68"><a href="#cb37-68" aria-hidden="true" tabindex="-1"></a>gap_long_panelr <span class="ot">&lt;-</span> gap_wide <span class="sc">|&gt;</span> </span>
+<span id="cb37-69"><a href="#cb37-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">long_panel</span>(</span>
+<span id="cb37-70"><a href="#cb37-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"country"</span>,</span>
+<span id="cb37-71"><a href="#cb37-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">wave =</span> <span class="st">"year"</span>,</span>
+<span id="cb37-72"><a href="#cb37-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">begin =</span> <span class="dv">1952</span>,</span>
+<span id="cb37-73"><a href="#cb37-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">end =</span> <span class="dv">2007</span></span>
+<span id="cb37-74"><a href="#cb37-74" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-75"><a href="#cb37-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-76"><a href="#cb37-76" aria-hidden="true" tabindex="-1"></a>gap_long_panelr</span>
+<span id="cb37-77"><a href="#cb37-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-78"><a href="#cb37-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-79"><a href="#cb37-79" aria-hidden="true" tabindex="-1"></a>*Note that `panelr` has made the missing values explicit, which is something you may want (or not).*</span>
+<span id="cb37-80"><a href="#cb37-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-81"><a href="#cb37-81" aria-hidden="true" tabindex="-1"></a>Once you <span class="in">`gap_long_panelr`</span> you'll notice that this object has an extra class called "panel_data." The <span class="in">`widen_panel()`</span> function understands this and can make the change to "wide" effortlessly.</span>
+<span id="cb37-82"><a href="#cb37-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-85"><a href="#cb37-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-86"><a href="#cb37-86" aria-hidden="true" tabindex="-1"></a><span class="fu">widen_panel</span>(gap_long_panelr)</span>
+<span id="cb37-87"><a href="#cb37-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-88"><a href="#cb37-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-89"><a href="#cb37-89" aria-hidden="true" tabindex="-1"></a>Note that there's a lot of columns with missing values. You'll have to drop them first with <span class="in">`drop_na()`</span> if you don't want them.</span>
+<span id="cb37-90"><a href="#cb37-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-93"><a href="#cb37-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-94"><a href="#cb37-94" aria-hidden="true" tabindex="-1"></a>gap_long_panelr <span class="sc">|&gt;</span> </span>
+<span id="cb37-95"><a href="#cb37-95" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb37-96"><a href="#cb37-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">widen_panel</span>()</span>
+<span id="cb37-97"><a href="#cb37-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-98"><a href="#cb37-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-99"><a href="#cb37-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb37-100"><a href="#cb37-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-101"><a href="#cb37-101" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb37-102"><a href="#cb37-102" aria-hidden="true" tabindex="-1"></a>Slide 33 contains a very simple visualization made using the <span class="in">`line_plot()`</span> function.</span>
+<span id="cb37-103"><a href="#cb37-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-104"><a href="#cb37-104" aria-hidden="true" tabindex="-1"></a>Try your best to make a similar graph for the <span class="in">`gapminder`</span> dataset, with year on the x-axis and <span class="in">`lifeExp`</span> on the y-axis for a random subset of 10 countries.</span>
+<span id="cb37-105"><a href="#cb37-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-106"><a href="#cb37-106" aria-hidden="true" tabindex="-1"></a>*Use `ggplot2`, do not use `line_plot()`*</span>
+<span id="cb37-107"><a href="#cb37-107" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb37-108"><a href="#cb37-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-109"><a href="#cb37-109" aria-hidden="true" tabindex="-1"></a>The trick to answering this question is to first figure out how to select a random subset of countries when the rows of <span class="in">`gapminder`</span> don't represent countries but country-years.</span>
+<span id="cb37-110"><a href="#cb37-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-113"><a href="#cb37-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-114"><a href="#cb37-114" aria-hidden="true" tabindex="-1"></a>country_list <span class="ot">&lt;-</span> <span class="fu">unique</span>(gapminder<span class="sc">$</span>country)</span>
+<span id="cb37-115"><a href="#cb37-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-116"><a href="#cb37-116" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb37-117"><a href="#cb37-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb37-118"><a href="#cb37-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb37-119"><a href="#cb37-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb37-120"><a href="#cb37-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb37-121"><a href="#cb37-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-122"><a href="#cb37-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-123"><a href="#cb37-123" aria-hidden="true" tabindex="-1"></a>If you want the lines distinguished by colors, you can do something like this:</span>
+<span id="cb37-124"><a href="#cb37-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-127"><a href="#cb37-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-128"><a href="#cb37-128" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb37-129"><a href="#cb37-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb37-130"><a href="#cb37-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb37-131"><a href="#cb37-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb37-132"><a href="#cb37-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb37-133"><a href="#cb37-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-134"><a href="#cb37-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-135"><a href="#cb37-135" aria-hidden="true" tabindex="-1"></a>...or maybe by continent:</span>
+<span id="cb37-136"><a href="#cb37-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-139"><a href="#cb37-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-140"><a href="#cb37-140" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb37-141"><a href="#cb37-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> <span class="fu">sample</span>(country_list, <span class="dv">10</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb37-142"><a href="#cb37-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year, lifeExp, <span class="at">color =</span> continent, <span class="at">group =</span> country)) <span class="sc">+</span></span>
+<span id="cb37-143"><a href="#cb37-143" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb37-144"><a href="#cb37-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb37-145"><a href="#cb37-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-146"><a href="#cb37-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-147"><a href="#cb37-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb37-148"><a href="#cb37-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-149"><a href="#cb37-149" aria-hidden="true" tabindex="-1"></a>The ICC is a summary statistic that only makes sense when you have data whose variance can be partitioned in terms of *within* and *between.*</span>
+<span id="cb37-150"><a href="#cb37-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-151"><a href="#cb37-151" aria-hidden="true" tabindex="-1"></a>Two typical situations:</span>
+<span id="cb37-152"><a href="#cb37-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-153"><a href="#cb37-153" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Clusters (e.g., "students nested" in classrooms)</span>
+<span id="cb37-154"><a href="#cb37-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-155"><a href="#cb37-155" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Repeated observations (e.g., observations "nested in" individuals).</span>
+<span id="cb37-156"><a href="#cb37-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-157"><a href="#cb37-157" aria-hidden="true" tabindex="-1"></a>Panel data is case of the latter. In class we saw an example of a **multilevel model**, which extends typical regression models by adding a second error term.</span>
+<span id="cb37-158"><a href="#cb37-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-159"><a href="#cb37-159" aria-hidden="true" tabindex="-1"></a>For example:</span>
+<span id="cb37-160"><a href="#cb37-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-161"><a href="#cb37-161" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb37-162"><a href="#cb37-162" aria-hidden="true" tabindex="-1"></a>\text{lwage}_{it} = \beta_0 + \beta_1 \text{college}_i + \alpha_i + \epsilon_{it}</span>
+<span id="cb37-163"><a href="#cb37-163" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb37-164"><a href="#cb37-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-167"><a href="#cb37-167" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-168"><a href="#cb37-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-169"><a href="#cb37-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-170"><a href="#cb37-170" aria-hidden="true" tabindex="-1"></a>How much of the variance is within and how much is between? We can get a simple answer to this question by examining the **intraclass correlation**, defined as:$$\text{ICC} = \frac{\tau^2}{\tau^2 + \sigma^2}$$where $\tau^2$ is the between-person variance and $\sigma^2$ is the within-person variance.</span>
+<span id="cb37-171"><a href="#cb37-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-172"><a href="#cb37-172" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb37-173"><a href="#cb37-173" aria-hidden="true" tabindex="-1"></a>What is the ICC for <span class="in">`lifeExp`</span>, <span class="in">`pop`</span>, and <span class="in">`gdpPercap`</span> in the <span class="in">`gapminder`</span> dataset?</span>
+<span id="cb37-174"><a href="#cb37-174" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb37-175"><a href="#cb37-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-176"><a href="#cb37-176" aria-hidden="true" tabindex="-1"></a>There are many ways to do this</span>
+<span id="cb37-177"><a href="#cb37-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-178"><a href="#cb37-178" aria-hidden="true" tabindex="-1"></a>**Method 1 (full manual)**</span>
+<span id="cb37-179"><a href="#cb37-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-182"><a href="#cb37-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-183"><a href="#cb37-183" aria-hidden="true" tabindex="-1"></a><span class="do">## Steve's code</span></span>
+<span id="cb37-184"><a href="#cb37-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-185"><a href="#cb37-185" aria-hidden="true" tabindex="-1"></a><span class="co"># BETWEEN VARIANCE</span></span>
+<span id="cb37-186"><a href="#cb37-186" aria-hidden="true" tabindex="-1"></a>b_var <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span></span>
+<span id="cb37-187"><a href="#cb37-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>                            <span class="co"># do calculations separately for ids</span></span>
+<span id="cb37-188"><a href="#cb37-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_lifeExp =</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">|&gt;</span>      <span class="co"># get each id's mean [lifeExp]</span></span>
+<span id="cb37-189"><a href="#cb37-189" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">b_var =</span> <span class="fu">var</span>(mean_lifeExp)) <span class="sc">|&gt;</span>         <span class="co"># get variance of means</span></span>
+<span id="cb37-190"><a href="#cb37-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>()                                    <span class="co"># output as a number</span></span>
+<span id="cb37-191"><a href="#cb37-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-192"><a href="#cb37-192" aria-hidden="true" tabindex="-1"></a>b_var</span>
+<span id="cb37-193"><a href="#cb37-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-194"><a href="#cb37-194" aria-hidden="true" tabindex="-1"></a><span class="co"># WITHIN VARIANCE</span></span>
+<span id="cb37-195"><a href="#cb37-195" aria-hidden="true" tabindex="-1"></a>w_var <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span>                             </span>
+<span id="cb37-196"><a href="#cb37-196" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span>                            <span class="co"># do calculations separately for ids</span></span>
+<span id="cb37-197"><a href="#cb37-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dev_lifeExp =</span> lifeExp <span class="sc">-</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">|&gt;</span><span class="co"># create time devs from each id's mean</span></span>
+<span id="cb37-198"><a href="#cb37-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>                                    <span class="co"># calcs on whole data frame</span></span>
+<span id="cb37-199"><a href="#cb37-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">w_var =</span> <span class="fu">var</span>(dev_lifeExp)) <span class="sc">|&gt;</span>          <span class="co"># get variance of deviations</span></span>
+<span id="cb37-200"><a href="#cb37-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.numeric</span>()                                    <span class="co"># output as number</span></span>
+<span id="cb37-201"><a href="#cb37-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-202"><a href="#cb37-202" aria-hidden="true" tabindex="-1"></a>w_var</span>
+<span id="cb37-203"><a href="#cb37-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-204"><a href="#cb37-204" aria-hidden="true" tabindex="-1"></a><span class="do">## ICC</span></span>
+<span id="cb37-205"><a href="#cb37-205" aria-hidden="true" tabindex="-1"></a>b_var <span class="sc">/</span> (b_var <span class="sc">+</span> w_var)</span>
+<span id="cb37-206"><a href="#cb37-206" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-207"><a href="#cb37-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-208"><a href="#cb37-208" aria-hidden="true" tabindex="-1"></a>**Method 2 (using OLS)**</span>
+<span id="cb37-209"><a href="#cb37-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-212"><a href="#cb37-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-213"><a href="#cb37-213" aria-hidden="true" tabindex="-1"></a>ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(lifeExp <span class="sc">~</span> country, <span class="at">data =</span> gapminder)</span>
+<span id="cb37-214"><a href="#cb37-214" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> (<span class="fu">var</span>(ols<span class="sc">$</span>residuals) <span class="sc">/</span> <span class="fu">var</span>(gapminder<span class="sc">$</span>lifeExp))</span>
+<span id="cb37-215"><a href="#cb37-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-216"><a href="#cb37-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-217"><a href="#cb37-217" aria-hidden="true" tabindex="-1"></a>*Note. Here I took advantage of the fact that `var(gapminder$lifeExp)` is the sum of the between and within variance. If you're curious about this I encourage you to search for "the law of total variance" in probability theory.*</span>
+<span id="cb37-218"><a href="#cb37-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-219"><a href="#cb37-219" aria-hidden="true" tabindex="-1"></a>**Method 3 (using `lmer`)**</span>
+<span id="cb37-220"><a href="#cb37-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-223"><a href="#cb37-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-224"><a href="#cb37-224" aria-hidden="true" tabindex="-1"></a>mlm <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lifeExp <span class="sc">~</span> (<span class="dv">1</span> <span class="sc">|</span> country), <span class="at">data =</span> gapminder, <span class="at">REML =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb37-225"><a href="#cb37-225" aria-hidden="true" tabindex="-1"></a>performance<span class="sc">::</span><span class="fu">icc</span>(mlm)</span>
+<span id="cb37-226"><a href="#cb37-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-227"><a href="#cb37-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-228"><a href="#cb37-228" aria-hidden="true" tabindex="-1"></a>*Excuse me! The results are too different... what gives?*</span>
+<span id="cb37-229"><a href="#cb37-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-230"><a href="#cb37-230" aria-hidden="true" tabindex="-1"></a>*The numbers differ a bit because `lmer()` "shrinks" the estimates of the means towards the population mean a bit (in exchange for better "efficiency"). This issue is outside the scope of this homework, but both results are OK!*</span>
+<span id="cb37-231"><a href="#cb37-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-232"><a href="#cb37-232" aria-hidden="true" tabindex="-1"></a>If you want some intuition of what this "shrinkage" business is all about, I recommend squinting at the following graph:</span>
+<span id="cb37-233"><a href="#cb37-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-236"><a href="#cb37-236" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-237"><a href="#cb37-237" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 15</span></span>
+<span id="cb37-238"><a href="#cb37-238" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb37-239"><a href="#cb37-239" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb37-240"><a href="#cb37-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-241"><a href="#cb37-241" aria-hidden="true" tabindex="-1"></a>pred_ols <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment</span>(ols, <span class="at">newdata =</span> <span class="fu">tibble</span>(<span class="at">country =</span> country_list))</span>
+<span id="cb37-242"><a href="#cb37-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-243"><a href="#cb37-243" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">coefficients</span>(mlm)<span class="sc">$</span>country <span class="sc">|&gt;</span> </span>
+<span id="cb37-244"><a href="#cb37-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"country"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb37-245"><a href="#cb37-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(pred_ols)</span>
+<span id="cb37-246"><a href="#cb37-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-247"><a href="#cb37-247" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> </span>
+<span id="cb37-248"><a href="#cb37-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">lm =</span> <span class="st">".fitted"</span>, <span class="at">lmer =</span> <span class="st">"(Intercept)"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb37-249"><a href="#cb37-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diff =</span> <span class="fu">abs</span>(lm <span class="sc">-</span> lmer)) <span class="sc">|&gt;</span> </span>
+<span id="cb37-250"><a href="#cb37-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">fct_reorder</span>(country, diff)) <span class="sc">|&gt;</span> </span>
+<span id="cb37-251"><a href="#cb37-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> country)) <span class="sc">+</span> </span>
+<span id="cb37-252"><a href="#cb37-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lm, <span class="at">color =</span> <span class="st">"lm"</span>), <span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb37-253"><a href="#cb37-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lmer, <span class="at">color =</span> <span class="st">"lmer"</span>), <span class="at">size =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>) <span class="sc">+</span> </span>
+<span id="cb37-254"><a href="#cb37-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"average lifeExp"</span>, <span class="at">y =</span> <span class="cn">NULL</span>)</span>
+<span id="cb37-255"><a href="#cb37-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb37-256"><a href="#cb37-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-257"><a href="#cb37-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise</span></span>
+<span id="cb37-258"><a href="#cb37-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-259"><a href="#cb37-259" aria-hidden="true" tabindex="-1"></a>*Note. In case you didn't notice, this exercise was taken straight from Steve's `ldar` course materials.*</span>
+<span id="cb37-260"><a href="#cb37-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-263"><a href="#cb37-263" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-264"><a href="#cb37-264" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"WageData"</span>, <span class="at">package =</span> <span class="st">"panelr"</span>)</span>
+<span id="cb37-265"><a href="#cb37-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-266"><a href="#cb37-266" aria-hidden="true" tabindex="-1"></a>WageData <span class="ot">&lt;-</span> WageData <span class="sc">|&gt;</span> </span>
+<span id="cb37-267"><a href="#cb37-267" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb37-268"><a href="#cb37-268" aria-hidden="true" tabindex="-1"></a>    <span class="at">college =</span> <span class="fu">if_else</span>(ed <span class="sc">&gt;=</span> <span class="dv">16</span>, <span class="dv">1</span>L, <span class="dv">0</span>L),  <span class="co"># college variable</span></span>
+<span id="cb37-269"><a href="#cb37-269" aria-hidden="true" tabindex="-1"></a>    <span class="at">t0 =</span> t <span class="sc">-</span> <span class="dv">1</span>                            <span class="co"># start time at 0</span></span>
+<span id="cb37-270"><a href="#cb37-270" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-271"><a href="#cb37-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-272"><a href="#cb37-272" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, <span class="at">data =</span> WageData)</span>
+<span id="cb37-273"><a href="#cb37-273" aria-hidden="true" tabindex="-1"></a>mod2 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> (t0 <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, <span class="at">data =</span> WageData)</span>
+<span id="cb37-274"><a href="#cb37-274" aria-hidden="true" tabindex="-1"></a>mod3 <span class="ot">&lt;-</span> <span class="fu">lmer</span>(lwage <span class="sc">~</span> college <span class="sc">+</span> t0 <span class="sc">+</span> <span class="fu">I</span>(t0<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> (t0 <span class="sc">+</span> <span class="fu">I</span>(t0<span class="sc">^</span><span class="dv">2</span>) <span class="sc">|</span> id), <span class="at">REML =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb37-275"><a href="#cb37-275" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> WageData, </span>
+<span id="cb37-276"><a href="#cb37-276" aria-hidden="true" tabindex="-1"></a>             <span class="do">## I got this part from Stack Overflow, will update if something's wrong</span></span>
+<span id="cb37-277"><a href="#cb37-277" aria-hidden="true" tabindex="-1"></a>             <span class="at">control =</span> <span class="fu">lmerControl</span>(<span class="at">optimizer =</span> <span class="st">'optimx'</span>, <span class="at">optCtrl =</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">'nlminb'</span>)))</span>
+<span id="cb37-278"><a href="#cb37-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-279"><a href="#cb37-279" aria-hidden="true" tabindex="-1"></a><span class="co"># compare BICs</span></span>
+<span id="cb37-280"><a href="#cb37-280" aria-hidden="true" tabindex="-1"></a><span class="fu">BIC</span>(mod1, mod2, mod3)</span>
+<span id="cb37-281"><a href="#cb37-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-282"><a href="#cb37-282" aria-hidden="true" tabindex="-1"></a><span class="co"># get coef</span></span>
+<span id="cb37-283"><a href="#cb37-283" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span>
+<span id="cb37-284"><a href="#cb37-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-285"><a href="#cb37-285" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb37-286"><a href="#cb37-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span>
+<span id="cb37-287"><a href="#cb37-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-288"><a href="#cb37-288" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod2, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb37-289"><a href="#cb37-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span>
+<span id="cb37-290"><a href="#cb37-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-291"><a href="#cb37-291" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod3, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb37-292"><a href="#cb37-292" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span>
+<span id="cb37-293"><a href="#cb37-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
