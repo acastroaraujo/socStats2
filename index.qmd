@@ -42,6 +42,14 @@ These are my personal recommendations for resources to start getting interested 
 
 -   *Theory & Credibility* [@ashworth2021]
 
+**Longitudinal Data Analysis**
+
+-   @rohrer2023
+
+<!-- -->
+
+-   Difference-in-differences: @callaway2021, @goodman-bacon2021
+
 **Advanced Resources:**
 
 -   Mostly Harmless Econometrics [@angrist2009]
