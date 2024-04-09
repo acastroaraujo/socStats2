@@ -114,7 +114,7 @@ $$
 In which we replace the previous table with the following parameter values:
 
 |               |                     |                                         |
-|------------------|-------------------|-----------------------------------|
+|-------------------|-------------------|-----------------------------------|
 |               | **Before**          | **After**                               |
 | **Treated**   | $\beta_0 + \beta_1$ | $\beta_0 + \beta_1 + \beta_2 + \beta_3$ |
 | **Untreated** | $\beta_0$           | $\beta_0 + \beta_2$                     |
@@ -183,15 +183,33 @@ See *dynamic treatment effects* and *staggered difference-in-differences* for di
 
 ## Exercise
 
+```{r}
+#| message: false
+#| code-summary: "Packages and Setup"
+#| code-fold: true
+
+## Packages
+
+library(tidyverse)
+library(modelsummary)
+library(fixest)
+
+## Additional
+
+msummary <- function(...) {
+  modelsummary::msummary(..., output = "gt") |> 
+  gt::opt_table_font(font = "Optima") |> 
+  gt::tab_options(quarto.disable_processing = TRUE)
+}
+
+theme_set(theme_light(base_family = "Optima"))
+
+```
+
 **Load Data**
 
 ```{r}
 #| message: false
-
-library(tidyverse)
-theme_set(theme_light(base_family = "Optima"))
-library(modelsummary)
-library(fixest)
 
 url <- "https://raw.githubusercontent.com/NickCH-K/TheEffectAssignments/main/sourdough_trends.csv"
 
@@ -229,7 +247,7 @@ m1 <- lm(
   data = filter(sr, date < as.Date("2020-03-15"))
 )
 
-modelsummary(
+msummary(
   models = m1, 
   coef_map = "time:Treated",
   gof_map = "none", 
@@ -244,7 +262,7 @@ m2 <- lm(
   data = filter(sr_sub, date < as.Date("2020-03-15"))
 )
 
-modelsummary(
+msummary(
   models = list(m1, m2), 
   coef_map = "time:Treated",
   gof_map = "none",
@@ -284,7 +302,7 @@ twfe <- feols(
   data = sr_sub
 )
 
-modelsummary(twfe, gof_map = "none")
+msummary(twfe, gof_map = "none")
 ```
 
 *Note. You could have gone the same point-estimate (different standard error) using OLS:*
@@ -305,6 +323,6 @@ dynamic <- feols(
   data = sr_sub
 )
 
-modelsummary(dynamic)
+msummary(dynamic)
 coefplot(dynamic)
 ```
