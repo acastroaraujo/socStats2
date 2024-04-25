@@ -3,11 +3,7 @@ title: "Glossary"
 number-sections: false
 ---
 
-*Joint Submission.*
-
-*My comments are in the shaded boxes.*
-
-------------------------------------------------------------------------
+*Joint Submission. My comments are in the shaded boxes.*
 
 ## Estimand
 
@@ -403,6 +399,7 @@ The parallel trends assumption assumes that, during the measurement period, the 
 
 Note: The parallel trends assumption cannot be directly tested, but looking at prior trends can be useful for determining if the assumption is likely to be true.
 
+::: box-text-custom
 ```{r}
 #| code-fold: true
 #| label: fig-parallel-trends
@@ -433,6 +430,7 @@ tibble(
         panel.grid = element_blank()) + 
   annotate("text", x = 2.2, y = 2.5, label = latex2exp::TeX(r"($E[d^1 - d^0]$)"), family = "Crimson Text")
 ```
+:::
 
 ### Two-Way Fixed Effects (TWFE) 
 
