@@ -43,15 +43,15 @@ For example, in the case of a **binary** treatment, the potential outcomes frame
 -   When $T=0$, $Y^1$ is the *counterfactual.*
 :::
 
-## Theoretical Estimand 
+## Theoretical Estimand
 
 This is the actual thing we would like to know in our research question. The two components of the theoretical estimand are the unit-specific quantity and the target population. The theoretical estimand includes both observed and unobserved data (including counterfactuals).
 
-## Empirical Estimand 
+## Empirical Estimand
 
 The empirical estimand is the target of inference that only includes observable data and relies on identification assumptions.
 
-## Causal Interaction 
+## Causal Interaction
 
 A causal interaction is the intervention to two variables averaged over one population. In other words, the effect of one variable on the outcome is related to the effect of another.
 
@@ -72,14 +72,14 @@ For example, if the ~~control variable~~ covariate is $X$, the CATE can be writt
 ::: box-text-custom
 Note.
 
-The word "control" has some baggage because it has the connotation that we can somehow manipulate $X$. Usually we'd want to include variables like "gender" or "race" here.
+The word "control" has some baggage because it has the connotation that we can somehow manipulate $X$. Here, we'd usually want to condition on variables like "gender" or "race."
 :::
 
-## Average Treatment Effect on the Treated (ATT) 
+## Average Treatment Effect on the Treated (ATT)
 
 The average treatment effect, calculated only from the treatment group. To conceptualize the ATT, imagine *taking away* treatment from those who were treated and measuring the change.
 
-## Average Treatment Effect on the Untreated (ATU) 
+## Average Treatment Effect on the Untreated (ATU)
 
 The average treatment effect, calculated only from the untreated group. To conceptualize the ATU, imagine *giving* the treatment to those who were not treated and measuring the change.
 
@@ -87,7 +87,7 @@ The average treatment effect, calculated only from the untreated group. To conce
 
 A measurement or outcome that pertains to an individual unit or subject in a study, often used in contexts where the effect of a treatment may vary from one unit to another.
 
-## Treatment Effect Heterogeneity 
+## Treatment Effect Heterogeneity
 
 When a treatment has different effects on a population.
 
@@ -191,7 +191,7 @@ An often unacknowledged way of adjusting for colliders is during the sample sele
 
 A path on a causal diagram in which there is variation in all variables along the path (and no variation in any colliders on that path).
 
-### Closed Path 
+### Closed Path
 
 A path on a causal diagram in which one or more variables has no variation.
 
@@ -212,7 +212,7 @@ In order to make causal interpretations of regression coefficients we rely very 
 
 **Translating DAGs into Regression**
 
-![Flow Chart For Constructing Regression Equations [@huntington-klein2021, pp. 199]](images/reg-chart.png){#fig-reg-chart alt="Flow Chart For Constructing Regression Equations [@huntington-klein2021, pp. 199]" fig-align="center" width="70%"}
+![Flow Chart For Constructing Regression Equations \[\@huntington-klein2021, pp. 199\]](images/reg-chart.png){#fig-reg-chart fig-align="center" width="70%"}
 :::
 
 ## Matching and Weighting
@@ -319,7 +319,6 @@ In the workflow of propensity score matching and weighting, a key step is to ver
 Note: The convention we’ve been operating under is that the standardized difference in means between the treatment and control groups for each variable is \< 0.1 (1/10th of a standard deviation).
 
 ::: box-text-custom
-
 ![](images/workflow.png){fig-align="center" width="70%"}
 :::
 
@@ -341,7 +340,7 @@ A method of covariate balancing that seeks to balance on mean (like SMDs), varia
 
 In long-form data, each row is a "unit-observation," meaning that each row is exactly one observation. Thus, if person A is observed four times, her data will be stored in four separate rows.
 
-### Wide-Form Data 
+### Wide-Form Data
 
 In wide-form data, each row contains all of the observations for that *one specific* unit. Thus, if person A is observed four times, her data will be stored in only one row.
 
@@ -383,7 +382,7 @@ If the purpose of **matching/weighting** is to get rid of all observable confoun
 *Note. Fixed Effects are also Mixed Models.*
 :::
 
-## Difference-in-Differences 
+## Difference-in-Differences
 
 A simple difference-in-differences test compares the amounts that the treated and control groups change at time 1 and time 2. The equation for calculating a difference-in-differences reads as follows:
 
@@ -393,7 +392,7 @@ DiD = (Treated Time 2 - Treated Time 1) - (Untreated Time 2 - Untreated Time 1)
 
 Note: The DiD calculation relies on the parallel trends assumption.
 
-### Parallel Trends Assumption 
+### Parallel Trends Assumption
 
 The parallel trends assumption assumes that, during the measurement period, the treated and untreated groups would have changed in similar ways if the treated group did not receive treatment.
 
@@ -432,7 +431,7 @@ tibble(
 ```
 :::
 
-### Two-Way Fixed Effects (TWFE) 
+### Two-Way Fixed Effects (TWFE)
 
 The TWFE model is a way of isolating confounding effects in order to focus only on the within-subject treatment effect. Specifically, the TWFE model holds constant the effect of the individual and also holds constant the effect of time, therefore adjusting for both.
 
@@ -444,7 +443,7 @@ The TWFE difference-in-differences estimator refers to the coefficients learned 
 
 A method of estimating the parameters in a linear regression model. OLS chooses the parameters that minimize the sum of the squared differences between the observed values and the values predicted by the model.
 
-## Bootstrapping 
+## Bootstrapping
 
 Bootstrapping is a statistical technique in which a single data set is sampled and resampled in order to run simulations and pull samples to account for random error.
 
@@ -501,7 +500,9 @@ ols <- lm(y ~ splines::bs(x, df = 10), data = d)
 broom::tidy(ols)
 ```
 
-We then the predictions by using the various columns of `B` instead of using `x` directly.
+We then get the predictions by using the various columns of `B` instead of using `x` directly.
+
+*Note. The overlap in the small "hills" shown in the previous figure means that each is in reality a weighted sum.*
 
 ```{r}
 alpha <- ols$coefficients[1]
@@ -515,5 +516,5 @@ d |>
   geom_line(aes(y = pred), color = "red", linewidth = 1)
 ```
 
-In a causal inference context, we would want to do this when we have a covariate that interacts with the treatment in ways that are simply not captured by adding a quadratic term.
+In a causal inference context, we would want to do this when we have a covariate that interacts with the treatment in ways that are simply not captured by adding a quadratic term. This is one situation in which **marginal effects** come in handy.
 :::
