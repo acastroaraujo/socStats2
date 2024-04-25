@@ -353,6 +353,18 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sec-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -836,36 +848,41 @@ mod3 11 -1996.860</code></pre>
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get coef</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by maximum likelihood  ['lmerMod']
-Formula: lwage ~ college + t0 + (1 | id)
+Formula: lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id)
    Data: WageData
+Control: lmerControl(optimizer = "optimx", optCtrl = list(method = "nlminb"))
 
      AIC      BIC   logLik deviance df.resid 
- -1605.8  -1574.1    807.9  -1615.8     4160 
+ -2066.5  -1996.9   1044.3  -2088.5     4154 
 
 Scaled residuals: 
      Min       1Q   Median       3Q      Max 
--11.7145  -0.3543   0.0322   0.4068  12.6683 
+-13.5294  -0.3002   0.0237   0.3372  14.1080 
 
 Random effects:
- Groups   Name        Variance Std.Dev.
- id       (Intercept) 0.12694  0.3563  
- Residual             0.02356  0.1535  
+ Groups   Name        Variance  Std.Dev. Corr       
+ id       (Intercept) 1.159e-01 0.34038             
+          t0          5.175e-03 0.07194   0.08      
+          I(t0^2)     8.817e-05 0.00939  -0.19 -0.87
+ Residual             1.611e-02 0.12694             
 Number of obs: 4165, groups:  id, 595
 
 Fixed effects:
-            Estimate Std. Error t value
-(Intercept) 6.288711   0.017731  354.68
-college     0.353487   0.033183   10.65
-t0          0.096933   0.001189   81.51
+             Estimate Std. Error t value
+(Intercept)  6.281924   0.017114 367.065
+college      0.312154   0.032143   9.712
+t0           0.118664   0.004612  25.729
+I(t0^2)     -0.003622   0.000686  -5.280
 
 Correlation of Fixed Effects:
-        (Intr) colleg
-college -0.513       
-t0      -0.201  0.000</code></pre>
+        (Intr) colleg t0    
+college -0.515              
+t0      -0.115  0.000       
+I(t0^2)  0.052  0.000 -0.924</code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -1637,7 +1654,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb37-280"><a href="#cb37-280" aria-hidden="true" tabindex="-1"></a><span class="fu">BIC</span>(mod1, mod2, mod3)</span>
 <span id="cb37-281"><a href="#cb37-281" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-282"><a href="#cb37-282" aria-hidden="true" tabindex="-1"></a><span class="co"># get coef</span></span>
-<span id="cb37-283"><a href="#cb37-283" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span>
+<span id="cb37-283"><a href="#cb37-283" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod3)</span>
 <span id="cb37-284"><a href="#cb37-284" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-285"><a href="#cb37-285" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpredict</span>(mod1, <span class="at">terms =</span> <span class="fu">c</span>(<span class="st">"t0 [all]"</span>, <span class="st">"id [sample = 9]"</span>), <span class="at">type =</span> <span class="st">"random"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb37-286"><a href="#cb37-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span>

@@ -1343,7 +1343,7 @@
     "href": "solutions10.html#exercise-3",
     "title": "21  Solutions 10",
     "section": "21.4 Exercise",
-    "text": "21.4 Exercise\nNote. In case you didn’t notice, this exercise was taken straight from Steve’s ldar course materials.\n\n\nCode\ndata(\"WageData\", package = \"panelr\")\n\nWageData &lt;- WageData |&gt; \n  mutate(\n    college = if_else(ed &gt;= 16, 1L, 0L),  # college variable\n    t0 = t - 1                            # start time at 0\n  )\n\nmod1 &lt;- lmer(lwage ~ college + t0 + (1 | id), REML = FALSE, data = WageData)\nmod2 &lt;- lmer(lwage ~ college + t0 + (t0 | id), REML = FALSE, data = WageData)\nmod3 &lt;- lmer(lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id), REML = FALSE, \n             data = WageData, \n             ## I got this part from Stack Overflow, will update if something's wrong\n             control = lmerControl(optimizer = 'optimx', optCtrl = list(method = 'nlminb')))\n\n\nLoading required namespace: optimx\n\n\nCode\n# compare BICs\nBIC(mod1, mod2, mod3)\n\n\n     df       BIC\nmod1  5 -1574.123\nmod2  7 -1930.822\nmod3 11 -1996.860\n\n\nCode\n# get coef\nsummary(mod1)\n\n\nLinear mixed model fit by maximum likelihood  ['lmerMod']\nFormula: lwage ~ college + t0 + (1 | id)\n   Data: WageData\n\n     AIC      BIC   logLik deviance df.resid \n -1605.8  -1574.1    807.9  -1615.8     4160 \n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-11.7145  -0.3543   0.0322   0.4068  12.6683 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n id       (Intercept) 0.12694  0.3563  \n Residual             0.02356  0.1535  \nNumber of obs: 4165, groups:  id, 595\n\nFixed effects:\n            Estimate Std. Error t value\n(Intercept) 6.288711   0.017731  354.68\ncollege     0.353487   0.033183   10.65\nt0          0.096933   0.001189   81.51\n\nCorrelation of Fixed Effects:\n        (Intr) colleg\ncollege -0.513       \nt0      -0.201  0.000\n\n\nCode\nggpredict(mod1, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()\n\n\n\n\n\n\n\n\n\nCode\nggpredict(mod2, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()\n\n\n\n\n\n\n\n\n\nCode\nggpredict(mod3, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()",
+    "text": "21.4 Exercise\nNote. In case you didn’t notice, this exercise was taken straight from Steve’s ldar course materials.\n\n\nCode\ndata(\"WageData\", package = \"panelr\")\n\nWageData &lt;- WageData |&gt; \n  mutate(\n    college = if_else(ed &gt;= 16, 1L, 0L),  # college variable\n    t0 = t - 1                            # start time at 0\n  )\n\nmod1 &lt;- lmer(lwage ~ college + t0 + (1 | id), REML = FALSE, data = WageData)\nmod2 &lt;- lmer(lwage ~ college + t0 + (t0 | id), REML = FALSE, data = WageData)\nmod3 &lt;- lmer(lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id), REML = FALSE, \n             data = WageData, \n             ## I got this part from Stack Overflow, will update if something's wrong\n             control = lmerControl(optimizer = 'optimx', optCtrl = list(method = 'nlminb')))\n\n\nLoading required namespace: optimx\n\n\nCode\n# compare BICs\nBIC(mod1, mod2, mod3)\n\n\n     df       BIC\nmod1  5 -1574.123\nmod2  7 -1930.822\nmod3 11 -1996.860\n\n\nCode\n# get coef\nsummary(mod3)\n\n\nLinear mixed model fit by maximum likelihood  ['lmerMod']\nFormula: lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id)\n   Data: WageData\nControl: lmerControl(optimizer = \"optimx\", optCtrl = list(method = \"nlminb\"))\n\n     AIC      BIC   logLik deviance df.resid \n -2066.5  -1996.9   1044.3  -2088.5     4154 \n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-13.5294  -0.3002   0.0237   0.3372  14.1080 \n\nRandom effects:\n Groups   Name        Variance  Std.Dev. Corr       \n id       (Intercept) 1.159e-01 0.34038             \n          t0          5.175e-03 0.07194   0.08      \n          I(t0^2)     8.817e-05 0.00939  -0.19 -0.87\n Residual             1.611e-02 0.12694             \nNumber of obs: 4165, groups:  id, 595\n\nFixed effects:\n             Estimate Std. Error t value\n(Intercept)  6.281924   0.017114 367.065\ncollege      0.312154   0.032143   9.712\nt0           0.118664   0.004612  25.729\nI(t0^2)     -0.003622   0.000686  -5.280\n\nCorrelation of Fixed Effects:\n        (Intr) colleg t0    \ncollege -0.515              \nt0      -0.115  0.000       \nI(t0^2)  0.052  0.000 -0.924\n\n\nCode\nggpredict(mod1, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()\n\n\n\n\n\n\n\n\n\nCode\nggpredict(mod2, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()\n\n\n\n\n\n\n\n\n\nCode\nggpredict(mod3, terms = c(\"t0 [all]\", \"id [sample = 9]\"), type = \"random\") |&gt; \n  plot()",
     "crumbs": [
       "Solutions",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Solutions 10</span>"
@@ -1387,7 +1387,7 @@
     "href": "solutions11.html#exercise-2",
     "title": "22  Solutions 11",
     "section": "22.3 Exercise",
-    "text": "22.3 Exercise\n\nConsider a treatment and control group. Looking only at the pre-treatment period, they have exactly the same outcomes (zero gap between them in each period).\na. Despite having exactly the same outcomes pre-treatment, it happens to be the case that parallel trends is violated for these two groups. How is this possible? Explain what it means for parallel trends to be violated in this case, or give an example of how it could be violated.\n\nThe fact that pre-treatment outcomes coincide does not guarantee that the parallel trends assumption holds. It could be that the observed outcomes were just the same by coincidence, but that they were always set on different paths.\nFor example, think about the heights of children before and after puberty (the “treatment” can be something like growth hormones). In the absence of “treatment,” do we have reason to believe that they will grow exactly the same even if they share the same baseline?\n\nb. If we estimate the causal effect in this case using difference-in-differences, even though parallel trends is violated, how much would our effect be off by? (note you won’t be able to give a specific number)\n\nThe answer depends on how wrong is the parallel trends assumption. We will be off by the total (potential) change minus the treatment effect.",
+    "text": "22.3 Exercise\n\nConsider a treatment and control group. Looking only at the pre-treatment period, they have exactly the same outcomes (zero gap between them in each period).\na. Despite having exactly the same outcomes pre-treatment, it happens to be the case that parallel trends is violated for these two groups. How is this possible? Explain what it means for parallel trends to be violated in this case, or give an example of how it could be violated.\n\nThe fact that pre-treatment outcomes coincide does not guarantee that the parallel trends assumption holds. It could be that the observed outcomes were just the same by coincidence, but that they were always set on different paths.\nFor example, think about the heights of children before and after puberty (the “treatment” can be something like growth hormones). In the absence of “treatment,” do we have reason to believe that they will grow exactly the same even if they share the same baseline?\n\nb. If we estimate the causal effect in this case using difference-in-differences, even though parallel trends is violated, how much would our effect be off by? (note you won’t be able to give a specific number)\n\nThe answer depends on how wrong is the parallel trends assumption. We will be off by the total change minus the treatment effect.\n\nEdit:\nI realize my wording here is a little confusing. My apologies.\nSuppose that the actual causal effect is zero.\nThis means that our diff-in-diff estimate will be equal to the following formula if and only if the parallel trends assumption holds:\n\\[\n0 = \\underbrace{(Y^\\text{treated}_{t = 1} - Y^\\text{treated}_{t = 0})}_{\\Delta Y^\\text{treated}} - \\underbrace{(Y^\\text{untreated}_{t = 1} - Y^\\text{untreated}_{t = 0})}_{\\Delta Y^\\text{untreated}}\n\\]\nThis means that we will overestimate the effect when the change in the treated group is larger than the change in the untreated groups for reasons other than the actual treatment.\n\\[\n\\Delta Y^\\text{untreated} &lt; \\Delta Y^\\text{treated}\n\\]\nAnd we will underestimate the effect when the opposite holds true.\n\\[\n\\Delta Y^\\text{untreated} &gt; \\Delta Y^\\text{treated}\n\\]",
     "crumbs": [
       "Solutions",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Solutions 11</span>"
@@ -1398,7 +1398,7 @@
     "href": "solutions11.html#exercise-3",
     "title": "22  Solutions 11",
     "section": "22.4 Exercise",
-    "text": "22.4 Exercise\n\nConsider the below graph showing the average outcome for treated and control groups in the lead up to treatment (indicated by the dashed line), and also after treatment\n\n\n\n\n\n\n\n\nBased on the prior trend, does it seem likely that parallel trends holds in this instance?\n\n\nNo! They are clearly very different.\n\n\nIf we estimate difference-in-differences anyway, are we likely to overestimate the actual causal effect, underestimate it, or get it right on average?\n\n\nUnderestimate!",
+    "text": "22.4 Exercise\n\nConsider the below graph showing the average outcome for treated and control groups in the lead up to treatment (indicated by the dashed line), and also after treatment\n\n\n\n\n\n\n\n\nBased on the prior trend, does it seem likely that parallel trends holds in this instance?\n\n\nNo! They are clearly very different.\n\n\nIf we estimate difference-in-differences anyway, are we likely to overestimate the actual causal effect, underestimate it, or get it right on average?\n\n\nUnderestimate!\n\nEdit:\nNote that the slope for the untreated group is steeper than the slope for the treated group. As mentioned in the previous edit, we are likely to underestimate the effect when \\(\\Delta Y^\\text{untreated} &gt; \\Delta Y^\\text{treated}\\) for reasons other than the actual treatment.",
     "crumbs": [
       "Solutions",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Solutions 11</span>"
@@ -1468,6 +1468,366 @@
     "crumbs": [
       "Solutions",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Solutions 11</span>"
+    ]
+  },
+  {
+    "objectID": "sec-summary.html",
+    "href": "sec-summary.html",
+    "title": "23  Topics",
+    "section": "",
+    "text": "What is your estimand?\n\nestimands, estimators, estimates\n\nIdentification and causal diagrams\n\nfront doors\nback doors\ncolliders\npost-treatment bias\n\nMultiple regression and adjustment\n\nintepreting effect sizes\nusing marginaleffects\nfunctional form considerations\n\nMatching and weighting\n\nexact matching\npropensity scores (parametric and semi-parametric)\nnearest neighbor matching on the propensity score for ATT\nweighting using propensity scores for ATT and ATE\nweighting using non-propensity methods for ATT and ATE\n\nPanel data concepts\n\nwithin and between variance\nvariance components\nICC calculation\n\nMixed model for time-constant treatments\n\nadvantages over linear regression\nrandom growth curve models\nshrinkage\n\nWithin-subject models\n\nadvantages for estimating counterfactuals\ndisadvantages for generalization\npre-post\ntwo-period difference-in-differences\ntwo-way fixed effects\n\nWithin-between / correlated random effects models\n\nsplitting variables\ncombining strengths of mixed- and within-subject models\ninterpreting within, between, and contextual coefficients",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Topics</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Estimand\nThe parameter or quantity of interest that one aims to estimate in a statistical analysis. It defines what effect or measure is being targeted by the analysis, specifying how it relates to the variables and data involved.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#counterfactual",
+    "href": "glossary.html#counterfactual",
+    "title": "Glossary",
+    "section": "Counterfactual",
+    "text": "Counterfactual\nThe counterfactual compares the observed results of something that did happen to the expected results if the treatment had not happened.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#potential-outcomes",
+    "href": "glossary.html#potential-outcomes",
+    "title": "Glossary",
+    "section": "Potential Outcomes",
+    "text": "Potential Outcomes\nThe set of all possible outcomes for each individual in a study, under each possible treatment or intervention scenario. These outcomes reflect what could happen to each individual under different conditions.\n\nNote.\nI think it’s better to think of “potential outcomes.”\nFor example, in the case of a binary treatment, the potential outcomes framework involves the following:\n\n\\(T\\) is a treatment variable. The terms “treatment” and “cause” are used interchangeably.\n\\(Y\\) is the outcome we observe.\n\\(Y^0\\) is the the value the outcome would take if \\(T=0\\).\n\\(Y^1\\) is the value the outcome would take if \\(T=1\\).\n\\(Y^0\\) and \\(Y^1\\) are the potential outcomes.\nWe see \\(Y^0\\) or \\(Y^1\\) for the same unit, but never both.\nThis is the fundamental problem of causal inference.\nWhen \\(T=1\\), \\(Y^0\\) is the counterfactual.\nWhen \\(T=0\\), \\(Y^1\\) is the counterfactual.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#theoretical-estimand",
+    "href": "glossary.html#theoretical-estimand",
+    "title": "Glossary",
+    "section": "Theoretical Estimand",
+    "text": "Theoretical Estimand\nThis is the actual thing we would like to know in our research question. The two components of the theoretical estimand are the unit-specific quantity and the target population. The theoretical estimand includes both observed and unobserved data (including counterfactuals).",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#empirical-estimand",
+    "href": "glossary.html#empirical-estimand",
+    "title": "Glossary",
+    "section": "Empirical Estimand",
+    "text": "Empirical Estimand\nThe empirical estimand is the target of inference that only includes observable data and relies on identification assumptions.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#causal-interaction",
+    "href": "glossary.html#causal-interaction",
+    "title": "Glossary",
+    "section": "Causal Interaction",
+    "text": "Causal Interaction\nA causal interaction is the intervention to two variables averaged over one population. In other words, the effect of one variable on the outcome is related to the effect of another.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#baseline-bias",
+    "href": "glossary.html#baseline-bias",
+    "title": "Glossary",
+    "section": "Baseline Bias",
+    "text": "Baseline Bias\nWhen the treatment and the control group differ from one another for reasons other than the treatment they receive.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#average-treatment-effect-ate",
+    "href": "glossary.html#average-treatment-effect-ate",
+    "title": "Glossary",
+    "section": "Average Treatment Effect (ATE)",
+    "text": "Average Treatment Effect (ATE)\nThe average treatment effect across the population. In other words, this is the effect of switching treatment statuses (e.g., from either treatment to control or from control to treatment).",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#conditional-average-treatment-effect-cate",
+    "href": "glossary.html#conditional-average-treatment-effect-cate",
+    "title": "Glossary",
+    "section": "Conditional Average Treatment Effect (CATE)",
+    "text": "Conditional Average Treatment Effect (CATE)\nThe average treatment effect among a specific group as defined by certain control variables covariates.\nFor example, if the control variable covariate is \\(X\\), the CATE can be written as \\(E(Y^1-Y^0 \\mid X = x)\\).\n\nNote.\nThe word “control” has some baggage because it has the connotation that we can somehow manipulate \\(X\\). Usually we’d want to include variables like “gender” or “race” here.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#average-treatment-effect-on-the-treated-att",
+    "href": "glossary.html#average-treatment-effect-on-the-treated-att",
+    "title": "Glossary",
+    "section": "Average Treatment Effect on the Treated (ATT)",
+    "text": "Average Treatment Effect on the Treated (ATT)\nThe average treatment effect, calculated only from the treatment group. To conceptualize the ATT, imagine taking away treatment from those who were treated and measuring the change.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#average-treatment-effect-on-the-untreated-atu",
+    "href": "glossary.html#average-treatment-effect-on-the-untreated-atu",
+    "title": "Glossary",
+    "section": "Average Treatment Effect on the Untreated (ATU)",
+    "text": "Average Treatment Effect on the Untreated (ATU)\nThe average treatment effect, calculated only from the untreated group. To conceptualize the ATU, imagine giving the treatment to those who were not treated and measuring the change.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#unit-specific-quantity",
+    "href": "glossary.html#unit-specific-quantity",
+    "title": "Glossary",
+    "section": "Unit-Specific Quantity",
+    "text": "Unit-Specific Quantity\nA measurement or outcome that pertains to an individual unit or subject in a study, often used in contexts where the effect of a treatment may vary from one unit to another.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#treatment-effect-heterogeneity",
+    "href": "glossary.html#treatment-effect-heterogeneity",
+    "title": "Glossary",
+    "section": "Treatment Effect Heterogeneity",
+    "text": "Treatment Effect Heterogeneity\nWhen a treatment has different effects on a population.\nFor, example, a treatment for cervical cancer will have heterogeneous effects on people with cervixes versus people without cervixes, even if both groups in the population receive identical treatments. This is because people without cervixes will receive no treatment effect from drugs that target an organ they do not have.\n\n\nNote.\nThis is an extreme example. You’d usually want to remove men from design (i.e., not administering the treatment to people without cervixes).\nIn a less extreme example, the treatment for cervical cancer could have varying effects across women belonging to different age groups.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#directed-acyclic-graph-dag",
+    "href": "glossary.html#directed-acyclic-graph-dag",
+    "title": "Glossary",
+    "section": "Directed Acyclic Graph (DAG)",
+    "text": "Directed Acyclic Graph (DAG)\nA tool used to depict the data-generating process with nodes to represent the variable and the arrows to represent the causal relationships.\n\nCausal diagrams or DAGs are graphical representations of a data generating process. Everything we draw is hopefully an informed assumption; everything that’s not in the diagram is also an assumption. In other words, DAGs encode identifying assumptions.\nThe idea of a directed acyclical graph (DAG) implies that there are no cycles. If a variable causes itself, it’s near impossible to isolate or identifying the cause of anything. The world is full with feedback loops of all sorts, but we deal with them through the incorporation of time or by isolating one effect through some kind of experimental scenario.\nNote that DAGs are agnostic about functional form. This includes interactions among variables! Some people deal with interactions by drawing arrows toward arrows or by representing interactions explicitly as separate nodes.\nThe nicest thing about DAGs is that they help us spell out the testable implications of our assumptions. For example, if our causal diagram implies that a relationship between variables is zero, we can check for that.\n\n\nUnobserved / Unmeasured Variable\nA variable that may be present in the researcher’s assumptions about how the world works, but that is not addressed or available in the data.\n\nNote.\nIn a DAG, these variables are usually depicted by being enclosed within a circle.\n\n\n\nPath\nA path is simply the steps from one variable to another on a causal diagram.\nFor example, \\(A \\to B \\to C\\) is a path.\n\n\nDirect Effects\nThe effect of only the treatment variable on the outcome variable.\n\n\nIndirect Effects\nThe portion of the change in an outcome that is mediated through one or more intermediate variables, reflecting the causal influence exerted through these mediating variables.\n\n\nTotal Effects\nThe sum of direct and indirect effects.\n\n\nFront-Door Path\nA causal path in which all of the arrows in the causal diagram point from the treatment variable and towards the outcome variable.\n\n\nBack-Door Path\nThe rest of the paths on a causal diagram [connecting treatment to outcome] that are not front-door paths.\n\n\nConfounding Variable\nA variable that affects both the treatment and outcome variables.\nNote: Not adjusting for a confounding variable threatens the causal relationship between the treatment and outcome variables.\n\n\nNote.\nThe expression “threatens the causal relationship” is vague and clunky. A better way to say this is that the causal effect is not identified when we don’t adjust for confounding paths.\nAn even better way to talk about confounding is to realize that “confounding” is a property of paths, it’s NOT a property of variables.\n\n\n\nCollider Variable\nA variable in a DAG that is influenced by two or more other variables. Conditioning on a collider can open a confounding path, inadvertently introducing bias into the analysis.\n\nA variable is a collider in a path iff both arrows point at it.\n\\[\na \\to b \\to c_\\text{ollider} \\leftarrow d \\leftarrow e \\to f\n\\]\nHere, \\(b\\) and \\(c\\) are unrelated unless we remove variation in \\(c\\) (e.g., by including it in a regression).\nWe close paths by removing variation from one variable along the path (i.e., adjusting); but if the variable is a collider, then removing variation will actually open a path that was already closed.\nAn often unacknowledged way of adjusting for colliders is during the sample selection phase. If we have a sample of college students, it means we are adjusting for college attendance.\n\n\n\nOpen Path\nA path on a causal diagram in which there is variation in all variables along the path (and no variation in any colliders on that path).\n\n\nClosed Path\nA path on a causal diagram in which one or more variables has no variation.\nNote: A path is also considered closed if there is a collider variable present on that path.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#regression",
+    "href": "glossary.html#regression",
+    "title": "Glossary",
+    "section": "Regression",
+    "text": "Regression\nRegression focuses on estimating the effect of variables on an outcome through a mathematical model, assuming a specific form of relationship.\n\nNote.\nThis is NOT a good definition!!\nIn the usual context of regression, predictive inference relates to comparisons between units. In the context of causal inference, we attempt to make comparisons of different treatments as if applied to the same units.\nIn order to make causal interpretations of regression coefficients we rely very strong assumptions. In short, causal effects can be estimated with regression if the model includes all confounding variables and if the “functional form” is correct.\nTranslating DAGs into Regression\n\n\n\n\n\n\nFigure 24.1: Flow Chart For Constructing Regression Equations (Huntington-Klein 2021, p. 199)",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#matching-and-weighting",
+    "href": "glossary.html#matching-and-weighting",
+    "title": "Glossary",
+    "section": "Matching and Weighting",
+    "text": "Matching and Weighting\nMatching and weighting seeks to identify the treatment effect by adjusting for selection into treatment by comparing similar treatment and control cases based on certain attributes.\nNote: This is distinct from regression, which adjusts for variables that impact the outcome.\n\nBoth regression and matching/weighting are strategies to close the backdoor path between \\(T\\) and \\(Y\\). Both are conditional on observable covariates. However, matching/weighting provides a way to model treatment selection so that everyone looks the same on the pre-treatment covariates.\nMatching/weighting refers to a set of procedures that modify the original sample in preparation for a statistical analysis. It’s a form of data pre-processing. The goal is to create a sample that looks like it was created from a randomized experiment.\nHere are some benefits of matching/weighting procedures:\n\nThey are less restrictive about functional form than regression. We rely less on parametric assumptions. The intuition is the same as with an experiment: if we can create sufficient overlap and balance between treatment and control groups, then we should get a reasonable estimate of the treatment effect, even if the model used to estimate it is misspecified.\nRegression models on pre-processed data gives us two opportunities to close backdoor paths (i.e., “double robustness”).",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#exact-matching",
+    "href": "glossary.html#exact-matching",
+    "title": "Glossary",
+    "section": "Exact Matching",
+    "text": "Exact Matching\nExact matching compares treatment and control cases that have exactly identical characteristics on a certain combination of variables. In this way, treatment cases are matched to control cases that share the exact same distribution of values for the matching variable(s) of interest, making the only difference between them is treatment status.\nThe three assumptions for exact matching are as follows:\n\nSelection of variables-conditional independence assumption.\nOverlap (any individual case has a non-zero probability of treatment).\nStable unit treatment value assumption (SUTVA; treatment status and effect of treatment is independent for each case).\n\n\n\nNote.\nThese assumptions are NOT unique to matching.\nA better discussion of overlap can be found here or in one of the textbooks.\nThis brief discussion from the MatchIt vignette is also useful:\nhttps://kosukeimai.github.io/MatchIt/articles/matching-methods.html#exact-matching-method-exact",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#conditional-independence-assumption-cia",
+    "href": "glossary.html#conditional-independence-assumption-cia",
+    "title": "Glossary",
+    "section": "Conditional Independence Assumption (CIA)",
+    "text": "Conditional Independence Assumption (CIA)\nThe conditional independence assumption asserts that two events occur independent of one another (i.e., the two events do not influence one another).\n\nThe CIA (also known as “conditional ignorability” assumption) builds on the more general idea of ignorability.\nExperiments work because they make the distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator are independent.\n\\[\nY^0, Y^1 \\perp T\n\\]\nHere, the \\(\\perp\\) symbol means independent.\nThe CIA is a necessary assumption we make when using both regression and matching/weighting to identify a causal effect.\nInstead of a simple independence assumption that we have for randomized experiments, we now have to rely on a conditional ignorability. Just like in the case of experiments, we want distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator should be independent, conditional on the covariates \\(\\boldsymbol{X}\\) used in the analysis.\n\\[\nY^0, Y^1 \\perp T \\mid \\boldsymbol X\n\\]\nHere, \\(\\boldsymbol{X}\\) is meant to depict a collection of variables that will close the back-door path.\nThis strategy will get more complicated as the vector \\(\\boldsymbol X\\) grows in size.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#region-of-common-support",
+    "href": "glossary.html#region-of-common-support",
+    "title": "Glossary",
+    "section": "Region of Common Support",
+    "text": "Region of Common Support\nThis is the assumption that either for distribution of a matching variable (in exact matching) or for distribution of propensity scores (in weighting), there are both treatment and control cases. If there is overlap, this is known as the region of common support. If there is not overlap in the distributions, that is “off support” and makes causal inference a little more tricky.\n\nNote.\nWhat makes it “tricky” is that we don’t have direct support from the data to estimate the relevant counterfactuals—e.g., regression will just extrapolate.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#feasible-estimate-of-treatment-effects",
+    "href": "glossary.html#feasible-estimate-of-treatment-effects",
+    "title": "Glossary",
+    "section": "Feasible Estimate of Treatment Effects",
+    "text": "Feasible Estimate of Treatment Effects\nWhen calculating a treatment effect, it is sometimes necessary to drop cases that fall outside of the “region of common support.” Because cases are dropped, the “true” treatment effect cannot be calculated, which leaves us with calculating the “feasible” treatment effect instead.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#propensity-score",
+    "href": "glossary.html#propensity-score",
+    "title": "Glossary",
+    "section": "Propensity Score",
+    "text": "Propensity Score\nA subject’s individual probability of receiving treatment. Propensity scores can then be used to match or weight control cases to mimic the treatment group.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#doubly-robust",
+    "href": "glossary.html#doubly-robust",
+    "title": "Glossary",
+    "section": "Doubly-Robust",
+    "text": "Doubly-Robust\nUsing “doubly robust” methods refers to using both regression and balancing in an equation simultaneously. Employing doubly robust measures is a way to mitigate biases or confounding variables from influencing the “true” treatment effect of your model.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#inverse-probability-of-treatment-weights-iptw",
+    "href": "glossary.html#inverse-probability-of-treatment-weights-iptw",
+    "title": "Glossary",
+    "section": "Inverse probability of treatment weights (IPTW)",
+    "text": "Inverse probability of treatment weights (IPTW)\nThis is the weight that is calculated from the propensity score (which is just the probability of treatment). The idea is to apply a weight to each case that makes the treatment and the control groups balanced on the propensity score and therefore (hopefully) on the individual covariates.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#covariate-balance",
+    "href": "glossary.html#covariate-balance",
+    "title": "Glossary",
+    "section": "Covariate Balance",
+    "text": "Covariate Balance\nIn the workflow of propensity score matching and weighting, a key step is to verify if covariates are balanced or imbalanced. Covariate balance is the degree to which the distribution of covariates is similar across levels of treatment.\nNote: The convention we’ve been operating under is that the standardized difference in means between the treatment and control groups for each variable is &lt; 0.1 (1/10th of a standard deviation).",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#kolmogorov-smirnov-distance-ksd",
+    "href": "glossary.html#kolmogorov-smirnov-distance-ksd",
+    "title": "Glossary",
+    "section": "Kolmogorov-Smirnov Distance (KSD)",
+    "text": "Kolmogorov-Smirnov Distance (KSD)\nThe KSD is the proportion of non-overlap between two distributions (or, if dealing with cumulative distributions, the maximum distance between two distributions).\nNote: A value of 0 means that the distributions perfectly overlap, while a value of 1 means that the distributions do not overlap at all. The rule of thumb here is that the maximum KSD should be &lt; 0.05.\nNote: When both standard mean differences (SMDs) and KSDs are in their respective acceptable ranges, you can confidently say covariates are balanced.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#entropy-balancing",
+    "href": "glossary.html#entropy-balancing",
+    "title": "Glossary",
+    "section": "Entropy Balancing",
+    "text": "Entropy Balancing\nA method of covariate balancing that seeks to balance on mean (like SMDs), variance (like KSDs), and on skewness.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#panel-data",
+    "href": "glossary.html#panel-data",
+    "title": "Glossary",
+    "section": "Panel Data",
+    "text": "Panel Data\n\nLong-Form Data\nIn long-form data, each row is a “unit-observation,” meaning that each row is exactly one observation. Thus, if person A is observed four times, her data will be stored in four separate rows.\n\n\nWide-Form Data\nIn wide-form data, each row contains all of the observations for that one specific unit. Thus, if person A is observed four times, her data will be stored in only one row.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#within--vs.-between-subject-variance",
+    "href": "glossary.html#within--vs.-between-subject-variance",
+    "title": "Glossary",
+    "section": "Within- vs. Between-Subject Variance",
+    "text": "Within- vs. Between-Subject Variance\nWithin-Subject Variance is the variation that exists within individuals and changes over time. In contrast, Between-Subject Variance exists between individuals and is more or less stable over time.\nFor example, an individual being taller than someone else is considered between-subject variance, as it measures the differences between two different subjects. However, an individual being taller than he was ten years ago is an example of within-subject variance, because it measures the differences between the same subject at two different time periods.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#intra-class-correlation-icc",
+    "href": "glossary.html#intra-class-correlation-icc",
+    "title": "Glossary",
+    "section": "Intra-Class Correlation (ICC)",
+    "text": "Intra-Class Correlation (ICC)\nThe ICC is a descriptive statistic that ranges from 0 to 1 and measures the proportion of variance that is between individuals versus within individuals.\nFor example, an ICC of 0.25 indicates that a quarter of the variance exists between individuals, and three-fourths of the variance occurs within individuals.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#mixed-models",
+    "href": "glossary.html#mixed-models",
+    "title": "Glossary",
+    "section": "Mixed Models",
+    "text": "Mixed Models\nA mixed model is simply a linear regression with two error terms: level 1 units (observations) and level 2 units (people). Mixed models include a mix of within-subject variance and between-subject variance, weighing one or the other more heavily based on how much of the total variance it contributes.\n\nSo much more to say…\nThis might be useful to keep in mind:",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#fixed-effects-model",
+    "href": "glossary.html#fixed-effects-model",
+    "title": "Glossary",
+    "section": "Fixed-Effects Model",
+    "text": "Fixed-Effects Model\nA fixed-effects model is a statistical model that uses waves of observations from the same individual, then calculates the changes for the variables that differ in different waves of observations.\nNote: The fixed-effects model also holds time constant.\n\nPanel data provides the most common use of varying intercepts to estimate causal effects. Here we use repeated observations within the same individuals to adjust for time-constant unobserved confounders. Here, issues of balance and overlap still exist, but they only apply for within-person comparisons.\nIf the purpose of matching/weighting is to get rid of all observable confounders, then the purpose of fixed-effects is to get rid of all time-constant unobserved confounders.\nNote. Fixed Effects are also Mixed Models.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#difference-in-differences",
+    "href": "glossary.html#difference-in-differences",
+    "title": "Glossary",
+    "section": "Difference-in-Differences",
+    "text": "Difference-in-Differences\nA simple difference-in-differences test compares the amounts that the treated and control groups change at time 1 and time 2. The equation for calculating a difference-in-differences reads as follows:\n\nDiD = (Treated Time 2 - Treated Time 1) - (Untreated Time 2 - Untreated Time 1)\n\nNote: The DiD calculation relies on the parallel trends assumption.\n\nParallel Trends Assumption\nThe parallel trends assumption assumes that, during the measurement period, the treated and untreated groups would have changed in similar ways if the treated group did not receive treatment.\nNote: The parallel trends assumption cannot be directly tested, but looking at prior trends can be useful for determining if the assumption is likely to be true.\n\n\n\nCode\nlibrary(tidyverse)\ntheme_set(theme_light(base_family = \"Avenir Next Condensed\"))\n\ntibble(\n  t = c(\"Time 0\", \"Time 1\"),\n  y1 = 1:2,\n  y0 = 0:1,\n  y = c(1, 3)\n) |&gt; \n  pivot_longer(!c(t, y), names_to = \"g\") |&gt; \n  ggplot(aes(t, value, group = g)) + \n  geom_line(linetype = \"dashed\") + \n  geom_vline(xintercept = c(\"Time 0\", \"Time 1\")) +\n  geom_line(aes(t, y)) + \n  geom_segment(x = \"Time 1\", y = 2, yend = 3, xend = \"Time 1\", linewidth = 1.5, \n               color = \"steelblue1\") +\n  labs(y = NULL, x = NULL) + \n  theme(axis.text.y = element_blank(), axis.ticks.y = element_blank(), \n        panel.grid = element_blank()) + \n  annotate(\"text\", x = 2.2, y = 2.5, label = latex2exp::TeX(r\"($E[d^1 - d^0]$)\"), family = \"Crimson Text\")\n\n\n\n\n\n\n\n\nFigure 24.2: Parallel Trends\n\n\n\n\n\n\n\n\nTwo-Way Fixed Effects (TWFE)\nThe TWFE model is a way of isolating confounding effects in order to focus only on the within-subject treatment effect. Specifically, the TWFE model holds constant the effect of the individual and also holds constant the effect of time, therefore adjusting for both.\nTwo-Way Fixed Effects Difference-in-Difference Estimator\nThe TWFE difference-in-differences estimator refers to the coefficients learned by a regression model with fixed effects for treatment condition and time period, clustered for treatment condition.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#ordinary-least-squares-ols",
+    "href": "glossary.html#ordinary-least-squares-ols",
+    "title": "Glossary",
+    "section": "Ordinary Least Squares (OLS)",
+    "text": "Ordinary Least Squares (OLS)\nA method of estimating the parameters in a linear regression model. OLS chooses the parameters that minimize the sum of the squared differences between the observed values and the values predicted by the model.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#bootstrapping",
+    "href": "glossary.html#bootstrapping",
+    "title": "Glossary",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\nBootstrapping is a statistical technique in which a single data set is sampled and resampled in order to run simulations and pull samples to account for random error.\n\nWe use bootstrapping to calculate standard errors in some cases.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
+    ]
+  },
+  {
+    "objectID": "glossary.html#splines",
+    "href": "glossary.html#splines",
+    "title": "Glossary",
+    "section": "Splines",
+    "text": "Splines\nA spline is a flexible kind of model that combines different models [parameters] in order to create the best estimate for the equation [nonlinear regression curves expressed as the sum of many localized pieces].\nNote: The transition from one model into another (i.e., where the data splits) is referred to as a “knot.”\n\nYou don’t need to know this, but here is how this looks like:\n\n\nCode\nlibrary(tidyverse)\n\nN &lt;- 500\nd &lt;- tibble(\n  x = runif(N, 1, 200),\n  y = rnorm(N, mean = 5 + cos(0.05*x), sd = 0.5)\n)\n\nd |&gt; \n  ggplot(aes(x, y)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", formula = y ~ splines::bs(x, df = 10))\n\n\n\n\n\n\n\n\n\nUnder the hood, the bs() function is partitioning the \\(x\\) variable into 10 separate variables, each of them with their own weight, so that we have something like this:\n\n\nCode\nB &lt;- splines::bs(d$x, df = 10)\nds &lt;- as_tibble(B)\nds$x &lt;- d$x\n\nds |&gt; \n  pivot_longer(!x, names_to = \"b\", values_to = \"w\") |&gt; \n  ggplot(aes(x, w, group = b)) + \n  geom_line()\n\n\n\n\n\n\n\n\n\nEach of these separate variables is then associated with its own coefficient, which we estimate using linear regression.\nThese parameters are very difficult to interpret directly.\n\n\nCode\nols &lt;- lm(y ~ splines::bs(x, df = 10), data = d)\nbroom::tidy(ols)\n\n\n# A tibble: 11 × 5\n   term                      estimate std.error statistic   p.value\n   &lt;chr&gt;                        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n 1 (Intercept)                  5.90      0.196    30.0   5.40e-113\n 2 splines::bs(x, df = 10)1     0.235     0.348     0.675 5.00e-  1\n 3 splines::bs(x, df = 10)2    -0.457     0.233    -1.96  5.08e-  2\n 4 splines::bs(x, df = 10)3    -1.72      0.290    -5.94  5.43e-  9\n 5 splines::bs(x, df = 10)4    -2.22      0.235    -9.44  1.46e- 19\n 6 splines::bs(x, df = 10)5    -0.270     0.253    -1.07  2.86e-  1\n 7 splines::bs(x, df = 10)6     0.358     0.243     1.47  1.41e-  1\n 8 splines::bs(x, df = 10)7    -0.474     0.257    -1.84  6.57e-  2\n 9 splines::bs(x, df = 10)8    -2.01      0.279    -7.22  2.03e- 12\n10 splines::bs(x, df = 10)9    -1.84      0.283    -6.50  1.99e- 10\n11 splines::bs(x, df = 10)10   -1.64      0.263    -6.25  8.93e- 10\n\n\nWe then the predictions by using the various columns of B instead of using x directly.\n\n\nCode\nalpha &lt;- ols$coefficients[1]\ntheta &lt;- ols$coefficients[2:11]\n\nd$pred &lt;- alpha + B %*% theta\n\nd |&gt; \n  ggplot(aes(x, y)) + \n  geom_point() + \n  geom_line(aes(y = pred), color = \"red\", linewidth = 1)\n\n\n\n\n\n\n\n\n\nIn a causal inference context, we would want to do this when we have a covariate that interacts with the treatment in ways that are simply not captured by adding a quadratic term.\n\n\n\n\n\n\n\nHuntington-Klein, Nick. 2021. The Effect: An Introduction to Research Design and Causality. New York: Chapman; Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Glossary</span>"
     ]
   },
   {

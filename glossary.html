@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Social Statistics II (Exercises) - Glossary</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./sec-summary.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Social Statistics II (Exercises)</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/vaiseys/soc-stats-2"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">steve</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/acastroaraujo/socStats2"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">andrés</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./glossary.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Glossary</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sec01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Part 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week 6</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week 8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week 10</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Week 11</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./sec-solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Solutions 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Solutions 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Solutions 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Solutions 4</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Solutions 5</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Solutions 6</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Solutions 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Solutions 8</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Solutions 9</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Solutions 10</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solutions11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Solutions 11</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sec-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Topics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Glossary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#estimand" id="toc-estimand" class="nav-link active" data-scroll-target="#estimand">Estimand</a></li>
+  <li><a href="#counterfactual" id="toc-counterfactual" class="nav-link" data-scroll-target="#counterfactual">Counterfactual</a></li>
+  <li><a href="#potential-outcomes" id="toc-potential-outcomes" class="nav-link" data-scroll-target="#potential-outcomes">Potential Outcomes</a></li>
+  <li><a href="#theoretical-estimand" id="toc-theoretical-estimand" class="nav-link" data-scroll-target="#theoretical-estimand">Theoretical Estimand</a></li>
+  <li><a href="#empirical-estimand" id="toc-empirical-estimand" class="nav-link" data-scroll-target="#empirical-estimand">Empirical Estimand</a></li>
+  <li><a href="#causal-interaction" id="toc-causal-interaction" class="nav-link" data-scroll-target="#causal-interaction">Causal Interaction</a></li>
+  <li><a href="#baseline-bias" id="toc-baseline-bias" class="nav-link" data-scroll-target="#baseline-bias">Baseline Bias</a></li>
+  <li><a href="#average-treatment-effect-ate" id="toc-average-treatment-effect-ate" class="nav-link" data-scroll-target="#average-treatment-effect-ate">Average Treatment Effect (ATE)</a></li>
+  <li><a href="#conditional-average-treatment-effect-cate" id="toc-conditional-average-treatment-effect-cate" class="nav-link" data-scroll-target="#conditional-average-treatment-effect-cate">Conditional Average Treatment Effect (CATE)</a></li>
+  <li><a href="#average-treatment-effect-on-the-treated-att" id="toc-average-treatment-effect-on-the-treated-att" class="nav-link" data-scroll-target="#average-treatment-effect-on-the-treated-att">Average Treatment Effect on the Treated (ATT)</a></li>
+  <li><a href="#average-treatment-effect-on-the-untreated-atu" id="toc-average-treatment-effect-on-the-untreated-atu" class="nav-link" data-scroll-target="#average-treatment-effect-on-the-untreated-atu">Average Treatment Effect on the Untreated (ATU)</a></li>
+  <li><a href="#unit-specific-quantity" id="toc-unit-specific-quantity" class="nav-link" data-scroll-target="#unit-specific-quantity">Unit-Specific Quantity</a></li>
+  <li><a href="#treatment-effect-heterogeneity" id="toc-treatment-effect-heterogeneity" class="nav-link" data-scroll-target="#treatment-effect-heterogeneity">Treatment Effect Heterogeneity</a></li>
+  <li><a href="#directed-acyclic-graph-dag" id="toc-directed-acyclic-graph-dag" class="nav-link" data-scroll-target="#directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</a>
+  <ul class="collapse">
+  <li><a href="#unobserved-unmeasured-variable" id="toc-unobserved-unmeasured-variable" class="nav-link" data-scroll-target="#unobserved-unmeasured-variable">Unobserved / Unmeasured Variable</a></li>
+  <li><a href="#path" id="toc-path" class="nav-link" data-scroll-target="#path">Path</a></li>
+  <li><a href="#direct-effects" id="toc-direct-effects" class="nav-link" data-scroll-target="#direct-effects">Direct Effects</a></li>
+  <li><a href="#indirect-effects" id="toc-indirect-effects" class="nav-link" data-scroll-target="#indirect-effects">Indirect Effects</a></li>
+  <li><a href="#total-effects" id="toc-total-effects" class="nav-link" data-scroll-target="#total-effects">Total Effects</a></li>
+  <li><a href="#front-door-path" id="toc-front-door-path" class="nav-link" data-scroll-target="#front-door-path">Front-Door Path</a></li>
+  <li><a href="#back-door-path" id="toc-back-door-path" class="nav-link" data-scroll-target="#back-door-path">Back-Door Path</a></li>
+  <li><a href="#confounding-variable" id="toc-confounding-variable" class="nav-link" data-scroll-target="#confounding-variable">Confounding <del>Variable</del></a></li>
+  <li><a href="#collider-variable" id="toc-collider-variable" class="nav-link" data-scroll-target="#collider-variable">Collider Variable</a></li>
+  <li><a href="#open-path" id="toc-open-path" class="nav-link" data-scroll-target="#open-path">Open Path</a></li>
+  <li><a href="#closed-path" id="toc-closed-path" class="nav-link" data-scroll-target="#closed-path">Closed Path</a></li>
+  </ul></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">Regression</a></li>
+  <li><a href="#matching-and-weighting" id="toc-matching-and-weighting" class="nav-link" data-scroll-target="#matching-and-weighting">Matching and Weighting</a></li>
+  <li><a href="#exact-matching" id="toc-exact-matching" class="nav-link" data-scroll-target="#exact-matching">Exact Matching</a></li>
+  <li><a href="#conditional-independence-assumption-cia" id="toc-conditional-independence-assumption-cia" class="nav-link" data-scroll-target="#conditional-independence-assumption-cia">Conditional Independence Assumption (CIA)</a></li>
+  <li><a href="#region-of-common-support" id="toc-region-of-common-support" class="nav-link" data-scroll-target="#region-of-common-support">Region of Common Support</a></li>
+  <li><a href="#feasible-estimate-of-treatment-effects" id="toc-feasible-estimate-of-treatment-effects" class="nav-link" data-scroll-target="#feasible-estimate-of-treatment-effects">Feasible Estimate of Treatment Effects</a></li>
+  <li><a href="#propensity-score" id="toc-propensity-score" class="nav-link" data-scroll-target="#propensity-score">Propensity Score</a></li>
+  <li><a href="#doubly-robust" id="toc-doubly-robust" class="nav-link" data-scroll-target="#doubly-robust">Doubly-Robust</a></li>
+  <li><a href="#inverse-probability-of-treatment-weights-iptw" id="toc-inverse-probability-of-treatment-weights-iptw" class="nav-link" data-scroll-target="#inverse-probability-of-treatment-weights-iptw">Inverse probability of treatment weights (IPTW)</a></li>
+  <li><a href="#covariate-balance" id="toc-covariate-balance" class="nav-link" data-scroll-target="#covariate-balance">Covariate Balance</a></li>
+  <li><a href="#kolmogorov-smirnov-distance-ksd" id="toc-kolmogorov-smirnov-distance-ksd" class="nav-link" data-scroll-target="#kolmogorov-smirnov-distance-ksd">Kolmogorov-Smirnov Distance (KSD)</a></li>
+  <li><a href="#entropy-balancing" id="toc-entropy-balancing" class="nav-link" data-scroll-target="#entropy-balancing">Entropy Balancing</a></li>
+  <li><a href="#panel-data" id="toc-panel-data" class="nav-link" data-scroll-target="#panel-data">Panel Data</a>
+  <ul class="collapse">
+  <li><a href="#long-form-data" id="toc-long-form-data" class="nav-link" data-scroll-target="#long-form-data">Long-Form Data</a></li>
+  <li><a href="#wide-form-data" id="toc-wide-form-data" class="nav-link" data-scroll-target="#wide-form-data">Wide-Form Data</a></li>
+  </ul></li>
+  <li><a href="#within--vs.-between-subject-variance" id="toc-within--vs.-between-subject-variance" class="nav-link" data-scroll-target="#within--vs.-between-subject-variance">Within- vs.&nbsp;Between-Subject Variance</a></li>
+  <li><a href="#intra-class-correlation-icc" id="toc-intra-class-correlation-icc" class="nav-link" data-scroll-target="#intra-class-correlation-icc">Intra-Class Correlation (ICC)</a></li>
+  <li><a href="#mixed-models" id="toc-mixed-models" class="nav-link" data-scroll-target="#mixed-models">Mixed Models</a></li>
+  <li><a href="#fixed-effects-model" id="toc-fixed-effects-model" class="nav-link" data-scroll-target="#fixed-effects-model">Fixed-Effects Model</a></li>
+  <li><a href="#difference-in-differences" id="toc-difference-in-differences" class="nav-link" data-scroll-target="#difference-in-differences">Difference-in-Differences</a>
+  <ul class="collapse">
+  <li><a href="#parallel-trends-assumption" id="toc-parallel-trends-assumption" class="nav-link" data-scroll-target="#parallel-trends-assumption">Parallel Trends Assumption</a></li>
+  <li><a href="#two-way-fixed-effects-twfe" id="toc-two-way-fixed-effects-twfe" class="nav-link" data-scroll-target="#two-way-fixed-effects-twfe">Two-Way Fixed Effects (TWFE)</a></li>
+  </ul></li>
+  <li><a href="#ordinary-least-squares-ols" id="toc-ordinary-least-squares-ols" class="nav-link" data-scroll-target="#ordinary-least-squares-ols">Ordinary Least Squares (OLS)</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  <li><a href="#splines" id="toc-splines" class="nav-link" data-scroll-target="#splines">Splines</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">Glossary</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>Joint Submission. My comments are in the shaded boxes.</em></p>
+<section id="estimand" class="level2">
+<h2 class="anchored" data-anchor-id="estimand">Estimand</h2>
+<p>The parameter or quantity of interest that one aims to estimate in a statistical analysis. It defines what effect or measure is being targeted by the analysis, specifying how it relates to the variables and data involved.</p>
+</section>
+<section id="counterfactual" class="level2">
+<h2 class="anchored" data-anchor-id="counterfactual">Counterfactual</h2>
+<p>The counterfactual compares the observed results of something that did happen to the expected results if the treatment <em>had not</em> happened.</p>
+</section>
+<section id="potential-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="potential-outcomes">Potential Outcomes</h2>
+<p>The set of all possible outcomes for each individual in a study, under each possible treatment or intervention scenario. These outcomes reflect what could happen to each individual under different conditions.</p>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>I think it’s better to think of “potential outcomes.”</p>
+<p>For example, in the case of a <strong>binary</strong> treatment, the potential outcomes framework involves the following:</p>
+<ul>
+<li><p><span class="math inline">\(T\)</span> is a treatment variable. The terms “treatment” and “cause” are used interchangeably.</p></li>
+<li><p><span class="math inline">\(Y\)</span> is the outcome we observe.</p></li>
+<li><p><span class="math inline">\(Y^0\)</span> is the the value the outcome <em>would</em> take if <span class="math inline">\(T=0\)</span>.</p></li>
+<li><p><span class="math inline">\(Y^1\)</span> is the value the outcome <em>would</em> take if <span class="math inline">\(T=1\)</span>.</p></li>
+<li><p><span class="math inline">\(Y^0\)</span> and <span class="math inline">\(Y^1\)</span> are the <em>potential outcomes.</em></p></li>
+<li><p>We see <span class="math inline">\(Y^0\)</span> <em>or</em> <span class="math inline">\(Y^1\)</span> for the same unit, but never both.</p>
+<p>This is the <strong>fundamental problem of causal inference</strong>.</p></li>
+<li><p>When <span class="math inline">\(T=1\)</span>, <span class="math inline">\(Y^0\)</span> is the <em>counterfactual.</em></p></li>
+<li><p>When <span class="math inline">\(T=0\)</span>, <span class="math inline">\(Y^1\)</span> is the <em>counterfactual.</em></p></li>
+</ul>
+</div>
+</section>
+<section id="theoretical-estimand" class="level2">
+<h2 class="anchored" data-anchor-id="theoretical-estimand">Theoretical Estimand</h2>
+<p>This is the actual thing we would like to know in our research question. The two components of the theoretical estimand are the unit-specific quantity and the target population. The theoretical estimand includes both observed and unobserved data (including counterfactuals).</p>
+</section>
+<section id="empirical-estimand" class="level2">
+<h2 class="anchored" data-anchor-id="empirical-estimand">Empirical Estimand</h2>
+<p>The empirical estimand is the target of inference that only includes observable data and relies on identification assumptions.</p>
+</section>
+<section id="causal-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="causal-interaction">Causal Interaction</h2>
+<p>A causal interaction is the intervention to two variables averaged over one population. In other words, the effect of one variable on the outcome is related to the effect of another.</p>
+</section>
+<section id="baseline-bias" class="level2">
+<h2 class="anchored" data-anchor-id="baseline-bias">Baseline Bias</h2>
+<p>When the treatment and the control group differ from one another for reasons other than the treatment they receive.</p>
+</section>
+<section id="average-treatment-effect-ate" class="level2">
+<h2 class="anchored" data-anchor-id="average-treatment-effect-ate">Average Treatment Effect (ATE)</h2>
+<p>The average treatment effect across the population. In other words, this is the effect of switching treatment statuses (e.g., from either treatment to control or from control to treatment).</p>
+</section>
+<section id="conditional-average-treatment-effect-cate" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-average-treatment-effect-cate">Conditional Average Treatment Effect (CATE)</h2>
+<p>The average treatment effect among a specific group as defined by certain <del>control variables</del> covariates.</p>
+<p>For example, if the <del>control variable</del> covariate is <span class="math inline">\(X\)</span>, the CATE can be written as <span class="math inline">\(E(Y^1-Y^0 \mid X = x)\)</span>.</p>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>The word “control” has some baggage because it has the connotation that we can somehow manipulate <span class="math inline">\(X\)</span>. Usually we’d want to include variables like “gender” or “race” here.</p>
+</div>
+</section>
+<section id="average-treatment-effect-on-the-treated-att" class="level2">
+<h2 class="anchored" data-anchor-id="average-treatment-effect-on-the-treated-att">Average Treatment Effect on the Treated (ATT)</h2>
+<p>The average treatment effect, calculated only from the treatment group. To conceptualize the ATT, imagine <em>taking away</em> treatment from those who were treated and measuring the change.</p>
+</section>
+<section id="average-treatment-effect-on-the-untreated-atu" class="level2">
+<h2 class="anchored" data-anchor-id="average-treatment-effect-on-the-untreated-atu">Average Treatment Effect on the Untreated (ATU)</h2>
+<p>The average treatment effect, calculated only from the untreated group. To conceptualize the ATU, imagine <em>giving</em> the treatment to those who were not treated and measuring the change.</p>
+</section>
+<section id="unit-specific-quantity" class="level2">
+<h2 class="anchored" data-anchor-id="unit-specific-quantity">Unit-Specific Quantity</h2>
+<p>A measurement or outcome that pertains to an individual unit or subject in a study, often used in contexts where the effect of a treatment may vary from one unit to another.</p>
+</section>
+<section id="treatment-effect-heterogeneity" class="level2">
+<h2 class="anchored" data-anchor-id="treatment-effect-heterogeneity">Treatment Effect Heterogeneity</h2>
+<p>When a treatment has different effects on a population.</p>
+<p>For, example, a treatment for cervical cancer will have heterogeneous effects on people with cervixes versus people without cervixes, even if both groups in the population receive identical treatments. This is because people without cervixes will receive no treatment effect from drugs that target an organ they do not have.</p>
+<hr>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>This is an extreme example. You’d usually want to remove men from design (i.e., not administering the treatment to people without cervixes).</p>
+<p>In a less extreme example, the treatment for cervical cancer could have varying effects across women belonging to different age groups.</p>
+</div>
+</section>
+<section id="directed-acyclic-graph-dag" class="level2">
+<h2 class="anchored" data-anchor-id="directed-acyclic-graph-dag">Directed Acyclic Graph (DAG)</h2>
+<p>A tool used to depict the data-generating process with nodes to represent the variable and the arrows to represent the causal relationships.</p>
+<div class="box-text-custom">
+<p>Causal diagrams or DAGs are graphical representations of a <strong>data generating process</strong>. Everything we draw is hopefully an informed assumption; everything that’s not in the diagram is <em>also</em> an assumption. In other words, DAGs encode identifying assumptions.</p>
+<p>The idea of a directed acyclical graph (DAG) implies that there are <em>no cycles.</em> If a variable causes itself, it’s near impossible to isolate or identifying the cause of anything. The world is full with feedback loops of all sorts, but we deal with them through the incorporation of time or by isolating one effect through some kind of experimental scenario.</p>
+<p><em>Note that DAGs are agnostic about functional form. This includes interactions among variables! Some people deal with interactions by drawing arrows toward arrows or by representing interactions explicitly as separate nodes.</em></p>
+<p>The nicest thing about DAGs is that they help us spell out the <strong>testable implications</strong> of our assumptions. For example, if our causal diagram implies that a relationship between variables is zero, we can check for that.</p>
+</div>
+<section id="unobserved-unmeasured-variable" class="level3">
+<h3 class="anchored" data-anchor-id="unobserved-unmeasured-variable">Unobserved / Unmeasured Variable</h3>
+<p>A variable that may be present in the researcher’s assumptions about how the world works, but that is not <del>addressed or</del> available in the data.</p>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>In a DAG, these variables are usually depicted by being enclosed within a circle.</p>
+</div>
+</section>
+<section id="path" class="level3">
+<h3 class="anchored" data-anchor-id="path">Path</h3>
+<p>A path is simply the steps from one variable to another on a causal diagram.</p>
+<p>For example, <span class="math inline">\(A \to B \to C\)</span> is a path.</p>
+</section>
+<section id="direct-effects" class="level3">
+<h3 class="anchored" data-anchor-id="direct-effects">Direct Effects</h3>
+<p>The effect of only the treatment variable on the outcome variable.</p>
+</section>
+<section id="indirect-effects" class="level3">
+<h3 class="anchored" data-anchor-id="indirect-effects">Indirect Effects</h3>
+<p>The portion of the change in an outcome that is mediated through one or more intermediate variables, reflecting the causal influence exerted through these mediating variables.</p>
+</section>
+<section id="total-effects" class="level3">
+<h3 class="anchored" data-anchor-id="total-effects">Total Effects</h3>
+<p>The sum of direct and indirect effects.</p>
+</section>
+<section id="front-door-path" class="level3">
+<h3 class="anchored" data-anchor-id="front-door-path">Front-Door Path</h3>
+<p>A causal path in which all of the arrows in the causal diagram point from the treatment variable and towards the outcome variable.</p>
+</section>
+<section id="back-door-path" class="level3">
+<h3 class="anchored" data-anchor-id="back-door-path">Back-Door Path</h3>
+<p>The rest of the paths on a causal diagram [connecting treatment to outcome] that are not front-door paths.</p>
+</section>
+<section id="confounding-variable" class="level3">
+<h3 class="anchored" data-anchor-id="confounding-variable">Confounding <del>Variable</del></h3>
+<p>A variable that affects both the treatment and outcome variables.</p>
+<p>Note: Not adjusting for a confounding variable threatens the causal relationship between the treatment and outcome variables.</p>
+<hr>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>The expression “threatens the causal relationship” is vague and clunky. A better way to say this is that the causal effect is not <strong>identified</strong> when we don’t adjust for confounding paths.</p>
+<p>An even <em>better</em> way to talk about confounding is to realize that “confounding” is a property of <strong>paths</strong>, it’s NOT a property of variables.</p>
+</div>
+</section>
+<section id="collider-variable" class="level3">
+<h3 class="anchored" data-anchor-id="collider-variable">Collider Variable</h3>
+<p>A variable in a DAG that is influenced by two or more other variables. Conditioning on a collider can open a confounding path, inadvertently introducing bias into the analysis.</p>
+<div class="box-text-custom">
+<p>A variable is a collider in a path <em>iff</em> both arrows point at it.</p>
+<p><span class="math display">\[
+a \to b \to c_\text{ollider} \leftarrow d \leftarrow e \to f
+\]</span></p>
+<p>Here, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span> are unrelated <em>unless</em> we remove variation in <span class="math inline">\(c\)</span> (e.g., by including it in a regression).</p>
+<p>We close paths by removing variation from one variable along the path (i.e., adjusting); but if the variable is a collider, then removing variation will actually <em>open</em> a path that was already closed.</p>
+<p>An often unacknowledged way of adjusting for colliders is during the sample selection phase. If we have a sample of college students, it means we are adjusting for college attendance.</p>
+</div>
+</section>
+<section id="open-path" class="level3">
+<h3 class="anchored" data-anchor-id="open-path">Open Path</h3>
+<p>A path on a causal diagram in which there is variation in all variables along the path (and no variation in any colliders on that path).</p>
+</section>
+<section id="closed-path" class="level3">
+<h3 class="anchored" data-anchor-id="closed-path">Closed Path</h3>
+<p>A path on a causal diagram in which one or more variables has no variation.</p>
+<p>Note: A path is also considered closed if there is a collider variable present on that path.</p>
+</section>
+</section>
+<section id="regression" class="level2">
+<h2 class="anchored" data-anchor-id="regression">Regression</h2>
+<p>Regression focuses on estimating the effect of variables on an outcome through a mathematical model, assuming a specific form of relationship.</p>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>This is NOT a good definition!!</p>
+<p>In the usual context of regression, predictive inference relates to comparisons <em>between</em> units. In the context of causal inference, we attempt to make comparisons of different treatments <em>as if applied to the same units.</em></p>
+<p>In order to make causal interpretations of regression coefficients we rely very strong assumptions. In short, causal effects can be estimated with regression if the model includes all confounding variables <em>and</em> if the “functional form” is correct.</p>
+<p><strong>Translating DAGs into Regression</strong></p>
+<div id="fig-reg-chart" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reg-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/reg-chart.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reg-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.1: Flow Chart For Constructing Regression Equations <span class="citation" data-cites="huntington-klein2021">(<a href="references.html#ref-huntington-klein2021" role="doc-biblioref">Huntington-Klein 2021, p. 199</a>)</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="matching-and-weighting" class="level2">
+<h2 class="anchored" data-anchor-id="matching-and-weighting">Matching and Weighting</h2>
+<p>Matching and weighting seeks to identify the treatment effect by adjusting for selection into treatment by comparing similar treatment and control cases based on certain attributes.</p>
+<p>Note: This is distinct from regression, which adjusts for variables that impact the outcome.</p>
+<div class="box-text-custom">
+<p>Both <strong>regression</strong> and <strong>matching/weighting</strong> are strategies to close the backdoor path between <span class="math inline">\(T\)</span> and <span class="math inline">\(Y\)</span>. <em>Both are conditional on observable covariates.</em> However, matching/weighting provides a way to model treatment selection so that everyone looks the same on the pre-treatment covariates.</p>
+<p><strong>Matching/weighting</strong> refers to a set of procedures that modify the original sample in preparation for a statistical analysis. It’s a form of data pre-processing. The goal is to create a sample that <em>looks like</em> it was created from a randomized experiment.</p>
+<p>Here are some benefits of matching/weighting procedures:</p>
+<ul>
+<li>They are <em>less restrictive</em> about functional form than regression. We rely less on parametric assumptions. The intuition is the same as with an experiment: if we can create sufficient overlap and balance between treatment and control groups, then we should get a reasonable estimate of the treatment effect, <em>even if the model used to estimate it is misspecified</em>.</li>
+<li>Regression models on pre-processed data gives us two opportunities to close backdoor paths (i.e., “double robustness”).</li>
+</ul>
+</div>
+</section>
+<section id="exact-matching" class="level2">
+<h2 class="anchored" data-anchor-id="exact-matching">Exact Matching</h2>
+<p>Exact matching compares treatment and control cases that have exactly identical characteristics on a certain combination of variables. In this way, treatment cases are matched to control cases that share the exact same distribution of values for the matching variable(s) of interest, making the only difference between them is treatment status.</p>
+<p><del>The three assumptions for exact matching are as follows:</del></p>
+<ol type="1">
+<li><p><del>Selection of variables-conditional independence assumption.</del></p></li>
+<li><p><del>Overlap (any individual case has a non-zero probability of treatment).</del></p></li>
+<li><p><del>Stable unit treatment value assumption (SUTVA; treatment status and effect of treatment is independent for each case).</del></p></li>
+</ol>
+<hr>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>These assumptions are NOT unique to matching.</p>
+<p>A better discussion of overlap can be found <a href="https://acastroaraujo.github.io/socStats2/week06.html#balance-and-overlap">here</a> or in one of the textbooks.</p>
+<p>This brief discussion from the <code>MatchIt</code> vignette is also useful:</p>
+<p><a href="https://kosukeimai.github.io/MatchIt/articles/matching-methods.html#exact-matching-method-exact" class="uri">https://kosukeimai.github.io/MatchIt/articles/matching-methods.html#exact-matching-method-exact</a></p>
+</div>
+</section>
+<section id="conditional-independence-assumption-cia" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-independence-assumption-cia">Conditional Independence Assumption (CIA)</h2>
+<p><del>The conditional independence assumption asserts that two events occur independent of one another (i.e., the two events do not influence one another).</del></p>
+<div class="box-text-custom">
+<p>The CIA (also known as “conditional ignorability” assumption) builds on the more general idea of <strong>ignorability</strong>.</p>
+<p>Experiments work because they make the distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator are <em>independent.</em></p>
+<p><span class="math display">\[
+Y^0, Y^1 \perp T
+\]</span></p>
+<p>Here, the <span class="math inline">\(\perp\)</span> symbol means independent.</p>
+<p>The CIA is a necessary assumption we make when using both <em>regression</em> and <em>matching/weighting</em> to identify a causal effect.</p>
+<p>Instead of a simple independence assumption that we have for randomized experiments, we now have to rely on a <strong>conditional</strong> ignorability. Just like in the case of experiments, we want distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator <em>should</em> be independent, conditional on the covariates <span class="math inline">\(\boldsymbol{X}\)</span> used in the analysis.</p>
+<p><span class="math display">\[
+Y^0, Y^1 \perp T \mid \boldsymbol X
+\]</span></p>
+<p>Here, <span class="math inline">\(\boldsymbol{X}\)</span> is meant to depict a collection of variables that will close the back-door path.</p>
+<p>This strategy will get more complicated as the vector <span class="math inline">\(\boldsymbol X\)</span> grows in size.</p>
+</div>
+</section>
+<section id="region-of-common-support" class="level2">
+<h2 class="anchored" data-anchor-id="region-of-common-support">Region of Common Support</h2>
+<p>This is the assumption that either for distribution of a matching variable (in exact matching) or for distribution of propensity scores (in weighting), there are both treatment and control cases. If there is overlap, this is known as the region of common support. If there is not overlap in the distributions, that is “off support” and makes causal inference a little more tricky.</p>
+<div class="box-text-custom">
+<p>Note.</p>
+<p>What makes it “tricky” is that we don’t have direct support from the data to estimate the relevant counterfactuals—e.g., regression will just <em>extrapolate.</em></p>
+</div>
+</section>
+<section id="feasible-estimate-of-treatment-effects" class="level2">
+<h2 class="anchored" data-anchor-id="feasible-estimate-of-treatment-effects">Feasible Estimate of Treatment Effects</h2>
+<p>When calculating a treatment effect, it is sometimes necessary to drop cases that fall outside of the “region of common support.” Because cases are dropped, the “true” treatment effect cannot be calculated, which leaves us with calculating the “feasible” treatment effect instead.</p>
+</section>
+<section id="propensity-score" class="level2">
+<h2 class="anchored" data-anchor-id="propensity-score">Propensity Score</h2>
+<p>A subject’s individual probability of receiving treatment. Propensity scores can then be used to match or weight control cases to mimic the treatment group.</p>
+</section>
+<section id="doubly-robust" class="level2">
+<h2 class="anchored" data-anchor-id="doubly-robust">Doubly-Robust</h2>
+<p>Using “doubly robust” methods refers to using both regression and balancing <del>in an equation</del> simultaneously. Employing doubly robust measures is a way to mitigate biases or confounding variables from influencing the “true” treatment effect of your model.</p>
+</section>
+<section id="inverse-probability-of-treatment-weights-iptw" class="level2">
+<h2 class="anchored" data-anchor-id="inverse-probability-of-treatment-weights-iptw">Inverse probability of treatment weights (IPTW)</h2>
+<p>This is the weight that is calculated from the propensity score (which is just the probability of treatment). The idea is to apply a weight to each case that makes the treatment and the control groups balanced on the propensity score and therefore (hopefully) on the individual covariates.</p>
+</section>
+<section id="covariate-balance" class="level2">
+<h2 class="anchored" data-anchor-id="covariate-balance">Covariate Balance</h2>
+<p>In the workflow of propensity score matching and weighting, a key step is to verify if covariates are balanced or imbalanced. Covariate balance is the degree to which the distribution of covariates is similar across levels of treatment.</p>
+<p>Note: The convention we’ve been operating under is that the standardized difference in means between the treatment and control groups for each variable is &lt; 0.1 (1/10th of a standard deviation).</p>
+<div class="box-text-custom">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/workflow.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="kolmogorov-smirnov-distance-ksd" class="level2">
+<h2 class="anchored" data-anchor-id="kolmogorov-smirnov-distance-ksd">Kolmogorov-Smirnov Distance (KSD)</h2>
+<p>The KSD is the proportion of non-overlap between two distributions (or, if dealing with cumulative distributions, the maximum distance between two distributions).</p>
+<p>Note: A value of 0 means that the distributions perfectly overlap, while a value of 1 means that the distributions do not overlap at all. The rule of thumb here is that the maximum KSD should be &lt; 0.05.</p>
+<p>Note: When both standard mean differences (SMDs) and KSDs are in their respective acceptable ranges, you can confidently say covariates are balanced.</p>
+</section>
+<section id="entropy-balancing" class="level2">
+<h2 class="anchored" data-anchor-id="entropy-balancing">Entropy Balancing</h2>
+<p>A method of covariate balancing that seeks to balance on mean (like SMDs), variance (like KSDs), and on skewness.</p>
+</section>
+<section id="panel-data" class="level2">
+<h2 class="anchored" data-anchor-id="panel-data">Panel Data</h2>
+<section id="long-form-data" class="level3">
+<h3 class="anchored" data-anchor-id="long-form-data">Long-Form Data</h3>
+<p>In long-form data, each row is a “unit-observation,” meaning that each row is exactly one observation. Thus, if person A is observed four times, her data will be stored in four separate rows.</p>
+</section>
+<section id="wide-form-data" class="level3">
+<h3 class="anchored" data-anchor-id="wide-form-data">Wide-Form Data</h3>
+<p>In wide-form data, each row contains all of the observations for that <em>one specific</em> unit. Thus, if person A is observed four times, her data will be stored in only one row.</p>
+</section>
+</section>
+<section id="within--vs.-between-subject-variance" class="level2">
+<h2 class="anchored" data-anchor-id="within--vs.-between-subject-variance">Within- vs.&nbsp;Between-Subject Variance</h2>
+<p>Within-Subject Variance is the variation that exists within individuals and changes over time. In contrast, Between-Subject Variance exists between individuals and is more or less stable over time.</p>
+<p>For example, an individual being taller than someone else is considered between-subject variance, as it measures the differences between two different subjects. However, an individual being taller than he was ten years ago is an example of within-subject variance, because it measures the differences between <em>the same subject</em> at two different time periods.</p>
+</section>
+<section id="intra-class-correlation-icc" class="level2">
+<h2 class="anchored" data-anchor-id="intra-class-correlation-icc">Intra-Class Correlation (ICC)</h2>
+<p>The ICC is a descriptive statistic that ranges from 0 to 1 and measures the proportion of variance that is between individuals versus within individuals.</p>
+<p>For example, an ICC of 0.25 indicates that a quarter of the variance exists between individuals, and three-fourths of the variance occurs within individuals.</p>
+</section>
+<section id="mixed-models" class="level2">
+<h2 class="anchored" data-anchor-id="mixed-models">Mixed Models</h2>
+<p>A mixed model is simply a linear regression with two error terms: level 1 units (observations) and level 2 units (people). Mixed models include a mix of within-subject variance and between-subject variance, weighing one or the other more heavily based on how much of the total variance it contributes.</p>
+<div class="box-text-custom">
+<p>So much more to say…</p>
+<p>This might be useful to keep in mind:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/two-datasets.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="fixed-effects-model" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-effects-model">Fixed-Effects Model</h2>
+<p>A fixed-effects model is a statistical model that uses waves of observations from the same individual, then calculates the changes for the variables that differ in different waves of observations.</p>
+<p><del>Note: The fixed-effects model also holds time constant.</del></p>
+<div class="box-text-custom">
+<p>Panel data provides the most common use of varying intercepts to estimate causal effects. Here we use repeated observations within the same individuals to adjust for time-constant unobserved confounders. Here, issues of balance and overlap still exist, but they only apply for <em>within-</em>person comparisons.</p>
+<p>If the purpose of <strong>matching/weighting</strong> is to get rid of all observable confounders, then the purpose of <strong>fixed-effects</strong> is to get rid of all time-constant unobserved confounders.</p>
+<p><em>Note. Fixed Effects are also Mixed Models.</em></p>
+</div>
+</section>
+<section id="difference-in-differences" class="level2">
+<h2 class="anchored" data-anchor-id="difference-in-differences">Difference-in-Differences</h2>
+<p>A simple difference-in-differences test compares the amounts that the treated and control groups change at time 1 and time 2. The equation for calculating a difference-in-differences reads as follows:</p>
+<div style="text-align: center;">
+<p>DiD = (Treated Time 2 - Treated Time 1) - (Untreated Time 2 - Untreated Time 1)</p>
+</div>
+<p>Note: The DiD calculation relies on the parallel trends assumption.</p>
+<section id="parallel-trends-assumption" class="level3">
+<h3 class="anchored" data-anchor-id="parallel-trends-assumption">Parallel Trends Assumption</h3>
+<p>The parallel trends assumption assumes that, during the measurement period, the treated and untreated groups would have changed in similar ways if the treated group did not receive treatment.</p>
+<p>Note: The parallel trends assumption cannot be directly tested, but looking at prior trends can be useful for determining if the assumption is likely to be true.</p>
+<div class="box-text-custom">
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>(<span class="at">base_family =</span> <span class="st">"Avenir Next Condensed"</span>))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">c</span>(<span class="st">"Time 0"</span>, <span class="st">"Time 1"</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">y1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y0 =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(t, y), <span class="at">names_to =</span> <span class="st">"g"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t, value, <span class="at">group =</span> g)) <span class="sc">+</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="st">"Time 0"</span>, <span class="st">"Time 1"</span>)) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t, y)) <span class="sc">+</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x =</span> <span class="st">"Time 1"</span>, <span class="at">y =</span> <span class="dv">2</span>, <span class="at">yend =</span> <span class="dv">3</span>, <span class="at">xend =</span> <span class="st">"Time 1"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"steelblue1"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">x =</span> <span class="cn">NULL</span>) <span class="sc">+</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(), <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.2</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">label =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">"($E[d^1 - d^0]$)"</span>), <span class="at">family =</span> <span class="st">"Crimson Text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-parallel-trends" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-parallel-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="glossary_files/figure-html/fig-parallel-trends-1.png" class="img-fluid figure-img" width="384">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parallel-trends-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;24.2: Parallel Trends
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="two-way-fixed-effects-twfe" class="level3">
+<h3 class="anchored" data-anchor-id="two-way-fixed-effects-twfe">Two-Way Fixed Effects (TWFE)</h3>
+<p>The TWFE model is a way of isolating confounding effects in order to focus only on the within-subject treatment effect. Specifically, the TWFE model holds constant the effect of the individual and also holds constant the effect of time, therefore adjusting for both.</p>
+<p><strong>Two-Way Fixed Effects Difference-in-Difference Estimator</strong></p>
+<p>The TWFE difference-in-differences estimator refers to the coefficients learned by a regression model with fixed effects for treatment condition and time period, clustered for treatment condition.</p>
+</section>
+</section>
+<section id="ordinary-least-squares-ols" class="level2">
+<h2 class="anchored" data-anchor-id="ordinary-least-squares-ols">Ordinary Least Squares (OLS)</h2>
+<p>A method of estimating the parameters in a linear regression model. OLS chooses the parameters that minimize the sum of the squared differences between the observed values and the values predicted by the model.</p>
+</section>
+<section id="bootstrapping" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrapping">Bootstrapping</h2>
+<p>Bootstrapping is a statistical technique in which a single data set is sampled and resampled in order to run simulations and pull samples to account for random error.</p>
+<div class="box-text-custom">
+<p>We use bootstrapping to calculate standard errors in some cases.</p>
+</div>
+</section>
+<section id="splines" class="level2">
+<h2 class="anchored" data-anchor-id="splines">Splines</h2>
+<p>A spline is a flexible kind of model that combines different <del>models</del> [parameters] in order to <del>create the best estimate for the equation</del> [nonlinear regression curves expressed as the sum of many localized pieces].</p>
+<p><del>Note: The transition from one model into another (i.e., where the data splits) is referred to as a “knot.”</del></p>
+<div class="box-text-custom">
+<p>You don’t need to know this, but here is how this looks like:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">runif</span>(N, <span class="dv">1</span>, <span class="dv">200</span>),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(N, <span class="at">mean =</span> <span class="dv">5</span> <span class="sc">+</span> <span class="fu">cos</span>(<span class="fl">0.05</span><span class="sc">*</span>x), <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="at">df =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="glossary_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Under the hood, the <code>bs()</code> function is partitioning the <span class="math inline">\(x\)</span> variable into 10 separate variables, each of them with their own weight, so that we have something like this:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> splines<span class="sc">::</span><span class="fu">bs</span>(d<span class="sc">$</span>x, <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(B)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ds<span class="sc">$</span>x <span class="ot">&lt;-</span> d<span class="sc">$</span>x</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">|&gt;</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>x, <span class="at">names_to =</span> <span class="st">"b"</span>, <span class="at">values_to =</span> <span class="st">"w"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, w, <span class="at">group =</span> b)) <span class="sc">+</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="glossary_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Each of these separate variables is then associated with its own coefficient, which we estimate using linear regression.</p>
+<p>These parameters are <em>very difficult</em> to interpret directly.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="at">df =</span> <span class="dv">10</span>), <span class="at">data =</span> d)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(ols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 5
+   term                      estimate std.error statistic   p.value
+   &lt;chr&gt;                        &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+ 1 (Intercept)                  5.90      0.196    30.0   5.40e-113
+ 2 splines::bs(x, df = 10)1     0.235     0.348     0.675 5.00e-  1
+ 3 splines::bs(x, df = 10)2    -0.457     0.233    -1.96  5.08e-  2
+ 4 splines::bs(x, df = 10)3    -1.72      0.290    -5.94  5.43e-  9
+ 5 splines::bs(x, df = 10)4    -2.22      0.235    -9.44  1.46e- 19
+ 6 splines::bs(x, df = 10)5    -0.270     0.253    -1.07  2.86e-  1
+ 7 splines::bs(x, df = 10)6     0.358     0.243     1.47  1.41e-  1
+ 8 splines::bs(x, df = 10)7    -0.474     0.257    -1.84  6.57e-  2
+ 9 splines::bs(x, df = 10)8    -2.01      0.279    -7.22  2.03e- 12
+10 splines::bs(x, df = 10)9    -1.84      0.283    -6.50  1.99e- 10
+11 splines::bs(x, df = 10)10   -1.64      0.263    -6.25  8.93e- 10</code></pre>
+</div>
+</div>
+<p>We then the predictions by using the various columns of <code>B</code> instead of using <code>x</code> directly.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> ols<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> ols<span class="sc">$</span>coefficients[<span class="dv">2</span><span class="sc">:</span><span class="dv">11</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>pred <span class="ot">&lt;-</span> alpha <span class="sc">+</span> B <span class="sc">%*%</span> theta</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span> </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> pred), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="glossary_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In a causal inference context, we would want to do this when we have a covariate that interacts with the treatment in ways that are simply not captured by adding a quadratic term.</p>
+</div>
+
+
+<!-- -->
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-huntington-klein2021" class="csl-entry" role="listitem">
+Huntington-Klein, Nick. 2021. <em><a href="https://doi.org/10.1201/9781003226055">The Effect: An Introduction to Research Design and Causality</a></em>. New York: Chapman; Hall/CRC.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sec-summary.html" class="pagination-link" aria-label="Topics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Topics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Glossary"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>*Joint Submission. My comments are in the shaded boxes.*</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Estimand</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>The parameter or quantity of interest that one aims to estimate in a statistical analysis. It defines what effect or measure is being targeted by the analysis, specifying how it relates to the variables and data involved.</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Counterfactual</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>The counterfactual compares the observed results of something that did happen to the expected results if the treatment *had not* happened.</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Potential Outcomes</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>The set of all possible outcomes for each individual in a study, under each possible treatment or intervention scenario. These outcomes reflect what could happen to each individual under different conditions.</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>I think it's better to think of "potential outcomes."</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>For example, in the case of a **binary** treatment, the potential outcomes framework involves the following:</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$T$ is a treatment variable. The terms "treatment" and "cause" are used interchangeably.</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$Y$ is the outcome we observe.</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$Y^0$ is the the value the outcome *would* take if $T=0$.</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$Y^1$ is the value the outcome *would* take if $T=1$.</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$Y^0$ and $Y^1$ are the *potential outcomes.*</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>We see $Y^0$ *or* $Y^1$ for the same unit, but never both.</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    This is the **fundamental problem of causal inference**.</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>When $T=1$, $Y^0$ is the *counterfactual.*</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>When $T=0$, $Y^1$ is the *counterfactual.*</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Theoretical Estimand </span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>This is the actual thing we would like to know in our research question. The two components of the theoretical estimand are the unit-specific quantity and the target population. The theoretical estimand includes both observed and unobserved data (including counterfactuals).</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Empirical Estimand </span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>The empirical estimand is the target of inference that only includes observable data and relies on identification assumptions.</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Causal Interaction </span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>A causal interaction is the intervention to two variables averaged over one population. In other words, the effect of one variable on the outcome is related to the effect of another.</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Baseline Bias</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>When the treatment and the control group differ from one another for reasons other than the treatment they receive.</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Average Treatment Effect (ATE)</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>The average treatment effect across the population. In other words, this is the effect of switching treatment statuses (e.g., from either treatment to control or from control to treatment).</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional Average Treatment Effect (CATE)</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>The average treatment effect among a specific group as defined by certain ~~control variables~~ covariates.</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>For example, if the ~~control variable~~ covariate is $X$, the CATE can be written as $E(Y^1-Y^0 \mid X = x)$.</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>The word "control" has some baggage because it has the connotation that we can somehow manipulate $X$. Usually we'd want to include variables like "gender" or "race" here.</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Average Treatment Effect on the Treated (ATT) </span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>The average treatment effect, calculated only from the treatment group. To conceptualize the ATT, imagine *taking away* treatment from those who were treated and measuring the change.</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## Average Treatment Effect on the Untreated (ATU) </span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>The average treatment effect, calculated only from the untreated group. To conceptualize the ATU, imagine *giving* the treatment to those who were not treated and measuring the change.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Unit-Specific Quantity</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>A measurement or outcome that pertains to an individual unit or subject in a study, often used in contexts where the effect of a treatment may vary from one unit to another.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Treatment Effect Heterogeneity </span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>When a treatment has different effects on a population.</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>For, example, a treatment for cervical cancer will have heterogeneous effects on people with cervixes versus people without cervixes, even if both groups in the population receive identical treatments. This is because people without cervixes will receive no treatment effect from drugs that target an organ they do not have.</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>This is an extreme example. You'd usually want to remove men from design (i.e., not administering the treatment to people without cervixes).</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>In a less extreme example, the treatment for cervical cancer could have varying effects across women belonging to different age groups.</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Directed Acyclic Graph (DAG)</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>A tool used to depict the data-generating process with nodes to represent the variable and the arrows to represent the causal relationships.</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>Causal diagrams or DAGs are graphical representations of a **data generating process**. Everything we draw is hopefully an informed assumption; everything that’s not in the diagram is *also* an assumption. In other words, DAGs encode identifying assumptions.</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>The idea of a directed acyclical graph (DAG) implies that there are *no cycles.* If a variable causes itself, it’s near impossible to isolate or identifying the cause of anything. The world is full with feedback loops of all sorts, but we deal with them through the incorporation of time or by isolating one effect through some kind of experimental scenario.</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>*Note that DAGs are agnostic about functional form. This includes interactions among variables! Some people deal with interactions by drawing arrows toward arrows or by representing interactions explicitly as separate nodes.*</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>The nicest thing about DAGs is that they help us spell out the **testable implications** of our assumptions. For example, if our causal diagram implies that a relationship between variables is zero, we can check for that.</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="fu">### Unobserved / Unmeasured Variable</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>A variable that may be present in the researcher's assumptions about how the world works, but that is not ~~addressed or~~ available in the data.</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>In a DAG, these variables are usually depicted by being enclosed within a circle.</span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="fu">### Path</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>A path is simply the steps from one variable to another on a causal diagram.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>For example, $A \to B \to C$ is a path.</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Direct Effects</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>The effect of only the treatment variable on the outcome variable.</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Indirect Effects</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>The portion of the change in an outcome that is mediated through one or more intermediate variables, reflecting the causal influence exerted through these mediating variables.</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Total Effects</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>The sum of direct and indirect effects.</span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### Front-Door Path</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>A causal path in which all of the arrows in the causal diagram point from the treatment variable and towards the outcome variable.</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="fu">### Back-Door Path</span></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>The rest of the paths on a causal diagram <span class="sc">\[</span>connecting treatment to outcome<span class="sc">\]</span> that are not front-door paths.</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Confounding ~~Variable~~</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>A variable that affects both the treatment and outcome variables.</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>Note: Not adjusting for a confounding variable threatens the causal relationship between the treatment and outcome variables.</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>The expression "threatens the causal relationship" is vague and clunky. A better way to say this is that the causal effect is not **identified** when we don't adjust for confounding paths.</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>An even *better* way to talk about confounding is to realize that "confounding" is a property of **paths**, it's NOT a property of variables.</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="fu">### Collider Variable</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>A variable in a DAG that is influenced by two or more other variables. Conditioning on a collider can open a confounding path, inadvertently introducing bias into the analysis.</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>A variable is a collider in a path *iff* both arrows point at it.</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>a \to b \to c_\text{ollider} \leftarrow d \leftarrow e \to f</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>Here, $b$ and $c$ are unrelated *unless* we remove variation in $c$ (e.g., by including it in a regression).</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>We close paths by removing variation from one variable along the path (i.e., adjusting); but if the variable is a collider, then removing variation will actually *open* a path that was already closed.</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>An often unacknowledged way of adjusting for colliders is during the sample selection phase. If we have a sample of college students, it means we are adjusting for college attendance.</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Open Path</span></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>A path on a causal diagram in which there is variation in all variables along the path (and no variation in any colliders on that path).</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Closed Path </span></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>A path on a causal diagram in which one or more variables has no variation.</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>Note: A path is also considered closed if there is a collider variable present on that path.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regression</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>Regression focuses on estimating the effect of variables on an outcome through a mathematical model, assuming a specific form of relationship.</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>This is NOT a good definition!!</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>In the usual context of regression, predictive inference relates to comparisons *between* units. In the context of causal inference, we attempt to make comparisons of different treatments *as if applied to the same units.*</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>In order to make causal interpretations of regression coefficients we rely very strong assumptions. In short, causal effects can be estimated with regression if the model includes all confounding variables *and* if the "functional form" is correct.</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>**Translating DAGs into Regression**</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Flow Chart For Constructing Regression Equations [@huntington-klein2021, pp. 199]</span><span class="co">](images/reg-chart.png)</span>{#fig-reg-chart alt="Flow Chart For Constructing Regression Equations <span class="co">[</span><span class="ot">@huntington-klein2021, pp. 199</span><span class="co">]</span>" fig-align="center" width="70%"}</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Matching and Weighting</span></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>Matching and weighting seeks to identify the treatment effect by adjusting for selection into treatment by comparing similar treatment and control cases based on certain attributes.</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>Note: This is distinct from regression, which adjusts for variables that impact the outcome.</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>Both **regression** and **matching/weighting** are strategies to close the backdoor path between $T$ and $Y$. *Both are conditional on observable covariates.* However, matching/weighting provides a way to model treatment selection so that everyone looks the same on the pre-treatment covariates.</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>**Matching/weighting** refers to a set of procedures that modify the original sample in preparation for a statistical analysis. It's a form of data pre-processing. The goal is to create a sample that *looks like* it was created from a randomized experiment.</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>Here are some benefits of matching/weighting procedures:</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>They are *less restrictive* about functional form than regression. We rely less on parametric assumptions. The intuition is the same as with an experiment: if we can create sufficient overlap and balance between treatment and control groups, then we should get a reasonable estimate of the treatment effect, *even if the model used to estimate it is misspecified*.</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Regression models on pre-processed data gives us two opportunities to close backdoor paths (i.e., "double robustness").</span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exact Matching</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>Exact matching compares treatment and control cases that have exactly identical characteristics on a certain combination of variables. In this way, treatment cases are matched to control cases that share the exact same distribution of values for the matching variable(s) of interest, making the only difference between them is treatment status.</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>~~The three assumptions for exact matching are as follows:~~</span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>~~Selection of variables-conditional independence assumption.~~</span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>~~Overlap (any individual case has a non-zero probability of treatment).~~</span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>~~Stable unit treatment value assumption (SUTVA; treatment status and effect of treatment is independent for each case).~~</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>These assumptions are NOT unique to matching.</span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a>A better discussion of overlap can be found <span class="co">[</span><span class="ot">here</span><span class="co">](https://acastroaraujo.github.io/socStats2/week06.html#balance-and-overlap)</span> or in one of the textbooks.</span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>This brief discussion from the <span class="in">`MatchIt`</span> vignette is also useful:</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://kosukeimai.github.io/MatchIt/articles/matching-methods.html#exact-matching-method-exact&gt;</span></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conditional Independence Assumption (CIA)</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>~~The conditional independence assumption asserts that two events occur independent of one another (i.e., the two events do not influence one another).~~</span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a>The CIA (also known as "conditional ignorability" assumption) builds on the more general idea of **ignorability**.</span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a>Experiments work because they make the distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator are *independent.*</span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>Y^0, Y^1 \perp T</span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a>Here, the $\perp$ symbol means independent.</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>The CIA is a necessary assumption we make when using both *regression* and *matching/weighting* to identify a causal effect.</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>Instead of a simple independence assumption that we have for randomized experiments, we now have to rely on a **conditional** ignorability. Just like in the case of experiments, we want distribution of potential outcomes the same across levels of the treatment variable. In other words, the potential outcomes and the treatment indicator *should* be independent, conditional on the covariates $\boldsymbol{X}$ used in the analysis.</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a>Y^0, Y^1 \perp T \mid \boldsymbol X</span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a>Here, $\boldsymbol{X}$ is meant to depict a collection of variables that will close the back-door path.</span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a>This strategy will get more complicated as the vector $\boldsymbol X$ grows in size.</span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a><span class="fu">## Region of Common Support</span></span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>This is the assumption that either for distribution of a matching variable (in exact matching) or for distribution of propensity scores (in weighting), there are both treatment and control cases. If there is overlap, this is known as the region of common support. If there is not overlap in the distributions, that is “off support” and makes causal inference a little more tricky.</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>Note.</span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>What makes it "tricky" is that we don't have direct support from the data to estimate the relevant counterfactuals—e.g., regression will just *extrapolate.*</span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a><span class="fu">## Feasible Estimate of Treatment Effects</span></span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>When calculating a treatment effect, it is sometimes necessary to drop cases that fall outside of the "region of common support." Because cases are dropped, the "true" treatment effect cannot be calculated, which leaves us with calculating the "feasible" treatment effect instead.</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a><span class="fu">## Propensity Score</span></span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>A subject’s individual probability of receiving treatment. Propensity scores can then be used to match or weight control cases to mimic the treatment group.</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a><span class="fu">## Doubly-Robust</span></span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a>Using "doubly robust" methods refers to using both regression and balancing ~~in an equation~~ simultaneously. Employing doubly robust measures is a way to mitigate biases or confounding variables from influencing the "true" treatment effect of your model.</span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inverse probability of treatment weights (IPTW)</span></span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a>This is the weight that is calculated from the propensity score (which is just the probability of treatment). The idea is to apply a weight to each case that makes the treatment and the control groups balanced on the propensity score and therefore (hopefully) on the individual covariates.</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a><span class="fu">## Covariate Balance</span></span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a>In the workflow of propensity score matching and weighting, a key step is to verify if covariates are balanced or imbalanced. Covariate balance is the degree to which the distribution of covariates is similar across levels of treatment.</span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a>Note: The convention we’ve been operating under is that the standardized difference in means between the treatment and control groups for each variable is <span class="sc">\&lt;</span> 0.1 (1/10th of a standard deviation).</span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/workflow.png)</span>{fig-align="center" width="70%"}</span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a><span class="fu">## Kolmogorov-Smirnov Distance (KSD)</span></span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>The KSD is the proportion of non-overlap between two distributions (or, if dealing with cumulative distributions, the maximum distance between two distributions).</span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a>Note: A value of 0 means that the distributions perfectly overlap, while a value of 1 means that the distributions do not overlap at all. The rule of thumb here is that the maximum KSD should be <span class="sc">\&lt;</span> 0.05.</span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>Note: When both standard mean differences (SMDs) and KSDs are in their respective acceptable ranges, you can confidently say covariates are balanced.</span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a><span class="fu">## Entropy Balancing</span></span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>A method of covariate balancing that seeks to balance on mean (like SMDs), variance (like KSDs), and on skewness.</span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a><span class="fu">## Panel Data</span></span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a><span class="fu">### Long-Form Data</span></span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a>In long-form data, each row is a "unit-observation," meaning that each row is exactly one observation. Thus, if person A is observed four times, her data will be stored in four separate rows.</span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### Wide-Form Data </span></span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>In wide-form data, each row contains all of the observations for that *one specific* unit. Thus, if person A is observed four times, her data will be stored in only one row.</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a><span class="fu">## Within- vs. Between-Subject Variance</span></span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a>Within-Subject Variance is the variation that exists within individuals and changes over time. In contrast, Between-Subject Variance exists between individuals and is more or less stable over time.</span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a>For example, an individual being taller than someone else is considered between-subject variance, as it measures the differences between two different subjects. However, an individual being taller than he was ten years ago is an example of within-subject variance, because it measures the differences between *the same subject* at two different time periods.</span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a><span class="fu">## Intra-Class Correlation (ICC)</span></span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a>The ICC is a descriptive statistic that ranges from 0 to 1 and measures the proportion of variance that is between individuals versus within individuals.</span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a>For example, an ICC of 0.25 indicates that a quarter of the variance exists between individuals, and three-fourths of the variance occurs within individuals.</span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mixed Models</span></span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a>A mixed model is simply a linear regression with two error terms: level 1 units (observations) and level 2 units (people). Mixed models include a mix of within-subject variance and between-subject variance, weighing one or the other more heavily based on how much of the total variance it contributes.</span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a>So much more to say...</span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a>This might be useful to keep in mind:</span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/two-datasets.png)</span>{fig-align="center" width="80%"}</span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fixed-Effects Model</span></span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a>A fixed-effects model is a statistical model that uses waves of observations from the same individual, then calculates the changes for the variables that differ in different waves of observations.</span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a>~~Note: The fixed-effects model also holds time constant.~~</span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a>Panel data provides the most common use of varying intercepts to estimate causal effects. Here we use repeated observations within the same individuals to adjust for time-constant unobserved confounders. Here, issues of balance and overlap still exist, but they only apply for *within-*person comparisons.</span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a>If the purpose of **matching/weighting** is to get rid of all observable confounders, then the purpose of **fixed-effects** is to get rid of all time-constant unobserved confounders.</span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a>*Note. Fixed Effects are also Mixed Models.*</span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a><span class="fu">## Difference-in-Differences </span></span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a>A simple difference-in-differences test compares the amounts that the treated and control groups change at time 1 and time 2. The equation for calculating a difference-in-differences reads as follows:</span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a>DiD = (Treated Time 2 - Treated Time 1) - (Untreated Time 2 - Untreated Time 1)</span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a>Note: The DiD calculation relies on the parallel trends assumption.</span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a><span class="fu">### Parallel Trends Assumption </span></span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a>The parallel trends assumption assumes that, during the measurement period, the treated and untreated groups would have changed in similar ways if the treated group did not receive treatment.</span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a>Note: The parallel trends assumption cannot be directly tested, but looking at prior trends can be useful for determining if the assumption is likely to be true.</span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-parallel-trends</span></span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Parallel Trends"</span></span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 4</span></span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-415"><a href="#cb7-415" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_light</span>(<span class="at">base_family =</span> <span class="st">"Avenir Next Condensed"</span>))</span>
+<span id="cb7-416"><a href="#cb7-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-417"><a href="#cb7-417" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb7-418"><a href="#cb7-418" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="fu">c</span>(<span class="st">"Time 0"</span>, <span class="st">"Time 1"</span>),</span>
+<span id="cb7-419"><a href="#cb7-419" aria-hidden="true" tabindex="-1"></a>  <span class="at">y1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb7-420"><a href="#cb7-420" aria-hidden="true" tabindex="-1"></a>  <span class="at">y0 =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,</span>
+<span id="cb7-421"><a href="#cb7-421" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb7-422"><a href="#cb7-422" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-423"><a href="#cb7-423" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span><span class="fu">c</span>(t, y), <span class="at">names_to =</span> <span class="st">"g"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-424"><a href="#cb7-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t, value, <span class="at">group =</span> g)) <span class="sc">+</span> </span>
+<span id="cb7-425"><a href="#cb7-425" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span> </span>
+<span id="cb7-426"><a href="#cb7-426" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="st">"Time 0"</span>, <span class="st">"Time 1"</span>)) <span class="sc">+</span></span>
+<span id="cb7-427"><a href="#cb7-427" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t, y)) <span class="sc">+</span> </span>
+<span id="cb7-428"><a href="#cb7-428" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">x =</span> <span class="st">"Time 1"</span>, <span class="at">y =</span> <span class="dv">2</span>, <span class="at">yend =</span> <span class="dv">3</span>, <span class="at">xend =</span> <span class="st">"Time 1"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>, </span>
+<span id="cb7-429"><a href="#cb7-429" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">"steelblue1"</span>) <span class="sc">+</span></span>
+<span id="cb7-430"><a href="#cb7-430" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">x =</span> <span class="cn">NULL</span>) <span class="sc">+</span> </span>
+<span id="cb7-431"><a href="#cb7-431" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(), <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb7-432"><a href="#cb7-432" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> </span>
+<span id="cb7-433"><a href="#cb7-433" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.2</span>, <span class="at">y =</span> <span class="fl">2.5</span>, <span class="at">label =</span> latex2exp<span class="sc">::</span><span class="fu">TeX</span>(r<span class="st">"($E[d^1 - d^0]$)"</span>), <span class="at">family =</span> <span class="st">"Crimson Text"</span>)</span>
+<span id="cb7-434"><a href="#cb7-434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-435"><a href="#cb7-435" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-436"><a href="#cb7-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-437"><a href="#cb7-437" aria-hidden="true" tabindex="-1"></a><span class="fu">### Two-Way Fixed Effects (TWFE) </span></span>
+<span id="cb7-438"><a href="#cb7-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-439"><a href="#cb7-439" aria-hidden="true" tabindex="-1"></a>The TWFE model is a way of isolating confounding effects in order to focus only on the within-subject treatment effect. Specifically, the TWFE model holds constant the effect of the individual and also holds constant the effect of time, therefore adjusting for both.</span>
+<span id="cb7-440"><a href="#cb7-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-441"><a href="#cb7-441" aria-hidden="true" tabindex="-1"></a>**Two-Way Fixed Effects Difference-in-Difference Estimator**</span>
+<span id="cb7-442"><a href="#cb7-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-443"><a href="#cb7-443" aria-hidden="true" tabindex="-1"></a>The TWFE difference-in-differences estimator refers to the coefficients learned by a regression model with fixed effects for treatment condition and time period, clustered for treatment condition.</span>
+<span id="cb7-444"><a href="#cb7-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-445"><a href="#cb7-445" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ordinary Least Squares (OLS)</span></span>
+<span id="cb7-446"><a href="#cb7-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-447"><a href="#cb7-447" aria-hidden="true" tabindex="-1"></a>A method of estimating the parameters in a linear regression model. OLS chooses the parameters that minimize the sum of the squared differences between the observed values and the values predicted by the model.</span>
+<span id="cb7-448"><a href="#cb7-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-449"><a href="#cb7-449" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bootstrapping </span></span>
+<span id="cb7-450"><a href="#cb7-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-451"><a href="#cb7-451" aria-hidden="true" tabindex="-1"></a>Bootstrapping is a statistical technique in which a single data set is sampled and resampled in order to run simulations and pull samples to account for random error.</span>
+<span id="cb7-452"><a href="#cb7-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-453"><a href="#cb7-453" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-454"><a href="#cb7-454" aria-hidden="true" tabindex="-1"></a>We use bootstrapping to calculate standard errors in some cases.</span>
+<span id="cb7-455"><a href="#cb7-455" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-456"><a href="#cb7-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-457"><a href="#cb7-457" aria-hidden="true" tabindex="-1"></a><span class="fu">## Splines</span></span>
+<span id="cb7-458"><a href="#cb7-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a>A spline is a flexible kind of model that combines different ~~models~~ \[parameters\] in order to ~~create the best estimate for the equation~~ <span class="sc">\[</span>nonlinear regression curves expressed as the sum of many localized pieces<span class="sc">\]</span>.</span>
+<span id="cb7-460"><a href="#cb7-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-461"><a href="#cb7-461" aria-hidden="true" tabindex="-1"></a>~~Note: The transition from one model into another (i.e., where the data splits) is referred to as a "knot.”~~</span>
+<span id="cb7-462"><a href="#cb7-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-463"><a href="#cb7-463" aria-hidden="true" tabindex="-1"></a>::: box-text-custom</span>
+<span id="cb7-464"><a href="#cb7-464" aria-hidden="true" tabindex="-1"></a>You don't need to know this, but here is how this looks like:</span>
+<span id="cb7-465"><a href="#cb7-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-468"><a href="#cb7-468" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-469"><a href="#cb7-469" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-470"><a href="#cb7-470" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb7-471"><a href="#cb7-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-472"><a href="#cb7-472" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb7-473"><a href="#cb7-473" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-474"><a href="#cb7-474" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">runif</span>(N, <span class="dv">1</span>, <span class="dv">200</span>),</span>
+<span id="cb7-475"><a href="#cb7-475" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(N, <span class="at">mean =</span> <span class="dv">5</span> <span class="sc">+</span> <span class="fu">cos</span>(<span class="fl">0.05</span><span class="sc">*</span>x), <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb7-476"><a href="#cb7-476" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-477"><a href="#cb7-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-478"><a href="#cb7-478" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb7-479"><a href="#cb7-479" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span> </span>
+<span id="cb7-480"><a href="#cb7-480" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-481"><a href="#cb7-481" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="at">df =</span> <span class="dv">10</span>))</span>
+<span id="cb7-482"><a href="#cb7-482" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-483"><a href="#cb7-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-484"><a href="#cb7-484" aria-hidden="true" tabindex="-1"></a>Under the hood, the <span class="in">`bs()`</span> function is partitioning the $x$ variable into 10 separate variables, each of them with their own weight, so that we have something like this:</span>
+<span id="cb7-485"><a href="#cb7-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-488"><a href="#cb7-488" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-489"><a href="#cb7-489" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-490"><a href="#cb7-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-491"><a href="#cb7-491" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> splines<span class="sc">::</span><span class="fu">bs</span>(d<span class="sc">$</span>x, <span class="at">df =</span> <span class="dv">10</span>)</span>
+<span id="cb7-492"><a href="#cb7-492" aria-hidden="true" tabindex="-1"></a>ds <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(B)</span>
+<span id="cb7-493"><a href="#cb7-493" aria-hidden="true" tabindex="-1"></a>ds<span class="sc">$</span>x <span class="ot">&lt;-</span> d<span class="sc">$</span>x</span>
+<span id="cb7-494"><a href="#cb7-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-495"><a href="#cb7-495" aria-hidden="true" tabindex="-1"></a>ds <span class="sc">|&gt;</span> </span>
+<span id="cb7-496"><a href="#cb7-496" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>x, <span class="at">names_to =</span> <span class="st">"b"</span>, <span class="at">values_to =</span> <span class="st">"w"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-497"><a href="#cb7-497" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, w, <span class="at">group =</span> b)) <span class="sc">+</span> </span>
+<span id="cb7-498"><a href="#cb7-498" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span>
+<span id="cb7-499"><a href="#cb7-499" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-500"><a href="#cb7-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-501"><a href="#cb7-501" aria-hidden="true" tabindex="-1"></a>Each of these separate variables is then associated with its own coefficient, which we estimate using linear regression.</span>
+<span id="cb7-502"><a href="#cb7-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-503"><a href="#cb7-503" aria-hidden="true" tabindex="-1"></a>These parameters are *very difficult* to interpret directly.</span>
+<span id="cb7-504"><a href="#cb7-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-507"><a href="#cb7-507" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-508"><a href="#cb7-508" aria-hidden="true" tabindex="-1"></a>ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="at">df =</span> <span class="dv">10</span>), <span class="at">data =</span> d)</span>
+<span id="cb7-509"><a href="#cb7-509" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(ols)</span>
+<span id="cb7-510"><a href="#cb7-510" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-511"><a href="#cb7-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-512"><a href="#cb7-512" aria-hidden="true" tabindex="-1"></a>We then the predictions by using the various columns of <span class="in">`B`</span> instead of using <span class="in">`x`</span> directly.</span>
+<span id="cb7-513"><a href="#cb7-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-516"><a href="#cb7-516" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-517"><a href="#cb7-517" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> ols<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb7-518"><a href="#cb7-518" aria-hidden="true" tabindex="-1"></a>theta <span class="ot">&lt;-</span> ols<span class="sc">$</span>coefficients[<span class="dv">2</span><span class="sc">:</span><span class="dv">11</span>]</span>
+<span id="cb7-519"><a href="#cb7-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-520"><a href="#cb7-520" aria-hidden="true" tabindex="-1"></a>d<span class="sc">$</span>pred <span class="ot">&lt;-</span> alpha <span class="sc">+</span> B <span class="sc">%*%</span> theta</span>
+<span id="cb7-521"><a href="#cb7-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-522"><a href="#cb7-522" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> </span>
+<span id="cb7-523"><a href="#cb7-523" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span> </span>
+<span id="cb7-524"><a href="#cb7-524" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-525"><a href="#cb7-525" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> pred), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>)</span>
+<span id="cb7-526"><a href="#cb7-526" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-527"><a href="#cb7-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-528"><a href="#cb7-528" aria-hidden="true" tabindex="-1"></a>In a causal inference context, we would want to do this when we have a covariate that interacts with the treatment in ways that are simply not captured by adding a quadratic term.</span>
+<span id="cb7-529"><a href="#cb7-529" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
