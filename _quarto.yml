@@ -45,6 +45,8 @@ book:
         - solutions09.qmd
         - solutions10.qmd
         - solutions11.qmd
+    - sec-summary.qmd
+    - glossary.qmd
     - references.qmd
 
 bibliography: references.bib

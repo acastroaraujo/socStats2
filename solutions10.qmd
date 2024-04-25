@@ -254,7 +254,7 @@ mod3 <- lmer(lwage ~ college + t0 + I(t0^2) + (t0 + I(t0^2) | id), REML = FALSE,
 BIC(mod1, mod2, mod3)
 
 # get coef
-summary(mod1)
+summary(mod3)
 
 ggpredict(mod1, terms = c("t0 [all]", "id [sample = 9]"), type = "random") |> 
   plot()

@@ -59,7 +59,33 @@ We don't have to make this assumption with difference-in-differences because we 
 
 > b\. If we estimate the causal effect in this case using difference-in-differences, even though parallel trends is violated, how much would our effect be off by? (note you won't be able to give a specific number)
 
-*The answer depends on how wrong is the parallel trends assumption. We will be off by the total (potential) change minus the treatment effect.*
+*The answer depends on how wrong is the parallel trends assumption. We will be off by the total change minus the treatment effect.*
+
+------------------------------------------------------------------------
+
+**Edit:**
+
+I realize my wording here is a little confusing. My apologies.
+
+Suppose that the actual causal effect is *zero.*
+
+This means that our diff-in-diff estimate will be *equal* to the following formula *if and only if* the parallel trends assumption holds:
+
+$$
+0 = \underbrace{(Y^\text{treated}_{t = 1} - Y^\text{treated}_{t = 0})}_{\Delta Y^\text{treated}} - \underbrace{(Y^\text{untreated}_{t = 1} - Y^\text{untreated}_{t = 0})}_{\Delta Y^\text{untreated}}
+$$
+
+This means that we will *overestimate* the effect when the change in the treated group is larger than the change in the untreated groups **for reasons *other* than the actual treatment**.
+
+$$
+\Delta Y^\text{untreated} < \Delta Y^\text{treated}
+$$
+
+And we will *underestimate* the effect when the opposite holds true.
+
+$$
+\Delta Y^\text{untreated} > \Delta Y^\text{treated}
+$$
 
 ## Exercise
 
@@ -74,6 +100,12 @@ We don't have to make this assumption with difference-in-differences because we 
 > a.  If we estimate difference-in-differences anyway, are we likely to overestimate the actual causal effect, underestimate it, or get it right on average?
 
 *Underestimate!*
+
+------------------------------------------------------------------------
+
+Edit:
+
+Note that the slope for the untreated group is steeper than the slope for the treated group. As mentioned in the previous edit, we are likely to *underestimate* the effect when $\Delta Y^\text{untreated} > \Delta Y^\text{treated}$ *for reasons other than the* *actual treatment.*
 
 ## Exercise
 
@@ -114,7 +146,7 @@ $$
 In which we replace the previous table with the following parameter values:
 
 |               |                     |                                         |
-|-------------------|-------------------|-----------------------------------|
+|-------------------|-------------------|----------------------------------|
 |               | **Before**          | **After**                               |
 | **Treated**   | $\beta_0 + \beta_1$ | $\beta_0 + \beta_1 + \beta_2 + \beta_3$ |
 | **Untreated** | $\beta_0$           | $\beta_0 + \beta_2$                     |

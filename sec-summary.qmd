@@ -1,0 +1,73 @@
+---
+title: "Topics"
+---
+
+What is your estimand?
+
+-   estimands, estimators, estimates
+
+Identification and causal diagrams
+
+-   front doors
+
+-   back doors
+
+-   colliders
+
+-   post-treatment bias
+
+Multiple regression and adjustment
+
+-   intepreting effect sizes
+
+-   using marginaleffects
+
+-   functional form considerations
+
+Matching and weighting
+
+-   exact matching
+
+-   propensity scores (parametric and semi-parametric)
+
+-   nearest neighbor matching on the propensity score for ATT
+
+-   weighting using propensity scores for ATT and ATE
+
+-   weighting using non-propensity methods for ATT and ATE
+
+Panel data concepts
+
+-   within and between variance
+
+-   variance components
+
+-   ICC calculation
+
+Mixed model for time-constant treatments
+
+-   advantages over linear regression
+
+-   random growth curve models
+
+-   shrinkage
+
+Within-subject models
+
+-   advantages for estimating counterfactuals
+
+-   disadvantages for generalization
+
+-   pre-post
+
+-   two-period difference-in-differences
+
+-   two-way fixed effects
+
+Within-between / correlated random effects models
+
+-   splitting variables
+
+-   combining strengths of mixed- and within-subject models
+
+-   interpreting within, between, and contextual coefficients
