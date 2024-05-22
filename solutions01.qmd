@@ -112,7 +112,7 @@ tibble(x = out) |>
 Hint: There are a few different ways of giving a reasonable answer to this question. The wording of this problem is ambiguous.
 :::
 
-To get at questions of statistical power we need to establish two things from the outset: (1) the "effect" we believe exists out there and (2) the desired standard error. For the latter, this *usually* means choosing a sample size so that *the resulting standard error that will allow me to have a false negative rate of at least 80%* But this is just a convention.
+To get at questions of statistical power we need to establish two things from the outset: (1) the "effect" we believe exists out there and (2) the desired standard error. For the latter, this *usually* means choosing a sample size so that *the resulting standard error that will allow me to have a false negative rate of at most 20%.* But this is just a convention.
 
 Steve's [code](https://github.com/vaiseys/soc-stats-2/blob/main/demos/week-02.R) already shows how to do this with the built-in `t.test` and `power.t.test` functions. He also had to make assumptions about the the distribution of the potential outcomes in the population. *We all have to do this*, except that sometimes we don't realize it because the assumptions are hidden away in some kind of Internet sample size calculator.
 
