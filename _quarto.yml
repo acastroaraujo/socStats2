@@ -32,19 +32,19 @@ book:
         - week09.qmd
         - week10.qmd
         - week11.qmd
-    - part: sec-solutions.qmd
-      chapters: 
-        - solutions01.qmd
-        - solutions02.qmd
-        - solutions03.qmd
-        - solutions04.qmd
-        - solutions05.qmd
-        - solutions06.qmd
-        - solutions07.qmd
-        - solutions08.qmd
-        - solutions09.qmd
-        - solutions10.qmd
-        - solutions11.qmd
+    #- part: sec-solutions.qmd
+      #chapters: 
+        #- solutions01.qmd
+        #- solutions02.qmd
+        #- solutions03.qmd
+        #- solutions04.qmd
+        #- solutions05.qmd
+        #- solutions06.qmd
+        #- solutions07.qmd
+        #- solutions08.qmd
+        #- solutions09.qmd
+        #- solutions10.qmd
+        #- solutions11.qmd
     - sec-summary.qmd
     - glossary.qmd
     - references.qmd
